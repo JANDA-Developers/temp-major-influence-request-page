@@ -1,0 +1,41 @@
+@import "./mixin.scss";
+
+$main-color: #df9d26;
+$sub-color1: #efd252;
+$sub-color2: #f8e79d;
+$font-color1: #333;
+$font-color2: #bababa;
+$font-color3: #555;
+$border-color: #d2d2d2;
+$background-color: #f2f4f9;
+
+$tablet1: 1200px;
+$tablet2: 1080px;
+$mobile1: 768px;
+$mobile2: 640px;
+$mobile3: 320px;
+
+*::selection {
+  background: rgba(248, 231, 157, 0.6);
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+img {
+  border: none;
+  vertical-align: top;
+}
+ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  list-style: none;
+  padding-inline-start: 0;
+}
+button:focus {
+  outline: none;
+}
+input:focus {
+  outline: none;
+}

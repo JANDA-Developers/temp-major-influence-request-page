@@ -1,0 +1,5 @@
+@mixin resp($max: 9999px, $min: 320px) {
+  @media only screen and (max-width: $max) and (min-width: $min) {
+    @content;
+  }
+}

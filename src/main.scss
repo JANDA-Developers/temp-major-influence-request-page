@@ -1,0 +1,1141 @@
+@import "./Variable.scss";
+@import "../node_modules/@janda-com/front/build/scss/style_config.scss";
+@import "../node_modules/@janda-com/front/build/scss/components/Slider.scss";
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+#none {
+  display: none;
+}
+
+.Main {
+  header {
+    padding: 30px 3%;
+    height: 46px;
+    .hd {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .logo img {
+        @include resp($mobile1, $mobile2) {
+          width: 180px;
+        }
+        @include resp($mobile2, $mobile3) {
+          width: 160px;
+        }
+      }
+    }
+    .search_wrap {
+      width: 50%;
+      height: 46px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      label {
+        text-indent: -9999px;
+      }
+      input {
+        width: 100%;
+        height: 40px;
+        background-color: $background-color;
+        border-radius: 20px;
+        border: 1px solid $border-color;
+        padding: 0 44px 0 20px;
+        margin-right: 24px;
+      }
+      input::placeholder {
+        font-size: 16px;
+        color: $font-color2;
+      }
+      .search_btn {
+        display: block;
+        width: 20px;
+        position: absolute;
+        top: 50%;
+        right: 40px;
+        transform: translateY(-50%);
+      }
+    }
+    .join_link1 {
+      display: block;
+      padding: 12px 24px;
+      background-color: $sub-color1;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      @include resp($mobile1, $mobile2) {
+        padding: 8px 20px;
+        font-size: 14px;
+      }
+      @include resp($mobile2, $mobile3) {
+        padding: 8px 20px;
+        font-size: 14px;
+      }
+    }
+    .join_link1:hover {
+      background-color: #fff;
+      border: 1px solid $sub-color1;
+      color: $sub-color1;
+      transition: all 0.6s;
+    }
+  }
+  #mainvisual {
+    .mainvisual {
+      background: url(img/mainvisual_img2.png) no-repeat 97% center;
+      width: 100%;
+      height: 900px;
+      overflow: hidden;
+      text-align: left;
+      position: relative;
+      @include resp($tablet1, $tablet2) {
+        background: url(img/mainvisual_img2.png) no-repeat 97% center/50% auto;
+        height: 750px;
+      }
+      @include resp($tablet2, $mobile1) {
+        background: url(./img/mainvisual_img2.png) no-repeat center 290px/50%
+          auto;
+        height: 750px;
+        text-align: center;
+      }
+      @include resp($mobile1, $mobile2) {
+        background: url(./img/mainvisual_img2.png) no-repeat center 260px/65%
+          auto;
+        height: 700px;
+        text-align: center;
+      }
+      @include resp($mobile2, $mobile3) {
+        background: url(./img/mainvisual_img2.png) no-repeat center 230px/80%
+          auto;
+        height: 620px;
+        text-align: center;
+      }
+      .txt_wrap {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translateY(-95%);
+        color: $font-color1;
+        font-size: 50px;
+        letter-spacing: -2px;
+        line-height: 0.5em;
+        @include resp($tablet1, $tablet2) {
+          left: 3%;
+          font-size: 42px;
+          letter-spacing: -3px;
+        }
+        @include resp($tablet2, $mobile1) {
+          width: 100%;
+          top: 8%;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 38px;
+          letter-spacing: -3px;
+        }
+        @include resp($mobile1, $mobile2) {
+          width: 100%;
+          top: 8%;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 30px;
+          letter-spacing: -2px;
+        }
+        @include resp($mobile2, $mobile3) {
+          width: 100%;
+          top: 8%;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 22px;
+          letter-spacing: -2px;
+        }
+        strong {
+          color: $main-color;
+          font-weight: bold;
+        }
+      }
+      .join_link2 {
+        display: bolck;
+        padding: 20px 34px;
+        font-size: 20px;
+        color: #fff;
+        background-color: $main-color;
+        border-radius: 34px;
+        position: absolute;
+        bottom: 40%;
+        left: 10%;
+        cursor: pointer;
+        @include resp($tablet1, $tablet2) {
+          left: 3%;
+        }
+        @include resp($tablet2, $mobile1) {
+          bottom: 64%;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 14px 24px;
+          font-size: 18px;
+        }
+        @include resp($mobile1, $mobile2) {
+          bottom: 66%;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 12px 24px;
+          font-size: 18px;
+        }
+        @include resp($mobile2, $mobile3) {
+          bottom: 70%;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 10px 24px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  #container {
+    .row_tit {
+      text-align: center;
+      font-size: 40px;
+      font-weight: 700;
+      color: $font-color1;
+      margin-bottom: 52px;
+      position: relative;
+      @include resp($tablet1, $tablet2) {
+        font-size: 36px;
+        margin-bottom: 32px;
+      }
+      @include resp($tablet2, $mobile1) {
+        font-size: 30px;
+        letter-spacing: -2px;
+        margin-bottom: 30px;
+      }
+      @include resp($mobile1, $mobile2) {
+        font-size: 28px;
+        letter-spacing: -2px;
+        margin-bottom: 24px;
+      }
+      @include resp($mobile2, $mobile3) {
+        font-size: 26px;
+        letter-spacing: -2.5px;
+        margin-bottom: 20px;
+      }
+    }
+    .row_txt {
+      font-size: 20px;
+      line-height: 35px;
+      text-align: center;
+      color: $font-color1;
+      margin-bottom: 65px;
+      @include resp($tablet1, $tablet2) {
+        margin-bottom: 52px;
+      }
+      @include resp($tablet2, $mobile1) {
+        font-size: 18px;
+        line-height: 1.5em;
+        margin-bottom: 46px;
+      }
+      @include resp($mobile1, $mobile2) {
+        font-size: 18px;
+        line-height: 1.5em;
+        margin-bottom: 46px;
+      }
+      @include resp($mobile2, $mobile3) {
+        font-size: 16px;
+        line-height: 1.5em;
+        margin-bottom: 40px;
+        letter-spacing: -1px;
+      }
+    }
+    .row1 {
+      background-color: $background-color;
+      padding: 210px 3% 150px;
+      position: relative;
+      @include resp($tablet1, $tablet2) {
+        padding: 150px 3% 90px;
+      }
+      @include resp($mobile1, $mobile2) {
+        padding: 130px 3% 60px;
+      }
+      @include resp($mobile2, $mobile3) {
+        padding: 130px 3% 60px;
+      }
+      .row_tit::before {
+        content: "PRODUCT";
+        display: bolck;
+        position: absolute;
+        top: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 32px;
+        font-weight: 300;
+        opacity: 0.2;
+        @include resp($tablet1, $tablet2) {
+          font-size: 28px;
+          top: -56px;
+        }
+        @include resp($tablet2, $mobile1) {
+          font-size: 26px;
+          top: -52px;
+        }
+        @include resp($mobile1, $mobile2) {
+          font-size: 24px;
+          top: -48px;
+        }
+        @include resp($mobile2, $mobile3) {
+          font-size: 24px;
+          top: -48px;
+        }
+      }
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          width: calc(25% - 40px);
+          margin: 0 20px 60px;
+          background-color: #fff;
+          border-radius: 5px;
+          @include resp($tablet1, $tablet2) {
+            width: calc(50% - 30px);
+            margin: 0 15px 60px;
+          }
+          @include resp($tablet2, $mobile1) {
+            width: calc(50% - 30px);
+            margin: 0 15px 50px;
+          }
+          @include resp($mobile1, $mobile2) {
+            width: 100%;
+            margin: 0 70px 50px;
+          }
+          @include resp($mobile2, $mobile3) {
+            width: 100%;
+            margin: 0 70px 50px;
+          }
+          a {
+            display: block;
+            overflow: hidden;
+            position: relative;
+            .list_img {
+              display: block;
+              height: 250px;
+              margin: 10px;
+              border-radius: 5px;
+              overflow: hidden;
+              @include resp(1700px) {
+                height: 220px;
+              }
+              @include resp($tablet1, $tablet2) {
+                height: 180px;
+              }
+              @include resp($mobile2, $mobile3) {
+                height: 160px;
+              }
+              img {
+                transform: scale(1.2);
+                @include resp(1200px) {
+                  transform: none;
+                  width: 100%;
+                }
+              }
+            }
+            .list_tit {
+              display: block;
+              font-size: 20px;
+              color: $font-color3;
+              font-weight: 600;
+              margin-left: 32px;
+              margin-right: 32px;
+              margin-bottom: 16px;
+              white-space: normal;
+              word-wrap: break-word;
+              display: -webkit-box;
+              -webkit-line-clamp: 1;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              @include resp(1500px) {
+                font-size: 18px;
+                margin-left: 26px;
+                margin-right: 26px;
+              }
+              @include resp($tablet1, $tablet2) {
+                font-size: 16px;
+                margin-left: 18px;
+                margin-right: 12px;
+              }
+            }
+          }
+          .like {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 32px;
+            margin-bottom: 24px;
+            @include resp(1500px) {
+              margin-right: 18px;
+              margin-bottom: 18px;
+            }
+            @include resp($tablet1, $tablet2) {
+              margin-right: 16px;
+              margin-bottom: 14px;
+            }
+            @include resp($mobile1, $mobile2) {
+              margin-right: 16px;
+              margin-bottom: 14px;
+            }
+            .like_icon svg {
+              width: 16px;
+              margin-right: 4px;
+              @include resp($tablet1, $tablet2) {
+                width: 14px;
+              }
+              @include resp($mobile2, $mobile3) {
+                width: 12px;
+              }
+            }
+            .like_txt {
+              font-size: 18px;
+              color: $font-color3;
+              @include resp($tablet1, $tablet2) {
+                font-size: 16px;
+              }
+              @include resp($mobile2, $mobile3) {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .row2 {
+      padding: 210px 3% 0;
+      @include resp($tablet1, $tablet2) {
+        padding: 150px 3% 0;
+      }
+      @include resp($tablet2, $mobile1) {
+        padding: 150px 3% 0;
+      }
+      @include resp($mobile1, $mobile2) {
+        padding: 130px 3% 0;
+      }
+      @include resp($mobile2, $mobile3) {
+        padding: 130px 3% 0;
+      }
+      .row_tit::before {
+        content: "SYSTEM";
+        display: bolck;
+        position: absolute;
+        top: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 32px;
+        font-weight: 300;
+        opacity: 0.2;
+        @include resp($tablet1, $tablet2) {
+          font-size: 28px;
+          top: -56px;
+        }
+        @include resp($tablet2, $mobile1) {
+          font-size: 26px;
+          top: -52px;
+        }
+        @include resp($mobile1, $mobile2) {
+          font-size: 24px;
+          top: -48px;
+        }
+        @include resp($mobile2, $mobile3) {
+          font-size: 24px;
+          top: -48px;
+        }
+      }
+      .info_wrap {
+        text-align: center;
+        position: relative;
+        .slick-prev {
+          position: absolute;
+          top: 50%;
+          left: 10%;
+          margin-top: -175px;
+          width: 60px;
+          height: 350px;
+          display: block;
+          border: none;
+          background-color: rgba(0, 0, 0, 0);
+          cursor: pointer;
+          @include resp($tablet2, $mobile1) {
+            left: 3%;
+          }
+          @include resp($mobile1, $mobile2) {
+            left: 3%;
+          }
+          @include resp($mobile2, $mobile3) {
+            left: 2%;
+          }
+          svg {
+            width: 20px;
+            @include resp($mobile2, $mobile3) {
+              width: 14px;
+            }
+          }
+        }
+        .slick-list {
+          .tit {
+            font-size: 26px;
+            margin-bottom: 10px;
+            color: $font-color1;
+            font-weight: 500;
+            @include resp($tablet1, $tablet2) {
+              font-size: 22px;
+            }
+            @include resp($tablet2, $mobile1) {
+              font-size: 20px;
+            }
+            @include resp($mobile1, $mobile2) {
+              font-size: 20px;
+            }
+            @include resp($mobile2, $mobile3) {
+              font-size: 20px;
+            }
+            span {
+              color: $main-color;
+              font-weight: 600;
+            }
+          }
+          .txt {
+            font-size: 20px;
+            color: $font-color3;
+            @include resp($tablet1, $tablet2) {
+              font-size: 18px;
+            }
+            @include resp($tablet2, $mobile1) {
+              font-size: 16px;
+            }
+            @include resp($mobile1, $mobile2) {
+              font-size: 16px;
+            }
+            @include resp($mobile2, $mobile3) {
+              font-size: 16px;
+            }
+          }
+          .cont {
+            padding: 152px 18px 0;
+            height: 800px;
+            overflow: hidden;
+            @include resp($tablet1, $tablet2) {
+              padding: 120px 18px 0;
+              height: 600px;
+            }
+            @include resp($tablet2, $mobile1) {
+              padding: 100px 18px 0;
+              height: 480px;
+            }
+            @include resp($mobile1, $mobile2) {
+              padding: 100px 18px 0;
+              height: 480px;
+            }
+            @include resp($mobile2, $mobile3) {
+              padding: 100px 18px 0;
+              height: 400px;
+            }
+            .go_btn {
+              display: inline-block;
+              padding: 12px 36px;
+              border-radius: 5px;
+              margin-bottom: 32px;
+              font-size: 16px;
+              line-height: 1.2em;
+              background-color: #fff;
+              border: 1px solid $font-color2;
+              box-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.1);
+              color: $font-color3;
+              cursor: pointer;
+              @include resp($tablet2, $mobile1) {
+                font-size: 14px;
+                padding: 10px 30px;
+                margin-bottom: 42px;
+              }
+              @include resp($mobile1, $mobile2) {
+                font-size: 14px;
+                padding: 10px 30px;
+                margin-bottom: 42px;
+              }
+              @include resp($mobile2, $mobile3) {
+                font-size: 14px;
+                padding: 10px 30px;
+                margin-bottom: 22px;
+              }
+              span {
+                @include resp($mobile2, $mobile3) {
+                  display: none;
+                }
+              }
+            }
+            img {
+              display: block;
+              margin: 0 auto;
+              @include resp($tablet1, $tablet2) {
+                width: 75%;
+              }
+              @include resp($tablet2, $mobile1) {
+                width: 86%;
+              }
+              @include resp($mobile1, $mobile2) {
+                width: 96%;
+              }
+              @include resp($mobile2, $mobile3) {
+                width: 96%;
+              }
+            }
+          }
+        }
+        .slick-next {
+          position: absolute;
+          top: 50%;
+          right: 10%;
+          margin-top: -175px;
+          width: 60px;
+          height: 350px;
+          display: block;
+          border: none;
+          background-color: rgba(0, 0, 0, 0);
+          cursor: pointer;
+          @include resp($tablet2, $mobile1) {
+            right: 3%;
+          }
+          @include resp($mobile1, $mobile2) {
+            right: 3%;
+          }
+          @include resp($mobile2, $mobile3) {
+            right: 2%;
+          }
+          svg {
+            width: 20px;
+            @include resp($mobile2, $mobile3) {
+              width: 14px;
+            }
+          }
+        }
+
+        ul {
+          position: absolute;
+          top: 142px;
+          left: 50%;
+          transform: translateX(-50%);
+          @include resp($tablet1, $tablet2) {
+            top: 106px;
+          }
+          @include resp($tablet2, $mobile1) {
+            top: 90px;
+          }
+          @include resp($mobile1, $mobile2) {
+            top: 92px;
+          }
+          @include resp($mobile2, $mobile3) {
+            top: 92px;
+          }
+          li {
+            display: inline-block;
+            margin: 0 20px;
+            position: relative;
+            button {
+              width: 50px;
+              height: 50px;
+              font-size: 18px;
+              font-weight: bold;
+              border-radius: 50%;
+              cursor: pointer;
+              color: $main-color;
+              border-color: #fff;
+              background-color: #fff;
+              border-width: 0;
+              box-shadow: 0 3px 5px 3px rgba(0, 0, 0, 0.1);
+              @include resp($tablet1, $tablet2) {
+                width: 42px;
+                height: 42px;
+              }
+              @include resp($tablet2, $mobile1) {
+                width: 40px;
+                height: 40px;
+              }
+              @include resp($mobile1, $mobile2) {
+                width: 40px;
+                height: 40px;
+              }
+              @include resp($mobile2, $mobile3) {
+                width: 40px;
+                height: 40px;
+              }
+            }
+            button::before {
+              display: none;
+            }
+          }
+          .slick-active {
+            button {
+              color: #fff;
+              background-color: $main-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .prepare {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    .white_bg {
+      width: 320px;
+      border-radius: 6px;
+      background-color: #fff;
+      padding: 26px 0;
+      margin: 15% auto 0;
+      position: relative;
+      @include resp($tablet2, $mobile1) {
+        margin: 25% auto 0;
+      }
+      @include resp($mobile2, $mobile3) {
+        margin: 30% auto 0;
+      }
+      img {
+        display: block;
+        margin: 0 auto;
+        width: 60px;
+      }
+      .p_txt {
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.5em;
+        color: $font-color3;
+        margin-top: 10px;
+        strong {
+          color: $main-color;
+        }
+      }
+      .close {
+        width: 40px;
+        height: 40px;
+        background-color: $main-color;
+        border-radius: 50%;
+        position: absolute;
+        top: -16px;
+        right: -16px;
+        border-width: 0;
+        cursor: pointer;
+        svg {
+          width: 16px;
+        }
+      }
+    }
+  }
+
+  .row3 {
+    padding: 250px 3%;
+    background-color: $background-color;
+    @include resp($tablet1, $tablet2) {
+      padding: 220px 3%;
+    }
+    @include resp($tablet2, $mobile1) {
+      padding: 180px 3% 140px;
+    }
+    @include resp($mobile1, $mobile2) {
+      padding: 180px 3% 140px;
+    }
+    @include resp($mobile2, $mobile3) {
+      padding: 130px 3% 90px;
+    }
+    .row_tit::before {
+      content: "PARTNER";
+      display: bolck;
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 32px;
+      font-weight: 300;
+      opacity: 0.2;
+      @include resp($tablet1, $tablet2) {
+        font-size: 28px;
+        top: -56px;
+      }
+      @include resp($tablet2, $mobile1) {
+        font-size: 26px;
+        top: -52px;
+      }
+      @include resp($mobile1, $mobile2) {
+        font-size: 24px;
+        top: -48px;
+      }
+      @include resp($mobile2, $mobile3) {
+        font-size: 24px;
+        top: -48px;
+      }
+    }
+    .partners_area {
+      width: 100%;
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          width: calc(20% - 100px);
+          margin: 0 50px 60px;
+          text-align: center;
+          @include resp(1300px) {
+            width: calc(20% - 40px);
+            margin: 0 20px 60px;
+          }
+          @include resp($tablet1, $tablet2) {
+            width: calc(20% - 16px);
+            margin: 0 8px 60px;
+          }
+          @include resp($tablet2, $mobile1) {
+            width: calc(50% - 30px);
+            margin: 0 15px 40px;
+          }
+          @include resp($mobile1, $mobile2) {
+            width: 100%;
+            margin: 0 90px 40px;
+          }
+          @include resp($mobile2, $mobile3) {
+            width: 100%;
+            margin: 0 90px 40px;
+          }
+          img {
+            width: 100%;
+          }
+          .partners_name {
+            display: block;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #555;
+            width: 100%;
+            @include resp($mobile2, $mobile3) {
+              margin-top: 14px;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer_in {
+    padding: 60px 3% 100px;
+    color: $font-color3;
+    text-align: center;
+    @include resp($mobile1, $mobile2) {
+      padding: 60px 3% 70px;
+    }
+    @include resp($mobile2, $mobile3) {
+      padding: 60px 3% 70px;
+    }
+    .ft_info {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+      position: relative;
+      .info1 {
+        display: block;
+        color: $font-color3;
+        font-size: 16px;
+        font-weight: 600;
+        margin-right: 80px;
+        cursor: pointer;
+        @include resp($mobile2, $mobile3) {
+          font-size: 14px;
+        }
+      }
+      .info1:hover {
+        opacity: 0.5;
+        transition: all 0.6s;
+      }
+      .info2 {
+        display: block;
+        color: $font-color3;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        @include resp($mobile2, $mobile3) {
+          font-size: 14px;
+        }
+      }
+      .info2:hover {
+        opacity: 0.5;
+        transition: all 0.6s;
+      }
+    }
+    .ft_info::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $font-color2;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    .f_detail_wrap {
+      color: $font-color1;
+      display: flex;
+      justify-content: center;
+      text-align: left;
+      @include resp($mobile1, $mobile2) {
+        text-align: center;
+        display: block;
+      }
+      @include resp($mobile2, $mobile3) {
+        text-align: center;
+        display: block;
+      }
+      ul {
+        margin: 0 10px;
+      }
+      li {
+        margin-bottom: 8px;
+        @include resp($mobile2, $mobile3) {
+          margin-bottom: 3px;
+        }
+        span {
+          font-size: 14px;
+          margin-right: 12px;
+          @include resp($mobile2, $mobile3) {
+            font-size: 12px;
+          }
+        }
+      }
+      strong {
+        font-size: 14px;
+        @include resp($mobile2, $mobile3) {
+          font-size: 12px;
+        }
+      }
+    }
+    .copyright {
+      font-size: 12px;
+      margin-top: 24px;
+      @include resp($mobile2, $mobile3) {
+        font-size: 10px;
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .top_btn {
+    position: fixed;
+    bottom: 72px;
+    right: 3%;
+    z-index: 500;
+    button {
+      z-index: 5;
+      box-sizing: border-box;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      background-color: #fff;
+      border-width: 0;
+      box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.1);
+      padding-top: 0.8rem;
+      cursor: pointer;
+      position: relative;
+      @include resp($mobile2, $mobile3) {
+        width: 3rem;
+        height: 3rem;
+        text-indent: -9999px;
+      }
+      span {
+        color: $font-color1;
+        margin-top: 6px;
+      }
+      span::before {
+        content: "";
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        transform: translateX(-50%) rotate(-135deg);
+        position: absolute;
+        top: 1rem;
+        left: 50%;
+        border-right: 1px solid rgba(0, 0, 0, 0.87);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.87);
+        @include resp($mobile2, $mobile3) {
+          width: 0.8rem;
+          height: 0.8rem;
+          top: 1.3rem;
+        }
+      }
+    }
+    button:hover {
+      box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  //이용약관
+  .clause {
+    .black_wrap_c {
+      display: none;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.7);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      .white_bg {
+        width: 880px;
+        padding: 50px 50px 80px;
+        margin: 100px auto;
+        background-color: #fff;
+        border-radius: 6px;
+        position: relative;
+        @include resp($mobile1, $mobile2) {
+          width: 60%;
+        }
+        @include resp($mobile2, $mobile3) {
+          padding: 30px 30px 50px;
+          width: 64%;
+          margin: 80px auto;
+        }
+        .title {
+          font-size: 28px;
+          font-weight: 500;
+          line-height: 0;
+          margin-bottom: 42px;
+          color: $font-color1;
+          @include resp($mobile1, $mobile2) {
+            font-size: 24px;
+          }
+          @include resp($mobile2, $mobile3) {
+            font-size: 22px;
+            margin-bottom: 32px;
+          }
+        }
+        .close {
+          width: 50px;
+          height: 50px;
+          background-color: $main-color;
+          border-radius: 50%;
+          position: absolute;
+          top: -20px;
+          right: -20px;
+          border-width: 0;
+          cursor: pointer;
+          @include resp($mobile2, $mobile3) {
+            width: 40px;
+            height: 40px;
+          }
+          svg {
+            width: 20px;
+            @include resp($mobile2, $mobile3) {
+              width: 14px;
+            }
+          }
+        }
+        .con_txt {
+          display: inline-block;
+          background-color: #f7f7f7;
+          width: 95%;
+          height: 420px;
+          padding: 20px 12px;
+          border: none;
+          font-size: 14px;
+          line-height: 1.7em;
+          resize: none;
+          word-break: keep-all;
+          overflow: auto;
+          @include resp($mobile2, $mobile3) {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  //개인정보 취급방침
+  .policy {
+    .black_wrap_p {
+      display: none;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.7);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      .white_bg {
+        width: 880px;
+        padding: 50px 50px 80px;
+        margin: 100px auto;
+        background-color: #fff;
+        border-radius: 6px;
+        position: relative;
+        @include resp($mobile1, $mobile2) {
+          width: 60%;
+        }
+        @include resp($mobile2, $mobile3) {
+          padding: 30px 30px 50px;
+          width: 64%;
+          margin: 80px auto;
+        }
+        .title {
+          font-size: 28px;
+          font-weight: 500;
+          line-height: 0;
+          margin-bottom: 42px;
+          color: $font-color1;
+          @include resp($mobile1, $mobile2) {
+            font-size: 24px;
+          }
+          @include resp($mobile2, $mobile3) {
+            font-size: 22px;
+            margin-bottom: 32px;
+          }
+        }
+        .close {
+          width: 50px;
+          height: 50px;
+          background-color: $main-color;
+          border-radius: 50%;
+          position: absolute;
+          top: -20px;
+          right: -20px;
+          border-width: 0;
+          cursor: pointer;
+          @include resp($mobile2, $mobile3) {
+            width: 40px;
+            height: 40px;
+          }
+          svg {
+            width: 20px;
+            @include resp($mobile2, $mobile3) {
+              width: 14px;
+            }
+          }
+        }
+        .con_txt {
+          display: inline-block;
+          background-color: #f7f7f7;
+          width: 95%;
+          height: 420px;
+          padding: 20px 12px;
+          border: none;
+          font-size: 14px;
+          line-height: 1.7em;
+          resize: none;
+          overflow: auto;
+          @include resp($mobile2, $mobile3) {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
