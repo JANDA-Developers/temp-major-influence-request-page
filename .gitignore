@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+*.zip
+
+/build_1
+/build_2
+/build_3

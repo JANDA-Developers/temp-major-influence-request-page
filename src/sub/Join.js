@@ -1,29 +1,20 @@
 import React from "react";
-import "./main.scss";
-import { HouseCard } from "./HouseCard";
-import img from "./img/logo_1.png";
-import rowimg1 from "./img/row1_img1.jpg";
-import rowimg2 from "./img/row1_img2.jpg";
-import rowimg3 from "./img/row1_img3.jpg";
-import rowimg4 from "./img/row1_img4.jpg";
-import rowimg5 from "./img/row1_img5.jpg";
-import rowimg6 from "./img/row1_img6.jpg";
-import rowimg7 from "./img/row1_img7.jpg";
-import rowimg8 from "./img/row1_img8.jpg";
-import row2img1 from "./img/row2_img1.png";
-import row2img2 from "./img/row2_img2.png";
-import row2img3 from "./img/row2_img3.png";
-import partners1 from "./img/partners1.png";
-import partners2 from "./img/partners2.png";
-import partners3 from "./img/partners3.png";
-import partners4 from "./img/partners4.png";
-import partners5 from "./img/partners5.png";
-import partners6 from "./img/partners6.png";
-import partners7 from "./img/partners7.png";
-import partners_img from "./img/partners_img.jpg";
-import p_icon from "./img/p_icon.png";
+import "./Join.scss";
+import img from "../Login_img/logo_1.png";
+import cover_img from "../Detail_img/cover_img.jpg";
+import cover_img1 from "../Detail_img/cover_img1.jpg";
+import cover_img2 from "../Detail_img/cover_img2.jpg";
+import cover_img3 from "../Detail_img/cover_img3.jpg";
+import more_img from "../Detail_img/more_img.jpg";
+import partners1 from "../Sub_img/partners1.png";
+import partners2 from "../Sub_img/partners2.png";
+import partners3 from "../Sub_img/partners3.png";
+import partners4 from "../Sub_img/partners4.png";
+import partners5 from "../Sub_img/partners5.png";
+import partners6 from "../Sub_img/partners6.png";
+import partners7 from "../Sub_img/partners7.png";
 import $ from "jquery";
-import { JDslider, JDslide } from "@janda-com/front";
+import { JDslider, JDslide, JDcheckBox, useCheckBox } from "@janda-com/front";
 // function  goToScrollTop () {
 
 // }
@@ -52,488 +43,373 @@ const popUpClause = () => {
 const popUpPolicy = () => {
   $(".black_wrap_p").css({ display: "block" });
 };
-const popUpPrepare = () => {
-  $(".prepare").css({ display: "block" });
+const subMenu = () => {
+  $(".sub_menu").css({ display: "block" });
 };
-const closePrepare = () => {
-  $(".prepare").css({ display: "none" });
+const subClose = () => {
+  $(".sub_menu").css({ display: "none" });
 };
 
 function App() {
-  return (
-    <div className="Main">
-      <header>
-        <script
-          type="text/javascript"
-          charset="UTF-8"
-          src="//t1.daumcdn.net/adfit/static/kp.js"
-        ></script>
-        <script type="text/javascript">
-          kakaoPixel('9183036049973725056').pageView();
-        </script>
-        <div className="hd">
-          <div className="logo">
-            <a href="http://localhost:3001/#/main">
-              <img src={img} alt="메이전시로고"></img>
-            </a>
-          </div>
+  const checkBoxHook = useCheckBox();
 
-          <div className="join">
-            <div onClick={popUp} className="join_link1">
-              인플루언서 신청하기
+  return (
+    <div className="Join">
+      <header>
+        <div className="hd">
+          <div className="hd_top">
+            <div className="logo">
+              <a href="http://localhost:3001/#/main">
+                <img src={img} alt="메이전시로고"></img>
+              </a>
+            </div>
+            <div class="nav_wrap">
+              <ul>
+                <li>
+                  <button className="nav" onClick={subMenu}>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 14">
+                      <defs>
+                        <style
+                          dangerouslySetInnerHTML={{
+                            __html: ".cls-10{fill:#df9d26;}",
+                          }}
+                        />
+                      </defs>
+                      <rect className="cls-10" width={16} height={2} />
+                      <rect className="cls-10" y={6} width={16} height={2} />
+                      <rect className="cls-10" y={12} width={16} height={2} />
+                    </svg>
+                  </button>
+                </li>
+                <li>
+                  <a href="#">통합검색</a>
+                </li>
+                <li>
+                  <a href="#">이벤트/제휴할인</a>
+                </li>
+                <li>
+                  <a href="#">도움말</a>
+                </li>
+                <li>
+                  <a href="http://localhost:3000/#/mypage">마이페이지</a>
+                </li>
+                <li>
+                  <a href="#">에이전시</a>
+                </li>
+              </ul>
+            </div>
+            <div className="search_wrap">
+              <input type="text" placeholder="검색어를 입력해주세요"></input>
+              <button className="search_btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 31.66">
+                  <defs>
+                    <style
+                      dangerouslySetInnerHTML={{
+                        __html:
+                          ".cls-1{fill:none;stroke:#df9d26;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;}",
+                      }}
+                    />
+                  </defs>
+                  <path
+                    className="cls-1"
+                    d="M969.31,537.44a11.91,11.91,0,1,1-11.9-11.77A11.84,11.84,0,0,1,969.31,537.44Z"
+                    transform="translate(-944 -524.17)"
+                  />
+                  <line
+                    className="cls-1"
+                    x1="22.81"
+                    y1="22.49"
+                    x2="30.5"
+                    y2="30.16"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div className="user">
+              <a href="http://localhost:3000/#/login" className="login">
+                로그인
+              </a>
+              <a href="http://localhost:3000/#/join" className="join">
+                회원가입
+              </a>
+              <div onClick={popUp} className="join_link1">
+                인플루언서 신청하기
+              </div>
             </div>
           </div>
         </div>
       </header>
-      <section id="mainvisual">
-        <div className="mainvisual">
-          <div className="txt_wrap">
-            <p className="txt">영향력 있는 인플루언서가 추천하는</p>
-            <p className="txt">
-              만족도 최고의 <strong>MAGENCY</strong>
-            </p>
-          </div>
-          <div onClick={popUp} className="join_link2">
-            인플루언서 신청하기
-          </div>
-        </div>
-      </section>
-      <section id="container">
-        <div className="row1">
-          <h2 className="row_tit">메이전시에서 어떤 상품을 소개하나요?</h2>
-          <p className="row_txt">
-            메이전시에서는 <strong>잔다솔루션</strong>과
-            <strong>타임스페이스</strong>를 사용중인
-            <br></br>
-            숙박, 공간예약 상품을 제공합니다.
-          </p>
+      <div className="sub_menu">
+        <div className="inner">
           <ul>
             <li>
-              <a
-                href="https://www.instagram.com/studio_jejunight/"
-                target="_blank"
-              >
-                <span className="list_img">
-                  <img src={rowimg1} alt="숨게스트하우스남포가로수길점"></img>
-                </span>
-                <span className="list_tit">SUM 제주 공항점</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#858a8;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">134</span>
-                  </span>
-                </span>
+              <button onClick={subClose}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 19.72 19.72"
+                >
+                  <defs>
+                    <style
+                      dangerouslySetInnerHTML={{
+                        __html: ".cls-11{fill:#555;}",
+                      }}
+                    />
+                  </defs>
+                  <rect
+                    className="cls-11"
+                    x="958.45"
+                    y="527.4"
+                    width="3.04"
+                    height="24.85"
+                    transform="translate(-287.22 -1050.66) rotate(45)"
+                  />
+                  <rect
+                    className="cls-11"
+                    x="958.45"
+                    y="527.4"
+                    width="3.04"
+                    height="24.85"
+                    transform="translate(1070.38 -287.22) rotate(135)"
+                  />
+                </svg>
+              </button>
+            </li>
+            <li>
+              <p>통합검색</p>
+              <a href="#">통합검색</a>
+            </li>
+            <li>
+              <p>이벤트/제휴할인</p>
+              <a href="#">
+                <span>공지사항</span>
+              </a>
+              <a href="#">
+                <span>이벤트</span>
               </a>
             </li>
             <li>
-              <a href="https://www.unknownhotel.com/" target="_blank">
-                <span className="list_img">
-                  <img src={rowimg2} alt="담양언노운호텔"></img>
-                </span>
-                <span className="list_tit">담양 언노운호텔</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#e64473;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">342</span>
-                  </span>
-                </span>
+              <p>도움말</p>
+              <a href="#">
+                <span>공지사항</span>
+              </a>
+              <a href="#">
+                <span>FAQ</span>
+              </a>
+              <a href="#">
+                <span>이용약관</span>
+              </a>
+              <a href="#">
+                <span>개인정보처리방침</span>
               </a>
             </li>
             <li>
-              <a
-                href="https://www.instagram.com/iloveyacht.kor/"
-                target="_blank"
-              >
-                <span className="list_img">
-                  <img src={rowimg3} alt="아이러브요트"></img>
-                </span>
-                <span className="list_tit">아이러브요트</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#858a8d;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">489</span>
-                  </span>
-                </span>
+              <p>마이페이지</p>
+              <a href="#">
+                <span>즐겨찾기</span>
+              </a>
+              <a href="#">
+                <span>프로필수정</span>
               </a>
             </li>
             <li>
-              <a href="http://sinki.co.kr/" target="_blank">
-                <span className="list_img">
-                  <img src={rowimg4} alt="신기산업"></img>
-                </span>
-                <span className="list_tit">신기산업</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#e64473;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">146</span>
-                  </span>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/sinki_yeoul/" target="_blank">
-                <span className="list_img">
-                  <img src={rowimg5} alt="신기여울"></img>
-                </span>
-                <span className="list_tit">신기여울</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#e64473;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">252</span>
-                  </span>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="http://mariannehotel.co.kr/" target="_blank">
-                <span className="list_img">
-                  <img src={rowimg6} alt="마리안느"></img>
-                </span>
-                <span className="list_tit">마리안느</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#e64473;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">363</span>
-                  </span>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.rtbpalliance.com/" target="_blank">
-                <span className="list_img">
-                  <img src={rowimg7} alt="RTBP"></img>
-                </span>
-                <span className="list_tit">RTBP</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#e64473;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">146</span>
-                  </span>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="http://www.angcompany.co.kr/" target="_blank">
-                <span className="list_img">
-                  <img src={rowimg8} alt="엔젤앤가든"></img>
-                </span>
-                <span className="list_tit">엔젤앤가든</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#e64473;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">273</span>
-                  </span>
-                </span>
+              <p>에이전시</p>
+              <a href="#">
+                <span>상품관리</span>
               </a>
             </li>
           </ul>
         </div>
-
-        <div className="row2">
-          <h2 className="row_tit">어떻게 신청하나요?</h2>
-          <div className="info_wrap">
-            <JDslider
-              prevArrow={
-                <button className="slick-prev">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20.51 36.77"
-                  >
-                    <defs>
-                      <style
-                        dangerouslySetInnerHTML={{
-                          __html: ".cls-2{fill:#333;}",
-                        }}
-                      />
-                    </defs>
-                    <rect
-                      className="cls-2"
-                      x="1002.37"
-                      y="522.87"
-                      width={3}
-                      height={26}
-                      transform="translate(1099.01 -320.67) rotate(135)"
-                    />
-                    <rect
-                      className="cls-2"
-                      x="1002.37"
-                      y="539.13"
-                      width={3}
-                      height={26}
-                      transform="translate(-309.17 -1073.74) rotate(45)"
-                    />
-                  </svg>
-                </button>
-              }
-              nextArrow={
-                <button className="slick-next">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20.51 36.77"
-                  >
-                    <defs>
-                      <style
-                        dangerouslySetInnerHTML={{
-                          __html: ".cls-2{fill:#333;}",
-                        }}
-                      />
-                    </defs>
-                    <rect
-                      className="cls-2"
-                      x="1002.37"
-                      y="522.87"
-                      width={3}
-                      height={26}
-                      transform="translate(1099.01 -320.67) rotate(135)"
-                    />
-                    <rect
-                      className="cls-2"
-                      x="1002.37"
-                      y="539.13"
-                      width={3}
-                      height={26}
-                      transform="translate(-309.17 -1073.74) rotate(45)"
-                    />
-                  </svg>
-                </button>
-              }
-              appendDots={(dots) => {
-                return <ul>{dots}</ul>;
-              }}
-              slide
-            >
-              <JDslide>
-                <div className="slick-list">
-                  <div className="slide_box">
-                    <div className="title">
-                      <div className="tit">
-                        <span>Step1</span> 인플루언서 신청서 작성
-                      </div>
-                      <div className="txt">
-                        인플루언서 신청서의 내용을 입력하세요.<br></br>
-                        연락처와 운영하고 있는 SNS 링크를 첨부해주세요.
-                      </div>
-                    </div>
-                    <div className="cont">
-                      <img src={row2img1} alt="신청서작성"></img>
-                    </div>
-                  </div>
-                </div>
-              </JDslide>
-              <JDslide>
-                <div className="slick-list">
-                  <div className="slide_box">
-                    <div className="title">
-                      <div className="tit">
-                        <span>Step2</span> 심사 후 승인 안내
-                      </div>
-                      <div className="txt">
-                        신청서 내용을 토대로 심사 후<br></br>
-                        가입승인 여부를 연락처로 안내해드립니다.
-                      </div>
-                    </div>
-                    <div className="cont">
-                      <img src={row2img2} alt="신청서작성"></img>
-                    </div>
-                  </div>
-                </div>
-              </JDslide>
-              <JDslide>
-                <div className="slick-list">
-                  <div className="slide_box">
-                    <div className="title">
-                      <div className="tit">
-                        <span>Step3</span> 홈페이지에서 상품홍보 시작
-                      </div>
-                      <div className="txt">
-                        메이전시에서 제공하는 상품을<br></br>
-                        홈페이지에 게시합니다.
-                      </div>
-                    </div>
-                    <div className="cont">
-                      <div onClick={popUpPrepare} className="go_btn">
-                        메이전시 홈페이지<span>로</span>
-                        <br></br>
-                        <span>바로가기</span>
-                      </div>
-                      <img src={row2img3} alt="신청서작성"></img>
-                    </div>
-                  </div>
-                </div>
-              </JDslide>
-            </JDslider>
-          </div>
-        </div>
-
-        <div class="prepare" onClick={closePrepare}>
-          <div class="white_bg">
-            <img src={p_icon} alt="준비중"></img>
-            <div class="p_txt">
-              사이트<br></br>
-              <strong>오픈 준비중</strong> 입니다
+      </div>
+      <div className="sign_in">
+        <div className="inner">
+          <div className="login_wrap">
+            <h2>회원가입</h2>
+            <div className="id_wrap">
+              <label>아이디</label>
+              <input type="id" placeholder="아이디를 입력해주세요"></input>
             </div>
-            <button
-              onClick={closeC}
-              type="button"
-              className="close"
-              data-dismiss="modal"
-              aria-label="close"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.56 15.56">
-                <defs>
-                  <style
-                    dangerouslySetInnerHTML={{ __html: ".cls-3{fill:#fff;}" }}
-                  />
-                </defs>
-                <rect
-                  className="cls-3"
-                  x="325.11"
-                  y="255.09"
-                  width={2}
-                  height={20}
-                  transform="translate(-35.37 -410.26) rotate(45)"
-                />
-                <rect
-                  className="cls-3"
-                  x="325.11"
-                  y="255.09"
-                  width={2}
-                  height={20}
-                  transform="translate(425.81 -35.37) rotate(135)"
-                />
-              </svg>
-            </button>
+            <div className="pw_wrap">
+              <label>비밀번호</label>
+              <input
+                type="password"
+                placeholder="비밀번호를 입력해주세요"
+              ></input>
+            </div>
+            <div className="pw_wrap_c">
+              <label>비밀번호 확인</label>
+              <input type="password" placeholder="비밀번호 확인"></input>
+            </div>
+            <div className="ph_wrap">
+              <label>연락처</label>
+              <input
+                type="number"
+                placeholder="-를 제외한 휴대폰 번호를 입력해주세요"
+              ></input>
+            </div>
+            <div className="ph_wrap">
+              <label>이메일</label>
+              <input type="email" placeholder="magency@magency.kr"></input>
+            </div>
+            <div className="policy_wrap">
+              <label>개인정보 수집 및 이용에 대한 동의</label>
+              <textarea
+                readonly="readonly"
+                data-autosize-on="true"
+                className="signUp_policy"
+                value={`MAGENCY(이하 “회사”)는 회원님의 개인정보를 중요시하며, 개인정보의 보호와 관련하여 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 및 개인정보 보호법 등 관련법 상의 개인정보 보호 규정을 준수하고 있습니다.
+
+회사는 개인정보처리방침을 통하여 회원님의 개인정보가 남용되거나 유출되지 않도록 최선을 다할 것이며, 회원님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있고, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.
+
+회사는 개인정보 처리방침을 홈페이지 첫 화면에 공개함으로써 회원님이 언제나 용이하게 보실 수 있도록 조치하고 있습니다.
+
+단, 본 개인정보 처리방침은 정부의 법령 및 지침의 변경, 또는 보다 나은 서비스의 제공을 위하여 그 내용이 변경될 수 있으니, 회원님들께서는 홈페이지 방문 시 수시로 그 내용을 확인하여 주시기 바라며, 회사는 개인정보처리방침을 개정하는 경우 웹사이트 공지사항(또는 개별공지)을 통하여 공지할 것입니다.
+
+0. 개인정보 수집에 대한 동의
+회사는 이용자들이 회사의 개인정보 취급방침 또는 이용약관의 내용에 대하여 「동의」버튼 또는 「취소」버튼을 클릭할 수 있는 절차를 마련하여, 「동의」버튼을 클릭하면 개인정보 수집에 대해 동의한 것으로 봅니다.
+
+1.개인정보의 수집 및 이용 목적
+'개인정보'라 함은 생존하는 개인에 관한 정보로, 성명, 이메일 주소, 전화번호 등 개인을 식별할 수 있는 정보를 말합니다.
+
+대부분의 메이전시 서비스는 별도의 사용자 등록이 없이 언제든지 볼 수 있습니다.
+
+그러나 회사는 회원서비스(잔다통합솔루션과 같이 현재 제공 중이거나 향후 제공될 로그인 기반의 서비스)등을 통하여 이용자들에게 맞춤 식 서비스를 비롯한 보다 더 향상된 양질의 서비스를 제공하기 위하여 이용자 개인의 정보를 수집하고 있습니다.
+
+회사는 이용자의 사전 동의 없이는 이용자의 개인 정보를 공개하지 않으며, 수집된 정보는 아래와 같이 이용하고 있습니다.
+
+첫째, 이용자들의 개인정보를 기반으로 보다 더 유용한 서비스를 개발할 수 있습니다. 회사는 신규 서비스개발이나 콘텐츠의 확충 시에 기존 이용자들이 회사에 제공한 개인정보를 바탕으로 개발해야 할 서비스의 우선 순위를 보다 더 효율적으로 정하고, 회사는 이용자들이 필요로 할 콘텐츠를 합리적으로 선택하여 제공할 수 있습니다.
+
+둘째, 회사가 제공하는 서비스의 원활한 이용을 위하여 회원은 적법한 동의절차를 거쳐 SNS 업체가 연결을 위한 정보를 회사에 제공하도록 할 수 있습니다. 회사는 연결된 SNS 를 원활한 서비스 제공을 위해 사용자에게서 권한이 허락된 범위 안에서 이를 활용할 수 있으며, 허락되지 않은 범위에 대해서는 절대 활용하지 않습니다. 서비스 이용을 위하여 회원으로부터 추가적인 권한의 요청을 필요로 할 경우, 각 SNS의 인증서비스를 통하여 이에 대한 사전 동의를 반드시 구할 것 입니다.
+
+세째, 회원구분에 따라서 다음의 목적을 위해서 회원정보를 수집, 이용하고 있습니다.
+
+필수 : 성명, E-MAIL, 비밀번호, 휴대전화번호
+
+선택 : 태그, 간단소개
+
+네째, 기타 이용과정이나 사업처리 과정에서 아래와 같은 정보들이 자동으로 생성되어 수집될 수 있습니다.
+
+-서비스 이용기록, 접속 로그, 쿠키, 접속IP 정보, 결제기록: 부정 이용 방지, 비인가 사용 방지 등
+
+다섯째, 회원님의 기본적 인권 침해의 우려가 있는 민감정보 (범죄경력, 유전정보 등)를 수집하지 않습니다.
+
+여섯째, 회원님이 제공하신 모든 정보는 상기 목적에 필요한 용도 이외로는 사용되지 않으며, 수집정보의 범위나 사용목적, 용도가 변경될 시에는 반드시 회원님들께 사전동의를 구할 것 입니다.
+
+위 정보는 가입 당시 정보만 아니라 정보수정으로 변경된 정보를 포함 합니다.
+
+2. 개인정보의 보유 및 이용기간
+회사는 원칙적으로 개인정보 수집 및 이용목적이 달성된 후에는 해당 개인정보를 지체 없이 파기합니다.
+단, 다음의 정보에 대해서는 아래의 이유로 명시한 기간 동안 보존 합니다.
+- 보존 항목 : 쿠키,세션
+- 보존 근거 : 회사의 서비스이용약관 및 개인정보취급방침에 동의
+- 보존 기간 : 로그아웃 시 삭제
+그리고 관계법령의 규정에 의하여 보존할 필요가 있는 경우 회사는 아래와 같이 관계법령에서 정한 일정한 기간 동안 회원정보를 보관합니다.
+- 보존 항목 : 이름, E-MAIL, 휴대전화번호, 비밀번호, 이용정보, 정산정보, 기업정보
+- 보존 근거 : 회사의 서비스이용약관 및 개인정보취급방침에 동의
+- 보존 기간 : 회원으로서의 자격을 유지하는 동안
+
+[기타]
+1) 계약 또는 청약철회 등에 관한 기록
+- 보존근거: 전자상거래 등에서의 소비자보호에 관한 법률
+- 보존기간: 5년
+( 모임/행사 참가신청 정보는 계약 정보에 해당 합니다. )
+2) 대금결제 및 재화 등의 공급에 관한 기록
+- 보존근거: 전자상거래 등에서의 소비자보호에 관한 법률
+- 보존기간: 5년
+3) 소비자의 불만 또는 분쟁처리에 관한 기록
+- 보존근거: 전자상거래등에서의 소비자보호에 관한 법률
+- 보존기간: 3년
+4) 웹사이트 방문기록
+-보존근거: 통신비밀보호법
+-보존기간: 3개월
+
+3. 개인정보의 파기절차 및 방법
+회원님의 개인정보는 원칙적으로 개인정보의 수집 및 이용목적이 달성되면 지체 없이 파기합니다.
+가. 파기절차
+- 회원님이 회원가입 등을 위해 입력한 정보는 목적이 달성된 후 별도의DB로 옮겨져(종이의 경우 별도의 서류함) 내부 방침 및 기타 관련 법령에 의한 정보보호 사유에 따라(보유 및 이용기간 참조) 일정 기간 저장된 후 파기됩니다.
+- 별도DB로 옮겨진 개인정보는 법률에 의한 경우를 제외하고는 다른 목적으로 이용되지 않습니다.
+나. 파기방법
+- 종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기합니다.
+- 전자적 파일형태로 저장된 개인정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제합니다.
+
+4. 개인정보의 제3자 제공 및 공유
+가. 회사는 회원님의 개인정보를 제1조에서 고지한 범위 내에서 사용하며, 회원님의 사전 동의 없이는 동 범위를 초과하여 이용하거나 원칙적으로 이용자의 개인정보를 제3자에게 제공하지 않습니다. 다만, 아래의 경우에는 예외로 합니다.
+- 이용자들이 사전에 공개 또는 제3자 제공에 동의한 경우
+- 법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우
+나. 회사가 제공하는 서비스를 통하여 주문 및 결제가 이루어진 경우 상담 등 거래 당사자간 원활한 의사소통과 배송 및 모임 등 거래이행을 위하여 관련된 정보를 필요한 범위 내에서 거래 당사자에게 제공합니다.
+
+5. 개인정보의 처리 위탁
+회사는 서비스 향상을 위해서 아래와 같이 개인정보를 위탁하고 있으며, 관계 법령에 따라 위탁계약 시 개인정보가 안전하게 관리될 수 있도록 필요한 사항을 규정하고 있습니다. 현재 회사의 개인정보 위탁처리 기관 및 위탁업무 내용은 다음과 같습니다.
+
+수탁자 | 위탁업무 | 개인정보 보유 및 이용기간
+향후 지정예정 | 전자결제 대행 | 회원탈퇴 시 혹은 위탁계약 종료시 까지
+향후 지정예정 | SMS 발송 | 회원탈퇴 시 혹은 위탁계약 종료시 까지
+
+6. 회원의 권리와 그 행사방법
+가. 회원님은 언제든지 등록되어 있는 본인의 개인정보를 조회하거나 수정할 수 있으며 회원 탈퇴 절차를 통하여 개인정보 이용에 대한 동의 등을 철회할 수 있습니다.
+나. 개인정보의 조회/수정을 위해서는 사이트의[마이페이지]내의[회원정보수정] 항목에서 확인 가능하며, 가입 해지(동의철회)는[마이페이지] 상단 메뉴 '탈퇴하기'를 통하여 탈퇴하실 수 있습니다. 이 외에도 회사의 개인정보 보호책임자에게 서면, 전화 또는 이메일로 연락하여 열람/수정/탈퇴를 요청하실 수 있습니다.
+다. 회원님이 개인정보의 오류에 대한 정정을 요청하신 경우에는 정정을 완료하기 전까지 당해 개인정보를 이용 또는 제공하지 않습니다. 회사는 회원님의 요청에 의해 해지 또는 삭제된 개인정보는 제2조에 명시된 바에 따라 처리하고 그 외의 용도로 열람 또는 이용할 수 없도록 처리하고 있습니다.
+
+7. 회원의 의무
+가. 회원님은 자신의 개인정보를 보호할 의무가 있으며, 회원님 본인의 부주의나 인터넷 상의 문제 등으로 개인정보가 유출되어 발생한 문제에 대하여 회사는 일체의 책임을 지지 않습니다.
+나. 회원님의 개인정보를 최신의 상태로 정확하게 입력하시기 바랍니다. 회원님의 부정확한 정보입력으로 발생하는 문제의 책임은 회원님 자신에게 있으며, 타인의 주민등록번호 등 개인정보를 도용하여 서비스 이용 시 회원자격 상실과 함께 주민등록법에 의거하여 처벌될 수 있습니다.
+다. 회원님은 개인정보를 보호받을 권리와 함께 스스로를 보호하고 타인의 정보를 침해하지 않을 의무도 가지고 있습니다. 아이디, 비밀번호를 포함한 회원님의 개인정보가 유출되지 않도록 조심하시고 게시물을 포함한 타인의 개인정보를 훼손하지 않도록 유의해 주십시오.
+라. 회원님은 『정보통신망이용촉진및정보보호등에관한법률』, 개인정보보호법, 주민등록법 등 기타 개인정보에 관한 법률을 준수하여야 합니다.
+
+8. 링크사이트
+회사는 회원님께 다른 회사의 웹사이트 또는 자료에 대한 링크를 제공할 수 있습니다. 이 경우 회사는 외부웹사이트 및 자료에 대한 아무런 통제권이 없으므로 그로부터 제공받는 서비스나 자료의 유용성에 대해 책임질 수 없으며 보증할 수 없습니다. 회사가 포함하고 있는 링크를 통하여 타 웹사이트의 페이지로 옮겨갈 경우 해당 웹사이트의 개인정보처리방침은 회사와 무관하므로 새로 방문한 웹사이트의 정책을 검토해보시기 바랍니다.
+
+9. 개인정보 자동수집 장치(쿠키 등)의 설치, 운영 및 그 거부에 관한 사항
+가. 회사는 회원님들에게 보다 적절하고 유용한 서비스를 제공하기 위하여 회원님의 정보를 수시로 저장하고 불러오는 ‘쿠키(cookie)’를 사용합니다. 쿠키란 회사의 웹사이트를 운영하는데 이용되는 서버가 회원님의 컴퓨터로 전송하는 아주 작은 텍스트 파일로서 회원님의 컴퓨터 하드디스크에 저장됩니다. 회원님께서는 쿠키의 사용여부에 대하여 선택하실 수 있습니다. 단, 쿠키를 사용하지 않아 생기는 서비스 사용의 문제및 제한은 회사가 책임 지지 않습니다.
+나. 쿠키 설정 거부 방법
+- 회원님은 사용하시는 웹 브라우저의 옵션을 설정함으로써 모든 쿠키를 허용하거나 쿠키를 저장할 때마다 확인을 거치거나, 모든 쿠키의 저장을 거부할 수 있습니다. 단, 쿠키의 저장을 거부할 경우 로그인이 필요한 일부 서비스의 이용에 제한이 생길 수 있음을 양지하시기 바랍니다.
+- 쿠키 설치 허용 여부를 지정하는 방법(Internet Explorer의 경우)
+1) [도구] 메뉴에서[인터넷 옵션]을 선택
+2) [개인정보]를 클릭
+3) [고급]을 클릭
+4) 쿠키 허용여부를 선택
+
+10. 개인정보의 기술적/관리적 보호 대책
+회사는 회원님의 개인정보를 보호하기 위하여 다음과 같은 보호 대책을 시행하고 있습니다.
+가. 비밀번호의 암호화
+회원님의 비밀번호는 암호화되어 저장 및 관리되고 있습니다. 비밀번호는 오직 회원 본인만이 알 수 있으며 개인정보를 확인 및 변경할 경우에도 비밀번호를 알고 있는 본인에 의해서만 가능합니다. 따라서 회원님의 비밀번호가 타인에게 알려지지 않도록 각별히 주의하시기 바랍니다.
+나. 해킹 및 컴퓨터 바이러스 등에 대비
+회사는 해킹이나 컴퓨터 바이러스에 의하여 회원님들의 개인정보가 유출되거나 훼손되는 것을 막기 위하여 필요한 보안조치를 이용하고 있으며, 더욱 향상된 보안조치를 확보할 수 있도록 가능한 모든 기술적 방법을 구비하기 위하여 노력하고 있습니다.
+다. 개인정보 처리자의 제한 및 교육
+회사는 개인정보를 처리하는 직원을 최소한으로 제한하고 있으며, 관련 직원들에 대한 교육을 수시로 실시하여 본 방침의 이행 및 준수여부를 확인하고 있습니다.
+
+11. 개인정보보호책임자
+회원님의 개인정보를 보호하고 개인정보와 관련된 불만 등을 처리하기 위하여 회사는 개인정보보호책임자를 두고 있습니다. 회원님의 개인정보와 관련한 문의사항은 아래의 개인정보보호책임자에게 연락하여 주시기 바랍니다.
+
+고객서비스담당 부서
+
+이메일: support@stayjanda.com
+
+개인정보보호책임자 성명: 김홍찬
+소속/직위: 기술전략이사
+전화번호: 070-4128-8244
+이메일: cdo@stayjanda.com
+
+기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에는 아래 기관에 문의하시기 바랍니다.
+1. 개인분쟁조정위원회(www.1336.or.kr/1336)
+2. 정보보호마크인증위원회(www.eprivacy.or.kr/02-580-0533~4)
+3. 대검찰청 인터넷범죄수사센터(icic.sppo.go.kr/02-3480-3600)
+4. 경찰청 사이버테러대응센터(www.ctrc.go.kr/02-392-0330)
+
+12. 개인정보처리방침의 개정과 그 공지
+본 방침은 2020년 1월 1일 부터 시행됩니다. 본 개인정보 처리방침이 변경될 경우 회사는 변경 내용을 그 시행일7일 전부터 홈페이지 ‘공지사항’을 통하여 공지할 예정입니다.`}
+              ></textarea>
+            </div>
+            <div className="agreeChk">
+              <JDcheckBox {...checkBoxHook} />
+              <label>
+                <span>동의합니다</span>
+              </label>
+            </div>
+            <input className="sum" type="submit" value="가입완료"></input>
           </div>
         </div>
-      </section>
+      </div>
       <footer>
         <div className="footer_in">
           <div className="ft_info">
@@ -588,10 +464,103 @@ function App() {
           </div>
         </div>
       </footer>
-      <div onClick={goToScrollTop} className="top_btn">
-        <button>
-          <span>TOP</span>
-        </button>
+      <div className="quick_menu">
+        <div onClick={goToScrollTop} className="top_btn">
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.46 32.21">
+              <defs>
+                <style
+                  dangerouslySetInnerHTML={{ __html: ".cls-3{fill:#888;}" }}
+                />
+              </defs>
+              <rect
+                className="cls-3"
+                x="13.73"
+                y="2.69"
+                width={3}
+                height="29.52"
+              />
+              <rect
+                className="cls-3"
+                x="942.72"
+                y="531.5"
+                width="21.44"
+                height={3}
+                transform="translate(-1042.43 305.94) rotate(-45)"
+              />
+              <rect
+                className="cls-3"
+                x="965.19"
+                y="522.21"
+                width="2.85"
+                height="21.59"
+                transform="translate(-1038.58 315.25) rotate(-45)"
+              />
+            </svg>
+          </button>
+        </div>
+        <div className="cs_wrap">
+          <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 30.58">
+              <defs>
+                <style
+                  dangerouslySetInnerHTML={{ __html: ".cls-3{fill:#888;}" }}
+                />
+              </defs>
+              <path
+                className="cls-3"
+                d="M944,540a5.56,5.56,0,0,0,5.56,5.56V534.44A5.56,5.56,0,0,0,944,540Z"
+                transform="translate(-944 -524.71)"
+              />
+              <polygon
+                className="cls-3"
+                points="8.37 8.34 8.37 22.24 22.33 30.58 22.33 0 8.37 8.34"
+              />
+              <rect
+                className="cls-3"
+                x="25.05"
+                y="13.9"
+                width="6.95"
+                height="2.78"
+                rx={1}
+              />
+              <rect
+                className="cls-3"
+                x="968.67"
+                y="530.53"
+                width="6.95"
+                height="2.78"
+                rx={1}
+                transform="translate(-1078.8 -44.6) rotate(-26.01)"
+              />
+              <rect
+                className="cls-3"
+                x="968.67"
+                y="546.69"
+                width="6.95"
+                height="2.78"
+                rx={1}
+                transform="translate(-605.26 -895.47) rotate(26.01)"
+              />
+            </svg>
+            <span>공지</span>
+          </a>
+          <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.55 30">
+              <defs>
+                <style
+                  dangerouslySetInnerHTML={{ __html: ".cls-3{fill:#888;}" }}
+                />
+              </defs>
+              <path
+                className="cls-3"
+                d="M959.7,525a14.16,14.16,0,0,1,4,.53,9.09,9.09,0,0,1,3,1.47,6.58,6.58,0,0,1,1.9,2.28,6.41,6.41,0,0,1,.66,2.91v.43a6.68,6.68,0,0,1-.23,1.76,5.81,5.81,0,0,1-.78,1.69,12.24,12.24,0,0,1-1.53,1.83c-.65.65-1.45,1.39-2.42,2.22a18.7,18.7,0,0,0-1.44,1.34,5.92,5.92,0,0,0-.83,1,2.89,2.89,0,0,0-.37,1,7.22,7.22,0,0,0-.08,1.11,1.6,1.6,0,0,1-.72,1.39,2.82,2.82,0,0,1-1.67.51,3.15,3.15,0,0,1-1.78-.49,1.7,1.7,0,0,1-.74-1.53,12.77,12.77,0,0,1,.12-1.83,5.49,5.49,0,0,1,.48-1.57,5.92,5.92,0,0,1,1-1.52,17.94,17.94,0,0,1,1.79-1.69c.86-.7,1.54-1.29,2-1.77a8.12,8.12,0,0,0,1.17-1.3,3.16,3.16,0,0,0,.54-1.07,4.41,4.41,0,0,0,.12-1.06v-.2a2.83,2.83,0,0,0-.24-1.16,2.74,2.74,0,0,0-.77-1,3.93,3.93,0,0,0-1.36-.68,7.68,7.68,0,0,0-2.08-.25,8.18,8.18,0,0,0-2.89.47,11.91,11.91,0,0,0-2.36,1.2,2,2,0,0,1-1.63.37,2.43,2.43,0,0,1-1.38-.91,2.37,2.37,0,0,1-.56-1.58,1.8,1.8,0,0,1,.85-1.45,12.77,12.77,0,0,1,3.53-1.81A14.36,14.36,0,0,1,959.7,525Zm-.54,24.09a3.13,3.13,0,0,1,2.23.86,2.87,2.87,0,0,1,0,4.19,3.31,3.31,0,0,1-4.45,0,2.87,2.87,0,0,1,0-4.19A3.1,3.1,0,0,1,959.16,549.09Z"
+                transform="translate(-950.72 -525)"
+              />
+            </svg>
+            <span>FAQ</span>
+          </a>
+        </div>
       </div>
 
       <div className="clause">
@@ -608,11 +577,11 @@ function App() {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.56 15.56">
                 <defs>
                   <style
-                    dangerouslySetInnerHTML={{ __html: ".cls-3{fill:#fff;}" }}
+                    dangerouslySetInnerHTML={{ __html: ".cls-2{fill:#fff;}" }}
                   />
                 </defs>
                 <rect
-                  className="cls-3"
+                  className="cls-2"
                   x="325.11"
                   y="255.09"
                   width={2}
@@ -620,7 +589,7 @@ function App() {
                   transform="translate(-35.37 -410.26) rotate(45)"
                 />
                 <rect
-                  className="cls-3"
+                  className="cls-2"
                   x="325.11"
                   y="255.09"
                   width={2}
@@ -963,11 +932,11 @@ function App() {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.56 15.56">
                 <defs>
                   <style
-                    dangerouslySetInnerHTML={{ __html: ".cls-3{fill:#fff;}" }}
+                    dangerouslySetInnerHTML={{ __html: ".cls-2{fill:#fff;}" }}
                   />
                 </defs>
                 <rect
-                  className="cls-3"
+                  className="cls-2"
                   x="325.11"
                   y="255.09"
                   width={2}
@@ -975,7 +944,7 @@ function App() {
                   transform="translate(-35.37 -410.26) rotate(45)"
                 />
                 <rect
-                  className="cls-3"
+                  className="cls-2"
                   x="325.11"
                   y="255.09"
                   width={2}

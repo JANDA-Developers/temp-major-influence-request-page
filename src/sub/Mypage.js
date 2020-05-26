@@ -1,29 +1,20 @@
 import React from "react";
-import "./main.scss";
-import { HouseCard } from "./HouseCard";
-import img from "./img/logo_1.png";
-import rowimg1 from "./img/row1_img1.jpg";
-import rowimg2 from "./img/row1_img2.jpg";
-import rowimg3 from "./img/row1_img3.jpg";
-import rowimg4 from "./img/row1_img4.jpg";
-import rowimg5 from "./img/row1_img5.jpg";
-import rowimg6 from "./img/row1_img6.jpg";
-import rowimg7 from "./img/row1_img7.jpg";
-import rowimg8 from "./img/row1_img8.jpg";
-import row2img1 from "./img/row2_img1.png";
-import row2img2 from "./img/row2_img2.png";
-import row2img3 from "./img/row2_img3.png";
-import partners1 from "./img/partners1.png";
-import partners2 from "./img/partners2.png";
-import partners3 from "./img/partners3.png";
-import partners4 from "./img/partners4.png";
-import partners5 from "./img/partners5.png";
-import partners6 from "./img/partners6.png";
-import partners7 from "./img/partners7.png";
-import partners_img from "./img/partners_img.jpg";
-import p_icon from "./img/p_icon.png";
+import "./Mypage.scss";
+import img from "../Login_img/logo_1.png";
+import cover_img from "../Detail_img/cover_img.jpg";
+import cover_img1 from "../Detail_img/cover_img1.jpg";
+import cover_img2 from "../Detail_img/cover_img2.jpg";
+import cover_img3 from "../Detail_img/cover_img3.jpg";
+import more_img from "../Detail_img/more_img.jpg";
+import partners1 from "../Sub_img/partners1.png";
+import partners2 from "../Sub_img/partners2.png";
+import partners3 from "../Sub_img/partners3.png";
+import partners4 from "../Sub_img/partners4.png";
+import partners5 from "../Sub_img/partners5.png";
+import partners6 from "../Sub_img/partners6.png";
+import partners7 from "../Sub_img/partners7.png";
 import $ from "jquery";
-import { JDslider, JDslide } from "@janda-com/front";
+import { JDslider, JDslide, JDcheckBox, useCheckBox } from "@janda-com/front";
 // function  goToScrollTop () {
 
 // }
@@ -52,488 +43,268 @@ const popUpClause = () => {
 const popUpPolicy = () => {
   $(".black_wrap_p").css({ display: "block" });
 };
-const popUpPrepare = () => {
-  $(".prepare").css({ display: "block" });
+const subMenu = () => {
+  $(".sub_menu").css({ display: "block" });
 };
-const closePrepare = () => {
-  $(".prepare").css({ display: "none" });
+const subClose = () => {
+  $(".sub_menu").css({ display: "none" });
 };
 
 function App() {
-  return (
-    <div className="Main">
-      <header>
-        <script
-          type="text/javascript"
-          charset="UTF-8"
-          src="//t1.daumcdn.net/adfit/static/kp.js"
-        ></script>
-        <script type="text/javascript">
-          kakaoPixel('9183036049973725056').pageView();
-        </script>
-        <div className="hd">
-          <div className="logo">
-            <a href="http://localhost:3001/#/main">
-              <img src={img} alt="메이전시로고"></img>
-            </a>
-          </div>
+  const checkBoxHook = useCheckBox();
 
-          <div className="join">
-            <div onClick={popUp} className="join_link1">
-              인플루언서 신청하기
+  return (
+    <div className="Mypage">
+      <header>
+        <div className="hd">
+          <div className="hd_top">
+            <div className="logo">
+              <a href="http://localhost:3001/#/main">
+                <img src={img} alt="메이전시로고"></img>
+              </a>
+            </div>
+            <div class="nav_wrap">
+              <ul>
+                <li>
+                  <button className="nav" onClick={subMenu}>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 14">
+                      <defs>
+                        <style
+                          dangerouslySetInnerHTML={{
+                            __html: ".cls-10{fill:#df9d26;}",
+                          }}
+                        />
+                      </defs>
+                      <rect className="cls-10" width={16} height={2} />
+                      <rect className="cls-10" y={6} width={16} height={2} />
+                      <rect className="cls-10" y={12} width={16} height={2} />
+                    </svg>
+                  </button>
+                </li>
+                <li>
+                  <a href="#">통합검색</a>
+                </li>
+                <li>
+                  <a href="#">이벤트/제휴할인</a>
+                </li>
+                <li>
+                  <a href="#">도움말</a>
+                </li>
+                <li>
+                  <a href="http://localhost:3000/#/mypage">마이페이지</a>
+                </li>
+                <li>
+                  <a href="#">에이전시</a>
+                </li>
+              </ul>
+            </div>
+            <div className="search_wrap">
+              <input type="text" placeholder="검색어를 입력해주세요"></input>
+              <button className="search_btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 31.66">
+                  <defs>
+                    <style
+                      dangerouslySetInnerHTML={{
+                        __html:
+                          ".cls-1{fill:none;stroke:#df9d26;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;}",
+                      }}
+                    />
+                  </defs>
+                  <path
+                    className="cls-1"
+                    d="M969.31,537.44a11.91,11.91,0,1,1-11.9-11.77A11.84,11.84,0,0,1,969.31,537.44Z"
+                    transform="translate(-944 -524.17)"
+                  />
+                  <line
+                    className="cls-1"
+                    x1="22.81"
+                    y1="22.49"
+                    x2="30.5"
+                    y2="30.16"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div className="user">
+              <a href="http://localhost:3000/#/login" className="login">
+                로그인
+              </a>
+              <a href="http://localhost:3000/#/join" className="join">
+                회원가입
+              </a>
+              <div onClick={popUp} className="join_link1">
+                인플루언서 신청하기
+              </div>
             </div>
           </div>
         </div>
       </header>
-      <section id="mainvisual">
-        <div className="mainvisual">
-          <div className="txt_wrap">
-            <p className="txt">영향력 있는 인플루언서가 추천하는</p>
-            <p className="txt">
-              만족도 최고의 <strong>MAGENCY</strong>
-            </p>
-          </div>
-          <div onClick={popUp} className="join_link2">
-            인플루언서 신청하기
-          </div>
-        </div>
-      </section>
-      <section id="container">
-        <div className="row1">
-          <h2 className="row_tit">메이전시에서 어떤 상품을 소개하나요?</h2>
-          <p className="row_txt">
-            메이전시에서는 <strong>잔다솔루션</strong>과
-            <strong>타임스페이스</strong>를 사용중인
-            <br></br>
-            숙박, 공간예약 상품을 제공합니다.
-          </p>
+      <div className="sub_menu">
+        <div className="inner">
           <ul>
             <li>
-              <a
-                href="https://www.instagram.com/studio_jejunight/"
-                target="_blank"
-              >
-                <span className="list_img">
-                  <img src={rowimg1} alt="숨게스트하우스남포가로수길점"></img>
-                </span>
-                <span className="list_tit">SUM 제주 공항점</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#858a8;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">134</span>
-                  </span>
-                </span>
+              <button onClick={subClose}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 19.72 19.72"
+                >
+                  <defs>
+                    <style
+                      dangerouslySetInnerHTML={{
+                        __html: ".cls-11{fill:#555;}",
+                      }}
+                    />
+                  </defs>
+                  <rect
+                    className="cls-11"
+                    x="958.45"
+                    y="527.4"
+                    width="3.04"
+                    height="24.85"
+                    transform="translate(-287.22 -1050.66) rotate(45)"
+                  />
+                  <rect
+                    className="cls-11"
+                    x="958.45"
+                    y="527.4"
+                    width="3.04"
+                    height="24.85"
+                    transform="translate(1070.38 -287.22) rotate(135)"
+                  />
+                </svg>
+              </button>
+            </li>
+            <li>
+              <p>통합검색</p>
+              <a href="#">통합검색</a>
+            </li>
+            <li>
+              <p>이벤트/제휴할인</p>
+              <a href="#">
+                <span>공지사항</span>
+              </a>
+              <a href="#">
+                <span>이벤트</span>
               </a>
             </li>
             <li>
-              <a href="https://www.unknownhotel.com/" target="_blank">
-                <span className="list_img">
-                  <img src={rowimg2} alt="담양언노운호텔"></img>
-                </span>
-                <span className="list_tit">담양 언노운호텔</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#e64473;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">342</span>
-                  </span>
-                </span>
+              <p>도움말</p>
+              <a href="#">
+                <span>공지사항</span>
+              </a>
+              <a href="#">
+                <span>FAQ</span>
+              </a>
+              <a href="#">
+                <span>이용약관</span>
+              </a>
+              <a href="#">
+                <span>개인정보처리방침</span>
               </a>
             </li>
             <li>
-              <a
-                href="https://www.instagram.com/iloveyacht.kor/"
-                target="_blank"
-              >
-                <span className="list_img">
-                  <img src={rowimg3} alt="아이러브요트"></img>
-                </span>
-                <span className="list_tit">아이러브요트</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#858a8d;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">489</span>
-                  </span>
-                </span>
+              <p>마이페이지</p>
+              <a href="#">
+                <span>즐겨찾기</span>
+              </a>
+              <a href="#">
+                <span>프로필수정</span>
               </a>
             </li>
             <li>
-              <a href="http://sinki.co.kr/" target="_blank">
-                <span className="list_img">
-                  <img src={rowimg4} alt="신기산업"></img>
-                </span>
-                <span className="list_tit">신기산업</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#e64473;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">146</span>
-                  </span>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/sinki_yeoul/" target="_blank">
-                <span className="list_img">
-                  <img src={rowimg5} alt="신기여울"></img>
-                </span>
-                <span className="list_tit">신기여울</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#e64473;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">252</span>
-                  </span>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="http://mariannehotel.co.kr/" target="_blank">
-                <span className="list_img">
-                  <img src={rowimg6} alt="마리안느"></img>
-                </span>
-                <span className="list_tit">마리안느</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#e64473;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">363</span>
-                  </span>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.rtbpalliance.com/" target="_blank">
-                <span className="list_img">
-                  <img src={rowimg7} alt="RTBP"></img>
-                </span>
-                <span className="list_tit">RTBP</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#e64473;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">146</span>
-                  </span>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="http://www.angcompany.co.kr/" target="_blank">
-                <span className="list_img">
-                  <img src={rowimg8} alt="엔젤앤가든"></img>
-                </span>
-                <span className="list_tit">엔젤앤가든</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#e64473;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">273</span>
-                  </span>
-                </span>
+              <p>에이전시</p>
+              <a href="#">
+                <span>상품관리</span>
               </a>
             </li>
           </ul>
         </div>
-
-        <div className="row2">
-          <h2 className="row_tit">어떻게 신청하나요?</h2>
-          <div className="info_wrap">
-            <JDslider
-              prevArrow={
-                <button className="slick-prev">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20.51 36.77"
-                  >
-                    <defs>
-                      <style
-                        dangerouslySetInnerHTML={{
-                          __html: ".cls-2{fill:#333;}",
-                        }}
-                      />
-                    </defs>
-                    <rect
-                      className="cls-2"
-                      x="1002.37"
-                      y="522.87"
-                      width={3}
-                      height={26}
-                      transform="translate(1099.01 -320.67) rotate(135)"
+      </div>
+      <div className="mypage_in">
+        <div className="inner">
+          <div className="mypage_wrap">
+            <h2>마이페이지</h2>
+            <nav className="mp_tab">
+              <ul>
+                <li>
+                  <a href="#" className="praises">
+                    즐겨찾기
+                  </a>
+                </li>
+                <li>
+                  <a href="http://localhost:3000/#/mypage" className="edit">
+                    프로필수정
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div className="profile_wrap">
+              <div className="profile_img">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 32.55 24.62"
+                >
+                  <defs>
+                    <style
+                      dangerouslySetInnerHTML={{
+                        __html:
+                          ".cls-6{fill:#888;}.cls-7{fill:none;stroke:#888;stroke-linecap:round;stroke-miterlimit:10;stroke-width:5px;}",
+                      }}
                     />
-                    <rect
-                      className="cls-2"
-                      x="1002.37"
-                      y="539.13"
-                      width={3}
-                      height={26}
-                      transform="translate(-309.17 -1073.74) rotate(45)"
-                    />
-                  </svg>
-                </button>
-              }
-              nextArrow={
-                <button className="slick-next">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20.51 36.77"
-                  >
-                    <defs>
-                      <style
-                        dangerouslySetInnerHTML={{
-                          __html: ".cls-2{fill:#333;}",
-                        }}
-                      />
-                    </defs>
-                    <rect
-                      className="cls-2"
-                      x="1002.37"
-                      y="522.87"
-                      width={3}
-                      height={26}
-                      transform="translate(1099.01 -320.67) rotate(135)"
-                    />
-                    <rect
-                      className="cls-2"
-                      x="1002.37"
-                      y="539.13"
-                      width={3}
-                      height={26}
-                      transform="translate(-309.17 -1073.74) rotate(45)"
-                    />
-                  </svg>
-                </button>
-              }
-              appendDots={(dots) => {
-                return <ul>{dots}</ul>;
-              }}
-              slide
-            >
-              <JDslide>
-                <div className="slick-list">
-                  <div className="slide_box">
-                    <div className="title">
-                      <div className="tit">
-                        <span>Step1</span> 인플루언서 신청서 작성
-                      </div>
-                      <div className="txt">
-                        인플루언서 신청서의 내용을 입력하세요.<br></br>
-                        연락처와 운영하고 있는 SNS 링크를 첨부해주세요.
-                      </div>
-                    </div>
-                    <div className="cont">
-                      <img src={row2img1} alt="신청서작성"></img>
-                    </div>
-                  </div>
-                </div>
-              </JDslide>
-              <JDslide>
-                <div className="slick-list">
-                  <div className="slide_box">
-                    <div className="title">
-                      <div className="tit">
-                        <span>Step2</span> 심사 후 승인 안내
-                      </div>
-                      <div className="txt">
-                        신청서 내용을 토대로 심사 후<br></br>
-                        가입승인 여부를 연락처로 안내해드립니다.
-                      </div>
-                    </div>
-                    <div className="cont">
-                      <img src={row2img2} alt="신청서작성"></img>
-                    </div>
-                  </div>
-                </div>
-              </JDslide>
-              <JDslide>
-                <div className="slick-list">
-                  <div className="slide_box">
-                    <div className="title">
-                      <div className="tit">
-                        <span>Step3</span> 홈페이지에서 상품홍보 시작
-                      </div>
-                      <div className="txt">
-                        메이전시에서 제공하는 상품을<br></br>
-                        홈페이지에 게시합니다.
-                      </div>
-                    </div>
-                    <div className="cont">
-                      <div onClick={popUpPrepare} className="go_btn">
-                        메이전시 홈페이지<span>로</span>
-                        <br></br>
-                        <span>바로가기</span>
-                      </div>
-                      <img src={row2img3} alt="신청서작성"></img>
-                    </div>
-                  </div>
-                </div>
-              </JDslide>
-            </JDslider>
-          </div>
-        </div>
-
-        <div class="prepare" onClick={closePrepare}>
-          <div class="white_bg">
-            <img src={p_icon} alt="준비중"></img>
-            <div class="p_txt">
-              사이트<br></br>
-              <strong>오픈 준비중</strong> 입니다
-            </div>
-            <button
-              onClick={closeC}
-              type="button"
-              className="close"
-              data-dismiss="modal"
-              aria-label="close"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.56 15.56">
-                <defs>
-                  <style
-                    dangerouslySetInnerHTML={{ __html: ".cls-3{fill:#fff;}" }}
+                  </defs>
+                  <circle className="cls-6" cx="4.09" cy="4.09" r="4.09" />
+                  <circle className="cls-6" cx="28.47" cy="4.09" r="4.09" />
+                  <path
+                    className="cls-7"
+                    d="M910.66,551c9.47,2.49,14.61,2.49,24.09,0"
+                    transform="translate(-906.36 -530.74)"
                   />
-                </defs>
-                <rect
-                  className="cls-3"
-                  x="325.11"
-                  y="255.09"
-                  width={2}
-                  height={20}
-                  transform="translate(-35.37 -410.26) rotate(45)"
-                />
-                <rect
-                  className="cls-3"
-                  x="325.11"
-                  y="255.09"
-                  width={2}
-                  height={20}
-                  transform="translate(425.81 -35.37) rotate(135)"
-                />
-              </svg>
-            </button>
+                </svg>
+              </div>
+              <div className="btn_wrap">
+                <button>프로필 사진 변경</button>
+              </div>
+            </div>
+            <div className="id_wrap">
+              <label>아이디</label>
+              <input type="id" placeholder="아이디를 입력해주세요"></input>
+            </div>
+            <div className="pw_wrap">
+              <label>비밀번호</label>
+              <input
+                type="password"
+                placeholder="비밀번호를 입력해주세요"
+              ></input>
+            </div>
+            <div className="pw_wrap_c">
+              <label>비밀번호 확인</label>
+              <input type="password" placeholder="비밀번호 확인"></input>
+            </div>
+            <div className="ph_wrap">
+              <label>연락처</label>
+              <input
+                type="number"
+                placeholder="-를 제외한 휴대폰 번호를 입력해주세요"
+              ></input>
+            </div>
+            <div className="ph_wrap">
+              <label>이메일</label>
+              <input type="email" placeholder="magency@magency.kr"></input>
+            </div>
+            <div className="policy_wrap">
+              <label>개인정보 수집 및 이용에 대한 동의</label>
+              <textarea className="signUp_policy"></textarea>
+            </div>
+            <a href="#" className="cancel">
+              취소
+            </a>
+            <a href="#" className="sum">
+              확인
+            </a>
           </div>
         </div>
-      </section>
+      </div>
       <footer>
         <div className="footer_in">
           <div className="ft_info">
@@ -588,10 +359,103 @@ function App() {
           </div>
         </div>
       </footer>
-      <div onClick={goToScrollTop} className="top_btn">
-        <button>
-          <span>TOP</span>
-        </button>
+      <div className="quick_menu">
+        <div onClick={goToScrollTop} className="top_btn">
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.46 32.21">
+              <defs>
+                <style
+                  dangerouslySetInnerHTML={{ __html: ".cls-3{fill:#888;}" }}
+                />
+              </defs>
+              <rect
+                className="cls-3"
+                x="13.73"
+                y="2.69"
+                width={3}
+                height="29.52"
+              />
+              <rect
+                className="cls-3"
+                x="942.72"
+                y="531.5"
+                width="21.44"
+                height={3}
+                transform="translate(-1042.43 305.94) rotate(-45)"
+              />
+              <rect
+                className="cls-3"
+                x="965.19"
+                y="522.21"
+                width="2.85"
+                height="21.59"
+                transform="translate(-1038.58 315.25) rotate(-45)"
+              />
+            </svg>
+          </button>
+        </div>
+        <div className="cs_wrap">
+          <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 30.58">
+              <defs>
+                <style
+                  dangerouslySetInnerHTML={{ __html: ".cls-3{fill:#888;}" }}
+                />
+              </defs>
+              <path
+                className="cls-3"
+                d="M944,540a5.56,5.56,0,0,0,5.56,5.56V534.44A5.56,5.56,0,0,0,944,540Z"
+                transform="translate(-944 -524.71)"
+              />
+              <polygon
+                className="cls-3"
+                points="8.37 8.34 8.37 22.24 22.33 30.58 22.33 0 8.37 8.34"
+              />
+              <rect
+                className="cls-3"
+                x="25.05"
+                y="13.9"
+                width="6.95"
+                height="2.78"
+                rx={1}
+              />
+              <rect
+                className="cls-3"
+                x="968.67"
+                y="530.53"
+                width="6.95"
+                height="2.78"
+                rx={1}
+                transform="translate(-1078.8 -44.6) rotate(-26.01)"
+              />
+              <rect
+                className="cls-3"
+                x="968.67"
+                y="546.69"
+                width="6.95"
+                height="2.78"
+                rx={1}
+                transform="translate(-605.26 -895.47) rotate(26.01)"
+              />
+            </svg>
+            <span>공지</span>
+          </a>
+          <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.55 30">
+              <defs>
+                <style
+                  dangerouslySetInnerHTML={{ __html: ".cls-3{fill:#888;}" }}
+                />
+              </defs>
+              <path
+                className="cls-3"
+                d="M959.7,525a14.16,14.16,0,0,1,4,.53,9.09,9.09,0,0,1,3,1.47,6.58,6.58,0,0,1,1.9,2.28,6.41,6.41,0,0,1,.66,2.91v.43a6.68,6.68,0,0,1-.23,1.76,5.81,5.81,0,0,1-.78,1.69,12.24,12.24,0,0,1-1.53,1.83c-.65.65-1.45,1.39-2.42,2.22a18.7,18.7,0,0,0-1.44,1.34,5.92,5.92,0,0,0-.83,1,2.89,2.89,0,0,0-.37,1,7.22,7.22,0,0,0-.08,1.11,1.6,1.6,0,0,1-.72,1.39,2.82,2.82,0,0,1-1.67.51,3.15,3.15,0,0,1-1.78-.49,1.7,1.7,0,0,1-.74-1.53,12.77,12.77,0,0,1,.12-1.83,5.49,5.49,0,0,1,.48-1.57,5.92,5.92,0,0,1,1-1.52,17.94,17.94,0,0,1,1.79-1.69c.86-.7,1.54-1.29,2-1.77a8.12,8.12,0,0,0,1.17-1.3,3.16,3.16,0,0,0,.54-1.07,4.41,4.41,0,0,0,.12-1.06v-.2a2.83,2.83,0,0,0-.24-1.16,2.74,2.74,0,0,0-.77-1,3.93,3.93,0,0,0-1.36-.68,7.68,7.68,0,0,0-2.08-.25,8.18,8.18,0,0,0-2.89.47,11.91,11.91,0,0,0-2.36,1.2,2,2,0,0,1-1.63.37,2.43,2.43,0,0,1-1.38-.91,2.37,2.37,0,0,1-.56-1.58,1.8,1.8,0,0,1,.85-1.45,12.77,12.77,0,0,1,3.53-1.81A14.36,14.36,0,0,1,959.7,525Zm-.54,24.09a3.13,3.13,0,0,1,2.23.86,2.87,2.87,0,0,1,0,4.19,3.31,3.31,0,0,1-4.45,0,2.87,2.87,0,0,1,0-4.19A3.1,3.1,0,0,1,959.16,549.09Z"
+                transform="translate(-950.72 -525)"
+              />
+            </svg>
+            <span>FAQ</span>
+          </a>
+        </div>
       </div>
 
       <div className="clause">
@@ -608,11 +472,11 @@ function App() {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.56 15.56">
                 <defs>
                   <style
-                    dangerouslySetInnerHTML={{ __html: ".cls-3{fill:#fff;}" }}
+                    dangerouslySetInnerHTML={{ __html: ".cls-2{fill:#fff;}" }}
                   />
                 </defs>
                 <rect
-                  className="cls-3"
+                  className="cls-2"
                   x="325.11"
                   y="255.09"
                   width={2}
@@ -620,7 +484,7 @@ function App() {
                   transform="translate(-35.37 -410.26) rotate(45)"
                 />
                 <rect
-                  className="cls-3"
+                  className="cls-2"
                   x="325.11"
                   y="255.09"
                   width={2}
@@ -963,11 +827,11 @@ function App() {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.56 15.56">
                 <defs>
                   <style
-                    dangerouslySetInnerHTML={{ __html: ".cls-3{fill:#fff;}" }}
+                    dangerouslySetInnerHTML={{ __html: ".cls-2{fill:#fff;}" }}
                   />
                 </defs>
                 <rect
-                  className="cls-3"
+                  className="cls-2"
                   x="325.11"
                   y="255.09"
                   width={2}
@@ -975,7 +839,7 @@ function App() {
                   transform="translate(-35.37 -410.26) rotate(45)"
                 />
                 <rect
-                  className="cls-3"
+                  className="cls-2"
                   x="325.11"
                   y="255.09"
                   width={2}

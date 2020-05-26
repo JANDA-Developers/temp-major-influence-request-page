@@ -1,15 +1,22 @@
 import React from "react";
 import "./Sub.scss";
-import img from "../Sub_img1/logo_1.png";
-import mainvisual2 from "../Sub_img1/visual_img2.jpg";
-import keyword1 from "../Sub_img1/keyword_img1.jpg";
-import keyword2 from "../Sub_img1/keyword_img2.jpg";
-import keyword3 from "../Sub_img1/keyword_img3.jpg";
-import keyword4 from "../Sub_img1/keyword_img4.jpg";
-import keyword5 from "../Sub_img1/keyword_img5.jpg";
-import row2_img1 from "../Sub_img1/row2_img1.jpg";
-import row3_img1 from "../Sub_img1/row3_img1.jpg";
-import sns_img from "../Sub_img1/sns_img.jpg";
+import img from "../Sub_img/logo_1.png";
+import mainvisual2 from "../Sub_img/visual_img2.jpg";
+import keyword1 from "../Sub_img/keyword_img1.jpg";
+import keyword2 from "../Sub_img/keyword_img2.jpg";
+import keyword3 from "../Sub_img/keyword_img3.jpg";
+import keyword4 from "../Sub_img/keyword_img4.jpg";
+import keyword5 from "../Sub_img/keyword_img5.jpg";
+import row2_img1 from "../Sub_img/row2_img1.jpg";
+import row3_img1 from "../Sub_img/row3_img1.jpg";
+import sns_img from "../Sub_img/sns_img.jpg";
+import partners1 from "../Sub_img/partners1.png";
+import partners2 from "../Sub_img/partners2.png";
+import partners3 from "../Sub_img/partners3.png";
+import partners4 from "../Sub_img/partners4.png";
+import partners5 from "../Sub_img/partners5.png";
+import partners6 from "../Sub_img/partners6.png";
+import partners7 from "../Sub_img/partners7.png";
 import $ from "jquery";
 import { JDslider, JDslide } from "@janda-com/front";
 // function  goToScrollTop () {
@@ -18,10 +25,6 @@ import { JDslider, JDslide } from "@janda-com/front";
 
 const goToScrollTop = () => {
   $("html").animate({ scrollTop: 0 }, 400);
-};
-
-const ScrollHd = () => {
-  $(".hd_bottom").css({ top: "0" });
 };
 
 const popUp = () => {
@@ -46,9 +49,11 @@ const popUpPolicy = () => {
 };
 const likeOn = () => {
   $(".like_on").css({ display: "block" });
+  $(".like").css({ display: "none" });
 };
 const likeOff = () => {
   $(".like_on").css({ display: "none" });
+  $(".like").css({ display: "block" });
 };
 const subMenu = () => {
   $(".sub_menu").css({ display: "block" });
@@ -64,9 +69,44 @@ function App() {
         <div className="hd">
           <div className="hd_top">
             <div className="logo">
-              <a href="#">
+              <a href="http://localhost:3000/#/main">
                 <img src={img} alt="메이전시로고"></img>
               </a>
+            </div>
+            <div class="nav_wrap">
+              <ul>
+                <li>
+                  <button className="nav" onClick={subMenu}>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 14">
+                      <defs>
+                        <style
+                          dangerouslySetInnerHTML={{
+                            __html: ".cls-10{fill:#df9d26;}",
+                          }}
+                        />
+                      </defs>
+                      <rect className="cls-10" width={16} height={2} />
+                      <rect className="cls-10" y={6} width={16} height={2} />
+                      <rect className="cls-10" y={12} width={16} height={2} />
+                    </svg>
+                  </button>
+                </li>
+                <li>
+                  <a href="#">통합검색</a>
+                </li>
+                <li>
+                  <a href="#">이벤트/제휴할인</a>
+                </li>
+                <li>
+                  <a href="#">도움말</a>
+                </li>
+                <li>
+                  <a href="http://localhost:3000/#/mypage">마이페이지</a>
+                </li>
+                <li>
+                  <a href="#">에이전시</a>
+                </li>
+              </ul>
             </div>
             <div className="search_wrap">
               <input type="text" placeholder="검색어를 입력해주세요"></input>
@@ -95,48 +135,18 @@ function App() {
                 </svg>
               </button>
             </div>
+
             <div className="user">
-              <div className="login">로그인</div>
-              <div className="join">회원가입</div>
+              <a href="http://localhost:3000/#/login" className="login">
+                로그인
+              </a>
+              <a href="http://localhost:3000/#/join" className="join">
+                회원가입
+              </a>
               <div onClick={popUp} className="join_link1">
                 인플루언서 신청하기
               </div>
             </div>
-          </div>
-          <div className="hd_bottom">
-            <ul>
-              <li className="nav">
-                <button onClick={subMenu}>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 14">
-                    <defs>
-                      <style
-                        dangerouslySetInnerHTML={{
-                          __html: ".cls-10{fill:#df9d26;}",
-                        }}
-                      />
-                    </defs>
-                    <rect className="cls-10" width={16} height={2} />
-                    <rect className="cls-10" y={6} width={16} height={2} />
-                    <rect className="cls-10" y={12} width={16} height={2} />
-                  </svg>
-                </button>
-              </li>
-              <li>
-                <a href="#">통합검색</a>
-              </li>
-              <li>
-                <a href="#">공지/이벤트</a>
-              </li>
-              <li>
-                <a href="#">도움말</a>
-              </li>
-              <li>
-                <a href="#">마이페이지</a>
-              </li>
-              <li>
-                <a href="#">에이전시</a>
-              </li>
-            </ul>
           </div>
         </div>
       </header>
@@ -144,44 +154,78 @@ function App() {
         <div className="inner">
           <ul>
             <li>
-              <button onClick={subClose}>CLOSE</button>
+              <button onClick={subClose}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 19.72 19.72"
+                >
+                  <defs>
+                    <style
+                      dangerouslySetInnerHTML={{
+                        __html: ".cls-11{fill:#555;}",
+                      }}
+                    />
+                  </defs>
+                  <rect
+                    className="cls-11"
+                    x="958.45"
+                    y="527.4"
+                    width="3.04"
+                    height="24.85"
+                    transform="translate(-287.22 -1050.66) rotate(45)"
+                  />
+                  <rect
+                    className="cls-11"
+                    x="958.45"
+                    y="527.4"
+                    width="3.04"
+                    height="24.85"
+                    transform="translate(1070.38 -287.22) rotate(135)"
+                  />
+                </svg>
+              </button>
             </li>
             <li>
-              <a href="#">sub1</a>
+              <p>통합검색</p>
+              <a href="#">통합검색</a>
             </li>
             <li>
+              <p>이벤트/제휴할인</p>
               <a href="#">
-                <span>sub2</span>
+                <span>공지사항</span>
               </a>
               <a href="#">
-                <span>sub2</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span>sub3</span>
-              </a>
-              <a href="#">
-                <span>sub3</span>
-              </a>
-              <a href="#">
-                <span>sub3</span>
-              </a>
-              <a href="#">
-                <span>sub3</span>
+                <span>이벤트</span>
               </a>
             </li>
             <li>
+              <p>도움말</p>
               <a href="#">
-                <span>sub4</span>
+                <span>공지사항</span>
               </a>
               <a href="#">
-                <span>sub4</span>
+                <span>FAQ</span>
+              </a>
+              <a href="#">
+                <span>이용약관</span>
+              </a>
+              <a href="#">
+                <span>개인정보처리방침</span>
               </a>
             </li>
             <li>
+              <p>마이페이지</p>
               <a href="#">
-                <span>sub5</span>
+                <span>즐겨찾기</span>
+              </a>
+              <a href="#">
+                <span>프로필수정</span>
+              </a>
+            </li>
+            <li>
+              <p>에이전시</p>
+              <a href="#">
+                <span>상품관리</span>
               </a>
             </li>
           </ul>
@@ -335,34 +379,10 @@ function App() {
           <div className="row_txt">이번 휴가는 호텔에서 재밌게 놀아보자!</div>
           <a href="#" className="more_btn">
             전체보기
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.71 36.24">
-              <defs>
-                <style
-                  dangerouslySetInnerHTML={{
-                    __html:
-                      ".cls-5{fill:none;stroke:#333;stroke-linecap:square;stroke-miterlimit:10;stroke-width:3px;}",
-                  }}
-                />
-              </defs>
-              <line
-                className="cls-5"
-                x1="17.59"
-                y1="18.12"
-                x2="2.12"
-                y2="2.12"
-              />
-              <line
-                className="cls-5"
-                x1="17.59"
-                y1="18.12"
-                x2="2.12"
-                y2="34.12"
-              />
-            </svg>
           </a>
           <ul className="row_list">
             <li>
-              <a href="#">
+              <a href="http://localhost:3000/#/detail">
                 <span className="img_wrap">
                   <img src={row2_img1} alt="이미지"></img>
                 </span>
@@ -396,7 +416,7 @@ function App() {
                 </span>
               </a>
               <button className="like" onClick={likeOn}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 39.81">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 29.77">
                   <defs>
                     <style
                       dangerouslySetInnerHTML={{
@@ -407,30 +427,30 @@ function App() {
                   </defs>
                   <path
                     className="cls-4"
-                    d="M970.19,521.79A11.4,11.4,0,0,0,959.6,529a11.4,11.4,0,0,0-22,4.2c-.3,13.57,21.94,25.48,22,25.4.06.08,22.3-11.83,22-25.4A11.49,11.49,0,0,0,970.19,521.79Z"
-                    transform="translate(-936.1 -520.29)"
+                    d="M967.7,526.62a8.29,8.29,0,0,0-7.7,5.23,8.29,8.29,0,0,0-16,3.06c-.22,9.87,16,18.53,16,18.47s16.22-8.6,16-18.47A8.36,8.36,0,0,0,967.7,526.62Z"
+                    transform="translate(-942.5 -525.12)"
                   />
                 </svg>
               </button>
               <button className="like_on" onClick={likeOff}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 36.81">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 26.77">
                   <defs>
                     <style
                       dangerouslySetInnerHTML={{
-                        __html: ".cls-9{fill:#df9d26;}",
+                        __html: ".cls-5{fill:#df9d26;}",
                       }}
                     />
                   </defs>
                   <path
-                    className="cls-9"
-                    d="M970.17,521.79a11.39,11.39,0,0,0-10.59,7.2,11.4,11.4,0,0,0-22,4.2c-.3,13.57,21.94,25.48,22,25.4,0,.08,22.29-11.83,22-25.4A11.49,11.49,0,0,0,970.17,521.79Z"
-                    transform="translate(-937.58 -521.79)"
+                    className="cls-5"
+                    d="M967.7,526.62a8.29,8.29,0,0,0-7.7,5.23,8.29,8.29,0,0,0-16,3.06c-.22,9.87,16,18.53,16,18.47s16.22-8.6,16-18.47A8.36,8.36,0,0,0,967.7,526.62Z"
+                    transform="translate(-944 -526.62)"
                   />
                 </svg>
               </button>
             </li>
             <li>
-              <a href="#">
+              <a href="http://localhost:3000/#/detail">
                 <span className="img_wrap">
                   <img src={row2_img1} alt="이미지"></img>
                 </span>
@@ -464,7 +484,7 @@ function App() {
                 </span>
               </a>
               <button className="like" onClick={likeOn}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 39.81">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 29.77">
                   <defs>
                     <style
                       dangerouslySetInnerHTML={{
@@ -475,30 +495,30 @@ function App() {
                   </defs>
                   <path
                     className="cls-4"
-                    d="M970.19,521.79A11.4,11.4,0,0,0,959.6,529a11.4,11.4,0,0,0-22,4.2c-.3,13.57,21.94,25.48,22,25.4.06.08,22.3-11.83,22-25.4A11.49,11.49,0,0,0,970.19,521.79Z"
-                    transform="translate(-936.1 -520.29)"
+                    d="M967.7,526.62a8.29,8.29,0,0,0-7.7,5.23,8.29,8.29,0,0,0-16,3.06c-.22,9.87,16,18.53,16,18.47s16.22-8.6,16-18.47A8.36,8.36,0,0,0,967.7,526.62Z"
+                    transform="translate(-942.5 -525.12)"
                   />
                 </svg>
               </button>
               <button className="like_on" onClick={likeOff}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 36.81">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 26.77">
                   <defs>
                     <style
                       dangerouslySetInnerHTML={{
-                        __html: ".cls-9{fill:#df9d26;}",
+                        __html: ".cls-5{fill:#df9d26;}",
                       }}
                     />
                   </defs>
                   <path
-                    className="cls-9"
-                    d="M970.17,521.79a11.39,11.39,0,0,0-10.59,7.2,11.4,11.4,0,0,0-22,4.2c-.3,13.57,21.94,25.48,22,25.4,0,.08,22.29-11.83,22-25.4A11.49,11.49,0,0,0,970.17,521.79Z"
-                    transform="translate(-937.58 -521.79)"
+                    className="cls-5"
+                    d="M967.7,526.62a8.29,8.29,0,0,0-7.7,5.23,8.29,8.29,0,0,0-16,3.06c-.22,9.87,16,18.53,16,18.47s16.22-8.6,16-18.47A8.36,8.36,0,0,0,967.7,526.62Z"
+                    transform="translate(-944 -526.62)"
                   />
                 </svg>
               </button>
             </li>
             <li>
-              <a href="#">
+              <a href="http://localhost:3000/#/detail">
                 <span className="img_wrap">
                   <img src={row2_img1} alt="이미지"></img>
                 </span>
@@ -532,7 +552,7 @@ function App() {
                 </span>
               </a>
               <button className="like" onClick={likeOn}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 39.81">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 29.77">
                   <defs>
                     <style
                       dangerouslySetInnerHTML={{
@@ -543,30 +563,30 @@ function App() {
                   </defs>
                   <path
                     className="cls-4"
-                    d="M970.19,521.79A11.4,11.4,0,0,0,959.6,529a11.4,11.4,0,0,0-22,4.2c-.3,13.57,21.94,25.48,22,25.4.06.08,22.3-11.83,22-25.4A11.49,11.49,0,0,0,970.19,521.79Z"
-                    transform="translate(-936.1 -520.29)"
+                    d="M967.7,526.62a8.29,8.29,0,0,0-7.7,5.23,8.29,8.29,0,0,0-16,3.06c-.22,9.87,16,18.53,16,18.47s16.22-8.6,16-18.47A8.36,8.36,0,0,0,967.7,526.62Z"
+                    transform="translate(-942.5 -525.12)"
                   />
                 </svg>
               </button>
               <button className="like_on" onClick={likeOff}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 36.81">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 26.77">
                   <defs>
                     <style
                       dangerouslySetInnerHTML={{
-                        __html: ".cls-9{fill:#df9d26;}",
+                        __html: ".cls-5{fill:#df9d26;}",
                       }}
                     />
                   </defs>
                   <path
-                    className="cls-9"
-                    d="M970.17,521.79a11.39,11.39,0,0,0-10.59,7.2,11.4,11.4,0,0,0-22,4.2c-.3,13.57,21.94,25.48,22,25.4,0,.08,22.29-11.83,22-25.4A11.49,11.49,0,0,0,970.17,521.79Z"
-                    transform="translate(-937.58 -521.79)"
+                    className="cls-5"
+                    d="M967.7,526.62a8.29,8.29,0,0,0-7.7,5.23,8.29,8.29,0,0,0-16,3.06c-.22,9.87,16,18.53,16,18.47s16.22-8.6,16-18.47A8.36,8.36,0,0,0,967.7,526.62Z"
+                    transform="translate(-944 -526.62)"
                   />
                 </svg>
               </button>
             </li>
             <li>
-              <a href="#">
+              <a href="http://localhost:3000/#/detail">
                 <span className="img_wrap">
                   <img src={row2_img1} alt="이미지"></img>
                 </span>
@@ -600,7 +620,7 @@ function App() {
                 </span>
               </a>
               <button className="like" onClick={likeOn}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 39.81">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 29.77">
                   <defs>
                     <style
                       dangerouslySetInnerHTML={{
@@ -611,24 +631,24 @@ function App() {
                   </defs>
                   <path
                     className="cls-4"
-                    d="M970.19,521.79A11.4,11.4,0,0,0,959.6,529a11.4,11.4,0,0,0-22,4.2c-.3,13.57,21.94,25.48,22,25.4.06.08,22.3-11.83,22-25.4A11.49,11.49,0,0,0,970.19,521.79Z"
-                    transform="translate(-936.1 -520.29)"
+                    d="M967.7,526.62a8.29,8.29,0,0,0-7.7,5.23,8.29,8.29,0,0,0-16,3.06c-.22,9.87,16,18.53,16,18.47s16.22-8.6,16-18.47A8.36,8.36,0,0,0,967.7,526.62Z"
+                    transform="translate(-942.5 -525.12)"
                   />
                 </svg>
               </button>
               <button className="like_on" onClick={likeOff}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 36.81">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 26.77">
                   <defs>
                     <style
                       dangerouslySetInnerHTML={{
-                        __html: ".cls-9{fill:#df9d26;}",
+                        __html: ".cls-5{fill:#df9d26;}",
                       }}
                     />
                   </defs>
                   <path
-                    className="cls-9"
-                    d="M970.17,521.79a11.39,11.39,0,0,0-10.59,7.2,11.4,11.4,0,0,0-22,4.2c-.3,13.57,21.94,25.48,22,25.4,0,.08,22.29-11.83,22-25.4A11.49,11.49,0,0,0,970.17,521.79Z"
-                    transform="translate(-937.58 -521.79)"
+                    className="cls-5"
+                    d="M967.7,526.62a8.29,8.29,0,0,0-7.7,5.23,8.29,8.29,0,0,0-16,3.06c-.22,9.87,16,18.53,16,18.47s16.22-8.6,16-18.47A8.36,8.36,0,0,0,967.7,526.62Z"
+                    transform="translate(-944 -526.62)"
                   />
                 </svg>
               </button>
@@ -641,34 +661,33 @@ function App() {
           <div className="row_txt">우리나라 야경맛집 모여라~!</div>
           <a href="#" className="more_btn">
             전체보기
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.71 36.24">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.28 30.46">
               <defs>
                 <style
-                  dangerouslySetInnerHTML={{
-                    __html:
-                      ".cls-5{fill:none;stroke:#333;stroke-linecap:square;stroke-miterlimit:10;stroke-width:3px;}",
-                  }}
+                  dangerouslySetInnerHTML={{ __html: ".cls-8{fill:#555;}" }}
                 />
               </defs>
-              <line
-                className="cls-5"
-                x1="17.59"
-                y1="18.12"
-                x2="2.12"
-                y2="2.12"
+              <rect
+                className="cls-8"
+                x="958.5"
+                y="522.69"
+                width={3}
+                height="21.44"
+                transform="translate(-1047.36 310.28) rotate(-45)"
               />
-              <line
-                className="cls-5"
-                x1="17.59"
-                y1="18.12"
-                x2="2.12"
-                y2="34.12"
+              <rect
+                className="cls-8"
+                x="949.2"
+                y="545.16"
+                width="21.59"
+                height="2.85"
+                transform="translate(-1056.68 314.14) rotate(-45)"
               />
             </svg>
           </a>
           <ul>
             <li>
-              <a href="#">
+              <a href="http://localhost:3000/#/detail">
                 <span className="img_wrap">
                   <img src={row3_img1} alt="이미지"></img>
                 </span>
@@ -704,7 +723,7 @@ function App() {
                 </span>
               </a>
               <button className="like" onClick={likeOn}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 39.81">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 29.77">
                   <defs>
                     <style
                       dangerouslySetInnerHTML={{
@@ -715,30 +734,30 @@ function App() {
                   </defs>
                   <path
                     className="cls-4"
-                    d="M970.19,521.79A11.4,11.4,0,0,0,959.6,529a11.4,11.4,0,0,0-22,4.2c-.3,13.57,21.94,25.48,22,25.4.06.08,22.3-11.83,22-25.4A11.49,11.49,0,0,0,970.19,521.79Z"
-                    transform="translate(-936.1 -520.29)"
+                    d="M967.7,526.62a8.29,8.29,0,0,0-7.7,5.23,8.29,8.29,0,0,0-16,3.06c-.22,9.87,16,18.53,16,18.47s16.22-8.6,16-18.47A8.36,8.36,0,0,0,967.7,526.62Z"
+                    transform="translate(-942.5 -525.12)"
                   />
                 </svg>
               </button>
               <button className="like_on" onClick={likeOff}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 36.81">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 26.77">
                   <defs>
                     <style
                       dangerouslySetInnerHTML={{
-                        __html: ".cls-9{fill:#df9d26;}",
+                        __html: ".cls-5{fill:#df9d26;}",
                       }}
                     />
                   </defs>
                   <path
-                    className="cls-9"
-                    d="M970.17,521.79a11.39,11.39,0,0,0-10.59,7.2,11.4,11.4,0,0,0-22,4.2c-.3,13.57,21.94,25.48,22,25.4,0,.08,22.29-11.83,22-25.4A11.49,11.49,0,0,0,970.17,521.79Z"
-                    transform="translate(-937.58 -521.79)"
+                    className="cls-5"
+                    d="M967.7,526.62a8.29,8.29,0,0,0-7.7,5.23,8.29,8.29,0,0,0-16,3.06c-.22,9.87,16,18.53,16,18.47s16.22-8.6,16-18.47A8.36,8.36,0,0,0,967.7,526.62Z"
+                    transform="translate(-944 -526.62)"
                   />
                 </svg>
               </button>
             </li>
             <li>
-              <a href="#">
+              <a href="http://localhost:3000/#/detail">
                 <span className="img_wrap">
                   <img src={row3_img1} alt="이미지"></img>
                 </span>
@@ -774,7 +793,7 @@ function App() {
                 </span>
               </a>
               <button className="like" onClick={likeOn}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 39.81">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 29.77">
                   <defs>
                     <style
                       dangerouslySetInnerHTML={{
@@ -785,30 +804,30 @@ function App() {
                   </defs>
                   <path
                     className="cls-4"
-                    d="M970.19,521.79A11.4,11.4,0,0,0,959.6,529a11.4,11.4,0,0,0-22,4.2c-.3,13.57,21.94,25.48,22,25.4.06.08,22.3-11.83,22-25.4A11.49,11.49,0,0,0,970.19,521.79Z"
-                    transform="translate(-936.1 -520.29)"
+                    d="M967.7,526.62a8.29,8.29,0,0,0-7.7,5.23,8.29,8.29,0,0,0-16,3.06c-.22,9.87,16,18.53,16,18.47s16.22-8.6,16-18.47A8.36,8.36,0,0,0,967.7,526.62Z"
+                    transform="translate(-942.5 -525.12)"
                   />
                 </svg>
               </button>
               <button className="like_on" onClick={likeOff}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 36.81">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 26.77">
                   <defs>
                     <style
                       dangerouslySetInnerHTML={{
-                        __html: ".cls-9{fill:#df9d26;}",
+                        __html: ".cls-5{fill:#df9d26;}",
                       }}
                     />
                   </defs>
                   <path
-                    className="cls-9"
-                    d="M970.17,521.79a11.39,11.39,0,0,0-10.59,7.2,11.4,11.4,0,0,0-22,4.2c-.3,13.57,21.94,25.48,22,25.4,0,.08,22.29-11.83,22-25.4A11.49,11.49,0,0,0,970.17,521.79Z"
-                    transform="translate(-937.58 -521.79)"
+                    className="cls-5"
+                    d="M967.7,526.62a8.29,8.29,0,0,0-7.7,5.23,8.29,8.29,0,0,0-16,3.06c-.22,9.87,16,18.53,16,18.47s16.22-8.6,16-18.47A8.36,8.36,0,0,0,967.7,526.62Z"
+                    transform="translate(-944 -526.62)"
                   />
                 </svg>
               </button>
             </li>
             <li>
-              <a href="#">
+              <a href="http://localhost:3000/#/detail">
                 <span className="img_wrap">
                   <img src={row3_img1} alt="이미지"></img>
                 </span>
@@ -844,7 +863,7 @@ function App() {
                 </span>
               </a>
               <button className="like" onClick={likeOn}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 39.81">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 29.77">
                   <defs>
                     <style
                       dangerouslySetInnerHTML={{
@@ -855,30 +874,30 @@ function App() {
                   </defs>
                   <path
                     className="cls-4"
-                    d="M970.19,521.79A11.4,11.4,0,0,0,959.6,529a11.4,11.4,0,0,0-22,4.2c-.3,13.57,21.94,25.48,22,25.4.06.08,22.3-11.83,22-25.4A11.49,11.49,0,0,0,970.19,521.79Z"
-                    transform="translate(-936.1 -520.29)"
+                    d="M967.7,526.62a8.29,8.29,0,0,0-7.7,5.23,8.29,8.29,0,0,0-16,3.06c-.22,9.87,16,18.53,16,18.47s16.22-8.6,16-18.47A8.36,8.36,0,0,0,967.7,526.62Z"
+                    transform="translate(-942.5 -525.12)"
                   />
                 </svg>
               </button>
               <button className="like_on" onClick={likeOff}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 36.81">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 26.77">
                   <defs>
                     <style
                       dangerouslySetInnerHTML={{
-                        __html: ".cls-9{fill:#df9d26;}",
+                        __html: ".cls-5{fill:#df9d26;}",
                       }}
                     />
                   </defs>
                   <path
-                    className="cls-9"
-                    d="M970.17,521.79a11.39,11.39,0,0,0-10.59,7.2,11.4,11.4,0,0,0-22,4.2c-.3,13.57,21.94,25.48,22,25.4,0,.08,22.29-11.83,22-25.4A11.49,11.49,0,0,0,970.17,521.79Z"
-                    transform="translate(-937.58 -521.79)"
+                    className="cls-5"
+                    d="M967.7,526.62a8.29,8.29,0,0,0-7.7,5.23,8.29,8.29,0,0,0-16,3.06c-.22,9.87,16,18.53,16,18.47s16.22-8.6,16-18.47A8.36,8.36,0,0,0,967.7,526.62Z"
+                    transform="translate(-944 -526.62)"
                   />
                 </svg>
               </button>
             </li>
             <li>
-              <a href="#">
+              <a href="http://localhost:3000/#/detail">
                 <span className="img_wrap">
                   <img src={row3_img1} alt="이미지"></img>
                 </span>
@@ -914,7 +933,7 @@ function App() {
                 </span>
               </a>
               <button className="like" onClick={likeOn}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 39.81">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 29.77">
                   <defs>
                     <style
                       dangerouslySetInnerHTML={{
@@ -925,30 +944,30 @@ function App() {
                   </defs>
                   <path
                     className="cls-4"
-                    d="M970.19,521.79A11.4,11.4,0,0,0,959.6,529a11.4,11.4,0,0,0-22,4.2c-.3,13.57,21.94,25.48,22,25.4.06.08,22.3-11.83,22-25.4A11.49,11.49,0,0,0,970.19,521.79Z"
-                    transform="translate(-936.1 -520.29)"
+                    d="M967.7,526.62a8.29,8.29,0,0,0-7.7,5.23,8.29,8.29,0,0,0-16,3.06c-.22,9.87,16,18.53,16,18.47s16.22-8.6,16-18.47A8.36,8.36,0,0,0,967.7,526.62Z"
+                    transform="translate(-942.5 -525.12)"
                   />
                 </svg>
               </button>
               <button className="like_on" onClick={likeOff}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 36.81">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 26.77">
                   <defs>
                     <style
                       dangerouslySetInnerHTML={{
-                        __html: ".cls-9{fill:#df9d26;}",
+                        __html: ".cls-5{fill:#df9d26;}",
                       }}
                     />
                   </defs>
                   <path
-                    className="cls-9"
-                    d="M970.17,521.79a11.39,11.39,0,0,0-10.59,7.2,11.4,11.4,0,0,0-22,4.2c-.3,13.57,21.94,25.48,22,25.4,0,.08,22.29-11.83,22-25.4A11.49,11.49,0,0,0,970.17,521.79Z"
-                    transform="translate(-937.58 -521.79)"
+                    className="cls-5"
+                    d="M967.7,526.62a8.29,8.29,0,0,0-7.7,5.23,8.29,8.29,0,0,0-16,3.06c-.22,9.87,16,18.53,16,18.47s16.22-8.6,16-18.47A8.36,8.36,0,0,0,967.7,526.62Z"
+                    transform="translate(-944 -526.62)"
                   />
                 </svg>
               </button>
             </li>
             <li>
-              <a href="#">
+              <a href="http://localhost:3000/#/detail">
                 <span className="img_wrap">
                   <img src={row3_img1} alt="이미지"></img>
                 </span>
@@ -984,7 +1003,7 @@ function App() {
                 </span>
               </a>
               <button className="like" onClick={likeOn}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 39.81">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 29.77">
                   <defs>
                     <style
                       dangerouslySetInnerHTML={{
@@ -995,24 +1014,24 @@ function App() {
                   </defs>
                   <path
                     className="cls-4"
-                    d="M970.19,521.79A11.4,11.4,0,0,0,959.6,529a11.4,11.4,0,0,0-22,4.2c-.3,13.57,21.94,25.48,22,25.4.06.08,22.3-11.83,22-25.4A11.49,11.49,0,0,0,970.19,521.79Z"
-                    transform="translate(-936.1 -520.29)"
+                    d="M967.7,526.62a8.29,8.29,0,0,0-7.7,5.23,8.29,8.29,0,0,0-16,3.06c-.22,9.87,16,18.53,16,18.47s16.22-8.6,16-18.47A8.36,8.36,0,0,0,967.7,526.62Z"
+                    transform="translate(-942.5 -525.12)"
                   />
                 </svg>
               </button>
               <button className="like_on" onClick={likeOff}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 36.81">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 26.77">
                   <defs>
                     <style
                       dangerouslySetInnerHTML={{
-                        __html: ".cls-9{fill:#df9d26;}",
+                        __html: ".cls-5{fill:#df9d26;}",
                       }}
                     />
                   </defs>
                   <path
-                    className="cls-9"
-                    d="M970.17,521.79a11.39,11.39,0,0,0-10.59,7.2,11.4,11.4,0,0,0-22,4.2c-.3,13.57,21.94,25.48,22,25.4,0,.08,22.29-11.83,22-25.4A11.49,11.49,0,0,0,970.17,521.79Z"
-                    transform="translate(-937.58 -521.79)"
+                    className="cls-5"
+                    d="M967.7,526.62a8.29,8.29,0,0,0-7.7,5.23,8.29,8.29,0,0,0-16,3.06c-.22,9.87,16,18.53,16,18.47s16.22-8.6,16-18.47A8.36,8.36,0,0,0,967.7,526.62Z"
+                    transform="translate(-944 -526.62)"
                   />
                 </svg>
               </button>
@@ -1059,7 +1078,7 @@ function App() {
                   <span className="post_no">32</span>
                 </span>
                 <span className="like_wrap">
-                  <span className="like">즐겨찾기</span>
+                  <span className="like_txt">즐겨찾기</span>
                   <span className="like_no">16</span>
                 </span>
               </a>
@@ -1097,7 +1116,7 @@ function App() {
                   <span className="post_no">32</span>
                 </span>
                 <span className="like_wrap">
-                  <span className="like">즐겨찾기</span>
+                  <span className="like_txt">즐겨찾기</span>
                   <span className="like_no">16</span>
                 </span>
               </a>
@@ -1135,7 +1154,7 @@ function App() {
                   <span className="post_no">32</span>
                 </span>
                 <span className="like_wrap">
-                  <span className="like">즐겨찾기</span>
+                  <span className="like_txt">즐겨찾기</span>
                   <span className="like_no">16</span>
                 </span>
               </a>
@@ -1173,7 +1192,7 @@ function App() {
                   <span className="post_no">32</span>
                 </span>
                 <span className="like_wrap">
-                  <span className="like">즐겨찾기</span>
+                  <span className="like_txt">즐겨찾기</span>
                   <span className="like_no">16</span>
                 </span>
               </a>
@@ -1211,7 +1230,7 @@ function App() {
                   <span className="post_no">32</span>
                 </span>
                 <span className="like_wrap">
-                  <span className="like">즐겨찾기</span>
+                  <span className="like_txt">즐겨찾기</span>
                   <span className="like_no">16</span>
                 </span>
               </a>
@@ -1249,7 +1268,7 @@ function App() {
                   <span className="post_no">32</span>
                 </span>
                 <span className="like_wrap">
-                  <span className="like">즐겨찾기</span>
+                  <span className="like_txt">즐겨찾기</span>
                   <span className="like_no">16</span>
                 </span>
               </a>
@@ -1375,15 +1394,117 @@ function App() {
               </li>
             </ul>
           </div>
+          <div className="partner_wrap">
+            <img src={partners1} alt="잔다솔루션"></img>
+            <img src={partners2} alt="아마존"></img>
+            <img src={partners3} alt="중소벤처기업부"></img>
+            <img src={partners4} alt="기술보증기금"></img>
+            <img src={partners5} alt="나이스페이먼츠"></img>
+            <img src={partners6} alt="부산광역시"></img>
+            <img src={partners7} alt="공유경제부산"></img>
+          </div>
           <div className="copyright">
             Copyright © 2010-2020 JANDA All Rights Reserved
           </div>
         </div>
       </footer>
-      <div onClick={goToScrollTop} className="top_btn">
-        <button>
-          <span>TOP</span>
-        </button>
+      <div className="quick_menu">
+        <div onClick={goToScrollTop} className="top_btn">
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.46 32.21">
+              <defs>
+                <style
+                  dangerouslySetInnerHTML={{ __html: ".cls-3{fill:#888;}" }}
+                />
+              </defs>
+              <rect
+                className="cls-3"
+                x="13.73"
+                y="2.69"
+                width={3}
+                height="29.52"
+              />
+              <rect
+                className="cls-3"
+                x="942.72"
+                y="531.5"
+                width="21.44"
+                height={3}
+                transform="translate(-1042.43 305.94) rotate(-45)"
+              />
+              <rect
+                className="cls-3"
+                x="965.19"
+                y="522.21"
+                width="2.85"
+                height="21.59"
+                transform="translate(-1038.58 315.25) rotate(-45)"
+              />
+            </svg>
+          </button>
+        </div>
+        <div className="cs_wrap">
+          <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 30.58">
+              <defs>
+                <style
+                  dangerouslySetInnerHTML={{ __html: ".cls-3{fill:#888;}" }}
+                />
+              </defs>
+              <path
+                className="cls-3"
+                d="M944,540a5.56,5.56,0,0,0,5.56,5.56V534.44A5.56,5.56,0,0,0,944,540Z"
+                transform="translate(-944 -524.71)"
+              />
+              <polygon
+                className="cls-3"
+                points="8.37 8.34 8.37 22.24 22.33 30.58 22.33 0 8.37 8.34"
+              />
+              <rect
+                className="cls-3"
+                x="25.05"
+                y="13.9"
+                width="6.95"
+                height="2.78"
+                rx={1}
+              />
+              <rect
+                className="cls-3"
+                x="968.67"
+                y="530.53"
+                width="6.95"
+                height="2.78"
+                rx={1}
+                transform="translate(-1078.8 -44.6) rotate(-26.01)"
+              />
+              <rect
+                className="cls-3"
+                x="968.67"
+                y="546.69"
+                width="6.95"
+                height="2.78"
+                rx={1}
+                transform="translate(-605.26 -895.47) rotate(26.01)"
+              />
+            </svg>
+            <span>공지</span>
+          </a>
+          <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.55 30">
+              <defs>
+                <style
+                  dangerouslySetInnerHTML={{ __html: ".cls-3{fill:#888;}" }}
+                />
+              </defs>
+              <path
+                className="cls-3"
+                d="M959.7,525a14.16,14.16,0,0,1,4,.53,9.09,9.09,0,0,1,3,1.47,6.58,6.58,0,0,1,1.9,2.28,6.41,6.41,0,0,1,.66,2.91v.43a6.68,6.68,0,0,1-.23,1.76,5.81,5.81,0,0,1-.78,1.69,12.24,12.24,0,0,1-1.53,1.83c-.65.65-1.45,1.39-2.42,2.22a18.7,18.7,0,0,0-1.44,1.34,5.92,5.92,0,0,0-.83,1,2.89,2.89,0,0,0-.37,1,7.22,7.22,0,0,0-.08,1.11,1.6,1.6,0,0,1-.72,1.39,2.82,2.82,0,0,1-1.67.51,3.15,3.15,0,0,1-1.78-.49,1.7,1.7,0,0,1-.74-1.53,12.77,12.77,0,0,1,.12-1.83,5.49,5.49,0,0,1,.48-1.57,5.92,5.92,0,0,1,1-1.52,17.94,17.94,0,0,1,1.79-1.69c.86-.7,1.54-1.29,2-1.77a8.12,8.12,0,0,0,1.17-1.3,3.16,3.16,0,0,0,.54-1.07,4.41,4.41,0,0,0,.12-1.06v-.2a2.83,2.83,0,0,0-.24-1.16,2.74,2.74,0,0,0-.77-1,3.93,3.93,0,0,0-1.36-.68,7.68,7.68,0,0,0-2.08-.25,8.18,8.18,0,0,0-2.89.47,11.91,11.91,0,0,0-2.36,1.2,2,2,0,0,1-1.63.37,2.43,2.43,0,0,1-1.38-.91,2.37,2.37,0,0,1-.56-1.58,1.8,1.8,0,0,1,.85-1.45,12.77,12.77,0,0,1,3.53-1.81A14.36,14.36,0,0,1,959.7,525Zm-.54,24.09a3.13,3.13,0,0,1,2.23.86,2.87,2.87,0,0,1,0,4.19,3.31,3.31,0,0,1-4.45,0,2.87,2.87,0,0,1,0-4.19A3.1,3.1,0,0,1,959.16,549.09Z"
+                transform="translate(-950.72 -525)"
+              />
+            </svg>
+            <span>FAQ</span>
+          </a>
+        </div>
       </div>
 
       <div className="clause">
@@ -1400,11 +1521,11 @@ function App() {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.56 15.56">
                 <defs>
                   <style
-                    dangerouslySetInnerHTML={{ __html: ".cls-3{fill:#fff;}" }}
+                    dangerouslySetInnerHTML={{ __html: ".cls-2{fill:#fff;}" }}
                   />
                 </defs>
                 <rect
-                  className="cls-3"
+                  className="cls-2"
                   x="325.11"
                   y="255.09"
                   width={2}
@@ -1412,7 +1533,7 @@ function App() {
                   transform="translate(-35.37 -410.26) rotate(45)"
                 />
                 <rect
-                  className="cls-3"
+                  className="cls-2"
                   x="325.11"
                   y="255.09"
                   width={2}
@@ -1755,11 +1876,11 @@ function App() {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.56 15.56">
                 <defs>
                   <style
-                    dangerouslySetInnerHTML={{ __html: ".cls-3{fill:#fff;}" }}
+                    dangerouslySetInnerHTML={{ __html: ".cls-2{fill:#fff;}" }}
                   />
                 </defs>
                 <rect
-                  className="cls-3"
+                  className="cls-2"
                   x="325.11"
                   y="255.09"
                   width={2}
@@ -1767,7 +1888,7 @@ function App() {
                   transform="translate(-35.37 -410.26) rotate(45)"
                 />
                 <rect
-                  className="cls-3"
+                  className="cls-2"
                   x="325.11"
                   y="255.09"
                   width={2}

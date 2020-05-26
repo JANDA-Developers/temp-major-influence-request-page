@@ -1,9 +1,9 @@
 {
   "name": "my-app2",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@janda-com/front": "^0.4.6",
+    "@janda-com/front": "^1.2.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -12,8 +12,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0",
-    "slick": "^1.12.2"
+    "react-scripts": "3.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -25,7 +24,7 @@
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [``
+    "production": [
       ">0.2%",
       "not dead",
       "not op_mini all"

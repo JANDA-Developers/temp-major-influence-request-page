@@ -1,6 +1,7 @@
 @import "./Variable.scss";
-@import "../node_modules/@janda-com/front/build/scss/style_config.scss";
-@import "../node_modules/@janda-com/front/build/scss/components/Slider.scss";
+@import "~@janda-com/front/build/scss/style_config.scss";
+@import "~@janda-com/front/build/scss/components/Slider.scss";
+@import "~@janda-com/front/build/scss/components/CheckBox.scss";
 body {
   margin: 0;
   min-width: 320px;
@@ -189,7 +190,7 @@ body {
           left: 50%;
           transform: translateX(-50%);
           padding: 10px 24px;
-          font-size: 16px;
+          font-size: 14px;
         }
       }
     }
@@ -319,25 +320,13 @@ body {
             position: relative;
             .list_img {
               display: block;
-              height: 250px;
+              //height: auto;
               margin: 10px;
               border-radius: 5px;
               overflow: hidden;
-              @include resp(1700px) {
-                height: 220px;
-              }
-              @include resp($tablet1, $tablet2) {
-                height: 180px;
-              }
-              @include resp($mobile2, $mobile3) {
-                height: 160px;
-              }
+
               img {
-                transform: scale(1.2);
-                @include resp(1200px) {
-                  transform: none;
-                  width: 100%;
-                }
+                width: 100%;
               }
             }
             .list_tit {
@@ -778,58 +767,13 @@ body {
         top: -48px;
       }
     }
-    .partners_area {
-      width: 100%;
-      ul {
-        display: flex;
-        flex-wrap: wrap;
-        li {
-          width: calc(20% - 100px);
-          margin: 0 50px 60px;
-          text-align: center;
-          @include resp(1300px) {
-            width: calc(20% - 40px);
-            margin: 0 20px 60px;
-          }
-          @include resp($tablet1, $tablet2) {
-            width: calc(20% - 16px);
-            margin: 0 8px 60px;
-          }
-          @include resp($tablet2, $mobile1) {
-            width: calc(50% - 30px);
-            margin: 0 15px 40px;
-          }
-          @include resp($mobile1, $mobile2) {
-            width: 100%;
-            margin: 0 90px 40px;
-          }
-          @include resp($mobile2, $mobile3) {
-            width: 100%;
-            margin: 0 90px 40px;
-          }
-          img {
-            width: 100%;
-          }
-          .partners_name {
-            display: block;
-            margin-top: 20px;
-            font-size: 18px;
-            color: #555;
-            width: 100%;
-            @include resp($mobile2, $mobile3) {
-              margin-top: 14px;
-              font-size: 16px;
-            }
-          }
-        }
-      }
-    }
   }
 
   .footer_in {
     padding: 60px 3% 100px;
     color: $font-color3;
     text-align: center;
+    background-color: $background-color;
     @include resp($mobile1, $mobile2) {
       padding: 60px 3% 70px;
     }
@@ -919,6 +863,13 @@ body {
         }
       }
     }
+    .partner_wrap {
+      margin: 30px 0 50px;
+      img {
+        height: 30px;
+        margin: 10px;
+      }
+    }
     .copyright {
       font-size: 12px;
       margin-top: 24px;
@@ -996,6 +947,20 @@ body {
         background-color: #fff;
         border-radius: 6px;
         position: relative;
+        @include resp($tablet1, $tablet2) {
+          width: 80%;
+        }
+        @include resp($tablet2, $mobile1) {
+          width: 70%;
+        }
+        @include resp($mobile1, $mobile2) {
+          width: 60%;
+        }
+        @include resp($mobile2, $mobile3) {
+          padding: 30px 30px 50px;
+          width: 64%;
+          margin: 80px auto;
+        }
         @include resp($mobile1, $mobile2) {
           width: 60%;
         }
@@ -1049,9 +1014,20 @@ body {
           font-size: 14px;
           line-height: 1.7em;
           resize: none;
-          word-break: keep-all;
           overflow: auto;
+          @include resp($tablet1, $tablet2) {
+            height: 300px;
+          }
+          @include resp($tablet2, $mobile1) {
+            height: 300px;
+            font-size: 12px;
+          }
+          @include resp($mobile1, $mobile2) {
+            height: 250px;
+            font-size: 12px;
+          }
           @include resp($mobile2, $mobile3) {
+            height: 230px;
             font-size: 12px;
           }
         }
@@ -1077,6 +1053,12 @@ body {
         background-color: #fff;
         border-radius: 6px;
         position: relative;
+        @include resp($tablet1, $tablet2) {
+          width: 80%;
+        }
+        @include resp($tablet2, $mobile1) {
+          width: 70%;
+        }
         @include resp($mobile1, $mobile2) {
           width: 60%;
         }
@@ -1131,7 +1113,19 @@ body {
           line-height: 1.7em;
           resize: none;
           overflow: auto;
+          @include resp($tablet1, $tablet2) {
+            height: 300px;
+          }
+          @include resp($tablet2, $mobile1) {
+            height: 300px;
+            font-size: 12px;
+          }
+          @include resp($mobile1, $mobile2) {
+            height: 250px;
+            font-size: 12px;
+          }
           @include resp($mobile2, $mobile3) {
+            height: 230px;
             font-size: 12px;
           }
         }
