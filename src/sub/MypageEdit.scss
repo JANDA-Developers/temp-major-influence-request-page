@@ -10,7 +10,7 @@ body {
   display: none;
 }
 
-.Join {
+.MypageEdit {
   header {
     width: 94%;
     padding: 30px 3%;
@@ -170,35 +170,48 @@ body {
     }
   }
 
-  .sign_in {
+  .mypage_in {
     padding: 176px 0 160px;
     .inner {
-      padding: 0 36%;
-      .login_wrap {
-        border-bottom: none;
-        h2 {
-          width: 100%;
-          font-size: 40px;
-          font-weight: normal;
-          color: $font-color3;
-          text-align: center;
-          margin-bottom: 32px;
+      padding: 0 30%;
+      h2 {
+        width: 100%;
+        font-size: 40px;
+        font-weight: normal;
+        color: $font-color3;
+        text-align: center;
+        margin-bottom: 32px;
+      }
+      .mypage_wrap {
+        .mp_tab ul {
+          display: flex;
+          justify-content: space-evenly;
+          margin-bottom: 40px;
+          li {
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 500;
+            a {
+              display: block;
+              background-color: $background-color;
+              border: 1px solid $border-color;
+              color: $font-color3;
+              padding: 12px 0;
+            }
+            .scrap {
+              border-top-left-radius: 5px;
+              border-bottom-left-radius: 5px;
+            }
+            .edit {
+              border-top-right-radius: 5px;
+              border-bottom-right-radius: 5px;
+              border-left: none;
+              background-color: #fff;
+            }
+          }
         }
-        // .id_wrap {
-        //   margin-bottom: 32px;
-        // }
-        // .pw_wrap {
-        //   margin-bottom: 32px;
-        // }
-        // .pw_wrap_c {
-        //   margin-bottom: 32px;
-        // }
-        // .ph_wrap {
-        //   margin-bottom: 32px;
-        // }
-        // .policy_wrap {
-        //   margin-bottom: 32px;
-        // }
+
         label {
           font-size: 16px;
           color: $font-color3;
@@ -222,18 +235,6 @@ body {
           font-size: 14px;
           color: $font-color2;
         }
-        .id_wrap {
-          position: relative;
-        }
-        .id_wrap::after {
-          content: "※ 아이디는 4~8자의 영문, 숫자의 조합으로 만들 수 있습니다.";
-          display: block;
-          position: absolute;
-          bottom: 14px;
-          left: 12px;
-          font-size: 13px;
-          color: #a1a1a1;
-        }
         .pw_wrap {
           position: relative;
         }
@@ -243,7 +244,7 @@ body {
           position: absolute;
           bottom: 14px;
           left: 12px;
-          font-size: 13px;
+          font-size: 12px;
           color: #a1a1a1;
         }
         span {
@@ -251,93 +252,69 @@ body {
           color: #a1a1a1;
           margin-left: 10px;
         }
-        .pw_save {
-          display: block;
-          position: relative;
-          padding: 12px 0;
-          .JDcheck_box:not(:checked) + .JDcheck_box_label:after {
-            width: 21px;
-            height: 21px;
-            border-radius: 3px;
-            border: 1px solid $border-color;
-          }
-          .JDcheck_box:checked + .JDcheck_box_label:after {
-            width: 20px;
-            height: 20px;
-            border-radius: 3px;
-            background-color: $font-color3;
-          }
-          span {
-            font-size: 14px;
-            color: $font-color3;
-          }
-        }
-        textarea {
+        .introduce {
           width: 96%;
           height: 118px;
           padding: 12px 2%;
           margin-top: 6px;
           border-radius: 5px;
           border: 1px solid $border-color;
-          background-color: $background-color;
           color: $font-color3;
           font-size: 12px;
           line-height: 1.7em;
           resize: none;
         }
-        .agreeChk {
-          display: flex;
-          align-self: start;
-          margin-left: 10px;
-          padding: 12px 0;
-          span {
-            padding-left: 6px;
-          }
-          .JDcheck_box_wrap {
-            margin-left: 0;
-            .JDcheck_box_label {
-              margin-left: 0;
-            }
-            .JDcheck_box_label:before {
-              width: 4px;
-              height: 12px;
-            }
-            .JDcheck_box_label:after {
-              width: 16px;
-              height: 16px;
-            }
-            .JDcheck_box {
-              width: auto;
-              height: auto;
-            }
+      }
+      .profile_wrap {
+        width: 100%;
+        .profile_img {
+          width: 90px;
+          height: 90px;
+          margin: 0 auto;
+          border-radius: 100%;
+          background-color: #ddd;
+          overflow: hidden;
+          text-align: center;
+          svg {
+            margin-top: 26px;
+            width: 60%;
           }
         }
-        .fin {
-          display: flex;
-          justify-content: space-between;
-          margin-top: 16px;
-          .cancel {
-            display: block;
-            width: 40%;
-            padding: 12px 0;
-            border-radius: 5px;
-            text-align: center;
+        .btn_wrap {
+          width: 100%;
+          text-align: center;
+          margin: 16px 0 26px;
+          button {
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
             font-size: 16px;
-            font-weight: 500;
+            font-weight: 600;
             color: $main-color;
-            border: 1px solid $main-color;
           }
-          .sum {
-            display: block;
-            width: 40%;
-            padding: 12px 0;
-            border-radius: 5px;
-            text-align: center;
-            font-size: 16px;
-            font-weight: 500;
-            color: #fff;
-            background-color: $main-color;
-          }
+        }
+      }
+      .fin {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 32px;
+        .cancel {
+          display: block;
+          padding: 12px 100px;
+          border-radius: 5px;
+          font-size: 16px;
+          font-weight: 500;
+          color: $main-color;
+          border: 1px solid $main-color;
+        }
+        .enter {
+          display: block;
+          padding: 12px 100px;
+          border-radius: 5px;
+          font-size: 16px;
+          font-weight: 500;
+          color: #fff;
+          background-color: $main-color;
         }
       }
     }

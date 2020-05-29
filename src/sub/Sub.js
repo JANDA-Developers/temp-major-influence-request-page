@@ -92,7 +92,7 @@ function App() {
                   </button>
                 </li>
                 <li>
-                  <a href="#">통합검색</a>
+                  <a href="http://localhost:3000/#/search">통합검색</a>
                 </li>
                 <li>
                   <a href="#">이벤트/제휴할인</a>
@@ -101,7 +101,7 @@ function App() {
                   <a href="#">도움말</a>
                 </li>
                 <li>
-                  <a href="http://localhost:3000/#/mypage">마이페이지</a>
+                  <a href="http://localhost:3000/#/edit">마이페이지</a>
                 </li>
                 <li>
                   <a href="#">에이전시</a>
@@ -187,7 +187,7 @@ function App() {
             </li>
             <li>
               <p>통합검색</p>
-              <a href="#">통합검색</a>
+              <a href="http://localhost:3000/#/search">통합검색</a>
             </li>
             <li>
               <p>이벤트/제휴할인</p>
@@ -215,10 +215,10 @@ function App() {
             </li>
             <li>
               <p>마이페이지</p>
-              <a href="#">
+              <a href="http://localhost:3000/#/scrap">
                 <span>즐겨찾기</span>
               </a>
-              <a href="#">
+              <a href="http://localhost:3000/#/edit">
                 <span>프로필수정</span>
               </a>
             </li>
@@ -379,6 +379,29 @@ function App() {
           <div className="row_txt">이번 휴가는 호텔에서 재밌게 놀아보자!</div>
           <a href="#" className="more_btn">
             전체보기
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.28 30.46">
+              <defs>
+                <style
+                  dangerouslySetInnerHTML={{ __html: ".cls-8{fill:#555;}" }}
+                />
+              </defs>
+              <rect
+                className="cls-8"
+                x="958.5"
+                y="522.69"
+                width={3}
+                height="21.44"
+                transform="translate(-1047.36 310.28) rotate(-45)"
+              />
+              <rect
+                className="cls-8"
+                x="949.2"
+                y="545.16"
+                width="21.59"
+                height="2.85"
+                transform="translate(-1056.68 314.14) rotate(-45)"
+              />
+            </svg>
           </a>
           <ul className="row_list">
             <li>

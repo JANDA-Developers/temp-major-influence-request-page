@@ -15,7 +15,9 @@ $tablet2: 1080px;
 $mobile1: 768px;
 $mobile2: 640px;
 $mobile3: 320px;
-
+html {
+  font-family: "Noto Sans KR", sans-serif;
+}
 *::selection {
   background: rgba(248, 231, 157, 0.6);
 }
@@ -45,5 +47,8 @@ input:focus {
   outline: none;
 }
 textarea:focus {
+  outline: none;
+}
+select:focus {
   outline: none;
 }

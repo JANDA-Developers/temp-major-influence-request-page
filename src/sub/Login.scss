@@ -37,7 +37,6 @@ body {
         margin-right: 58px;
         a {
           font-size: 16px;
-          font-weight: 600;
           color: $font-color3;
         }
         a:hover {
@@ -111,6 +110,7 @@ body {
         padding: 0 18px;
         font-size: 16px;
         line-height: 46px;
+        letter-spacing: 0.6px;
         background-color: $sub-color1;
         border: 1px solid $sub-color1;
         border-radius: 6px;
@@ -141,12 +141,15 @@ body {
         justify-content: space-evenly;
         li {
           p {
+            color: $font-color3;
+            font-size: 18px;
             margin-bottom: 20px;
-            font-weight: bold;
           }
           a {
             display: block;
             padding: 12px 0;
+            font-size: 16px;
+            font-weight: 300;
             color: $font-color3;
           }
         }
@@ -246,6 +249,7 @@ body {
           text-align: right;
           a {
             font-size: 14px;
+            font-weight: 300;
             color: $font-color3;
             padding: 0 12px;
             border-right: 1px solid $border-color;
@@ -314,7 +318,6 @@ body {
         display: block;
         color: $font-color3;
         font-size: 16px;
-        font-weight: 600;
         margin-right: 80px;
         cursor: pointer;
         @include resp($mobile2, $mobile3) {
@@ -329,7 +332,6 @@ body {
         display: block;
         color: $font-color3;
         font-size: 16px;
-        font-weight: 600;
         cursor: pointer;
         @include resp($mobile2, $mobile3) {
           font-size: 14px;
@@ -440,7 +442,6 @@ body {
         span {
           display: block;
           font-size: 12px;
-          font-weight: bold;
           color: #888;
         }
         svg {

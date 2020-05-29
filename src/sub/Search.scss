@@ -10,7 +10,7 @@ body {
   display: none;
 }
 
-.Join {
+.Search {
   header {
     width: 94%;
     padding: 30px 3%;
@@ -169,180 +169,178 @@ body {
       }
     }
   }
-
-  .sign_in {
-    padding: 176px 0 160px;
+  #container {
+    padding: 170px 0 160px;
+    h2 {
+      width: 96%;
+      font-size: 34px;
+      font-weight: normal;
+      color: $font-color3;
+      text-align: center;
+      padding-bottom: 40px;
+      margin: 0 auto;
+      //border-bottom: 1px solid #ddd;
+    }
     .inner {
-      padding: 0 36%;
-      .login_wrap {
-        border-bottom: none;
-        h2 {
-          width: 100%;
-          font-size: 40px;
-          font-weight: normal;
-          color: $font-color3;
-          text-align: center;
-          margin-bottom: 32px;
-        }
-        // .id_wrap {
-        //   margin-bottom: 32px;
-        // }
-        // .pw_wrap {
-        //   margin-bottom: 32px;
-        // }
-        // .pw_wrap_c {
-        //   margin-bottom: 32px;
-        // }
-        // .ph_wrap {
-        //   margin-bottom: 32px;
-        // }
-        // .policy_wrap {
-        //   margin-bottom: 32px;
-        // }
-        label {
-          font-size: 16px;
-          color: $font-color3;
-          margin-left: 10px;
-        }
-        label {
-          color: $font-color3;
-          font-size: 16px;
+      padding: 0 3%;
+      .search_form {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+        height: 50px;
+        margin-bottom: 20px;
+        position: relative;
+        .search_icon {
+          width: 40px;
+          height: 40px;
+          background-color: $main-color;
+          border: none;
+          cursor: pointer;
+          border-radius: 100%;
+          position: absolute;
+          top: 16px;
+          right: 26px;
+          svg {
+            width: 70%;
+          }
         }
         input {
-          width: 100%;
-          height: 42px;
-          padding-left: 10px;
-          margin-top: 6px;
-          margin-bottom: 32px;
-          box-sizing: border-box;
-          border-radius: 5px;
-          border: 1px solid $border-color;
+          border: 0;
+          padding: 5px 10px 5px 30px;
+          height: 40px;
+          width: 95%;
+          font-size: 16px;
         }
-        input::placeholder {
-          font-size: 14px;
-          color: $font-color2;
+      }
+      .keyword_wrap {
+        .keyword_tit {
+          color: $main-color;
+          //padding-bottom: 10px;
+          border-bottom: 2px solid $main-color;
         }
-        .id_wrap {
-          position: relative;
+        .keyword_list {
+          ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            a {
+              font-size: 14px;
+              color: #888;
+              display: inline-block;
+              padding: 3px 16px;
+              border: 1px solid #888;
+              border-radius: 20px;
+              margin: 24px 10px;
+            }
+            a:hover {
+              color: #fff;
+              background-color: #888;
+              transition: all 0.3s;
+            }
+          }
         }
-        .id_wrap::after {
-          content: "※ 아이디는 4~8자의 영문, 숫자의 조합으로 만들 수 있습니다.";
-          display: block;
+      }
+      .total_count {
+        margin-top: 32px;
+        margin-left: 10px;
+        color: $font-color3;
+        font-size: 19px;
+        .data {
+          color: $main-color;
+        }
+      }
+      .store_select {
+        width: 100%;
+        position: relative;
+        .select {
           position: absolute;
-          bottom: 14px;
-          left: 12px;
-          font-size: 13px;
-          color: #a1a1a1;
-        }
-        .pw_wrap {
-          position: relative;
-        }
-        .pw_wrap::after {
-          content: "※ 특수문자 1개이상, 7~15자리, 영문 숫자 포함되어야 합니다.";
-          display: block;
-          position: absolute;
-          bottom: 14px;
-          left: 12px;
-          font-size: 13px;
-          color: #a1a1a1;
-        }
-        span {
-          font-size: 14px;
-          color: #a1a1a1;
-          margin-left: 10px;
-        }
-        .pw_save {
-          display: block;
-          position: relative;
-          padding: 12px 0;
-          .JDcheck_box:not(:checked) + .JDcheck_box_label:after {
-            width: 21px;
-            height: 21px;
-            border-radius: 3px;
-            border: 1px solid $border-color;
-          }
-          .JDcheck_box:checked + .JDcheck_box_label:after {
-            width: 20px;
-            height: 20px;
-            border-radius: 3px;
-            background-color: $font-color3;
-          }
-          span {
-            font-size: 14px;
-            color: $font-color3;
-          }
-        }
-        textarea {
-          width: 96%;
-          height: 118px;
-          padding: 12px 2%;
-          margin-top: 6px;
-          border-radius: 5px;
-          border: 1px solid $border-color;
-          background-color: $background-color;
+          top: -30px;
+          right: 20px;
+          background-color: #fff;
+          border: 1px solid $font-color3;
           color: $font-color3;
-          font-size: 12px;
-          line-height: 1.7em;
-          resize: none;
+          border-radius: 3px;
+          cursor: pointer;
+          padding: 5px 7px;
+          font-size: 14px;
         }
-        .agreeChk {
+      }
+    }
+    .search_inner {
+      padding: 40px 3% 0;
+      .search_list {
+        .store ul {
           display: flex;
-          align-self: start;
-          margin-left: 10px;
-          padding: 12px 0;
-          span {
-            padding-left: 6px;
-          }
-          .JDcheck_box_wrap {
-            margin-left: 0;
-            .JDcheck_box_label {
-              margin-left: 0;
-            }
-            .JDcheck_box_label:before {
-              width: 4px;
-              height: 12px;
-            }
-            .JDcheck_box_label:after {
-              width: 16px;
-              height: 16px;
-            }
-            .JDcheck_box {
-              width: auto;
-              height: auto;
+          flex-wrap: wrap;
+          li {
+            width: calc(25% - 40px);
+            margin: 0 20px 56px;
+            a {
+              display: block;
+              height: 250px;
+              border-radius: 5px;
+              overflow: hidden;
+              position: relative;
+              .tit_wrap {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100px;
+                background: linear-gradient(
+                  180deg,
+                  transparent,
+                  rgba(0, 0, 0, 0.7)
+                );
+                .sub_tit {
+                  position: absolute;
+                  bottom: 20px;
+                  left: 12px;
+                  color: #fff;
+                }
+              }
             }
           }
         }
-        .fin {
+        .container {
+          padding: 0 30px;
           display: flex;
-          justify-content: space-between;
-          margin-top: 16px;
-          .cancel {
+          justify-content: center;
+          a {
             display: block;
-            width: 40%;
-            padding: 12px 0;
-            border-radius: 5px;
+            width: 24px;
+            height: 24px;
+            border-radius: 3px;
+            color: $font-color3;
+            font-size: 14px;
+            line-height: 24px;
             text-align: center;
-            font-size: 16px;
-            font-weight: 500;
-            color: $main-color;
-            border: 1px solid $main-color;
+            border: 1px solid #ddd;
           }
-          .sum {
-            display: block;
-            width: 40%;
-            padding: 12px 0;
-            border-radius: 5px;
-            text-align: center;
-            font-size: 16px;
-            font-weight: 500;
+          .on {
             color: #fff;
+            border: 1px solid $main-color;
             background-color: $main-color;
+          }
+          button {
+            height: 26px;
+            background-color: #fff;
+            border-radius: 3px;
+            border: 1px solid #ddd;
+            margin: 0 30px;
+            color: $font-color3;
+            font-size: 12px;
+            line-height: 26px;
+            cursor: pointer;
+          }
+          button:hover {
+            border: 1px solid #bbb;
+            transition: all 0.3s;
           }
         }
       }
     }
   }
-
   .footer_in {
     padding: 60px 3% 100px;
     color: $font-color3;

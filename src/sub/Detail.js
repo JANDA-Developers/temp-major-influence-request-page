@@ -80,7 +80,7 @@ function App() {
                   </button>
                 </li>
                 <li>
-                  <a href="#">통합검색</a>
+                  <a href="http://localhost:3000/#/search">통합검색</a>
                 </li>
                 <li>
                   <a href="#">이벤트/제휴할인</a>
@@ -89,7 +89,7 @@ function App() {
                   <a href="#">도움말</a>
                 </li>
                 <li>
-                  <a href="http://localhost:3000/#/mypage">마이페이지</a>
+                  <a href="http://localhost:3000/#/edit">마이페이지</a>
                 </li>
                 <li>
                   <a href="#">에이전시</a>
@@ -175,7 +175,7 @@ function App() {
             </li>
             <li>
               <p>통합검색</p>
-              <a href="#">통합검색</a>
+              <a href="http://localhost:3000/#/search">통합검색</a>
             </li>
             <li>
               <p>이벤트/제휴할인</p>
@@ -203,10 +203,10 @@ function App() {
             </li>
             <li>
               <p>마이페이지</p>
-              <a href="#">
+              <a href="http://localhost:3000/#/scrap">
                 <span>즐겨찾기</span>
               </a>
-              <a href="#">
+              <a href="http://localhost:3000/#/edit">
                 <span>프로필수정</span>
               </a>
             </li>
@@ -226,28 +226,6 @@ function App() {
             <button>공유하기</button>
           </div>
           <div className="cn_tit">해운대 멋진 호텔</div>
-          <div className="agency_wrap">
-            <span className="profile_img">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.55 24.62">
-                <defs>
-                  <style
-                    dangerouslySetInnerHTML={{
-                      __html:
-                        ".cls-6{fill:#888;}.cls-7{fill:none;stroke:#888;stroke-linecap:round;stroke-miterlimit:10;stroke-width:5px;}",
-                    }}
-                  />
-                </defs>
-                <circle className="cls-6" cx="4.09" cy="4.09" r="4.09" />
-                <circle className="cls-6" cx="28.47" cy="4.09" r="4.09" />
-                <path
-                  className="cls-7"
-                  d="M910.66,551c9.47,2.49,14.61,2.49,24.09,0"
-                  transform="translate(-906.36 -530.74)"
-                />
-              </svg>
-            </span>
-            <span className="profile_name">nice123</span>
-          </div>
           <a href="#" className="more_btn">
             상품 홈페이지
           </a>
@@ -391,7 +369,7 @@ function App() {
         </div>
         <div className="more_list">
           <div className="tit">다른 상품 더보기</div>
-          <div className="more_qna">
+          <div className="more_store">
             <ul>
               <li>
                 <a href="#">

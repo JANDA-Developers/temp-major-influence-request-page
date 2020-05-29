@@ -160,10 +160,11 @@ body {
       .join_link2 {
         display: bolck;
         padding: 20px 34px;
-        font-size: 20px;
+        font-size: 22px;
+        letter-spacing: 1px;
         color: #fff;
         background-color: $main-color;
-        border-radius: 34px;
+        border-radius: 36px;
         position: absolute;
         bottom: 40%;
         left: 10%;
@@ -200,7 +201,7 @@ body {
     .row_tit {
       text-align: center;
       font-size: 40px;
-      font-weight: 700;
+      font-weight: 600;
       color: $font-color1;
       margin-bottom: 52px;
       position: relative;

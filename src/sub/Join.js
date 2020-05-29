@@ -82,7 +82,7 @@ function App() {
                   </button>
                 </li>
                 <li>
-                  <a href="#">통합검색</a>
+                  <a href="http://localhost:3000/#/search">통합검색</a>
                 </li>
                 <li>
                   <a href="#">이벤트/제휴할인</a>
@@ -91,7 +91,7 @@ function App() {
                   <a href="#">도움말</a>
                 </li>
                 <li>
-                  <a href="http://localhost:3000/#/mypage">마이페이지</a>
+                  <a href="http://localhost:3000/#/edit">마이페이지</a>
                 </li>
                 <li>
                   <a href="#">에이전시</a>
@@ -177,7 +177,7 @@ function App() {
             </li>
             <li>
               <p>통합검색</p>
-              <a href="#">통합검색</a>
+              <a href="http://localhost:3000/#/search">통합검색</a>
             </li>
             <li>
               <p>이벤트/제휴할인</p>
@@ -205,10 +205,10 @@ function App() {
             </li>
             <li>
               <p>마이페이지</p>
-              <a href="#">
+              <a href="http://localhost:3000/#/scrap">
                 <span>즐겨찾기</span>
               </a>
-              <a href="#">
+              <a href="http://localhost:3000/#/edit">
                 <span>프로필수정</span>
               </a>
             </li>
@@ -406,7 +406,14 @@ function App() {
                 <span>동의합니다</span>
               </label>
             </div>
-            <input className="sum" type="submit" value="가입완료"></input>
+            <div className="fin">
+              <a href="javascript:history.back();" className="cancel">
+                취소
+              </a>
+              <a href="#" className="sum">
+                가입완료
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -1,11 +1,6 @@
 import React from "react";
-import "./Mypage.scss";
+import "./MypageEdit.scss";
 import img from "../Login_img/logo_1.png";
-import cover_img from "../Detail_img/cover_img.jpg";
-import cover_img1 from "../Detail_img/cover_img1.jpg";
-import cover_img2 from "../Detail_img/cover_img2.jpg";
-import cover_img3 from "../Detail_img/cover_img3.jpg";
-import more_img from "../Detail_img/more_img.jpg";
 import partners1 from "../Sub_img/partners1.png";
 import partners2 from "../Sub_img/partners2.png";
 import partners3 from "../Sub_img/partners3.png";
@@ -54,7 +49,7 @@ function App() {
   const checkBoxHook = useCheckBox();
 
   return (
-    <div className="Mypage">
+    <div className="MypageEdit">
       <header>
         <div className="hd">
           <div className="hd_top">
@@ -82,7 +77,7 @@ function App() {
                   </button>
                 </li>
                 <li>
-                  <a href="#">통합검색</a>
+                  <a href="http://localhost:3000/#/search">통합검색</a>
                 </li>
                 <li>
                   <a href="#">이벤트/제휴할인</a>
@@ -91,7 +86,7 @@ function App() {
                   <a href="#">도움말</a>
                 </li>
                 <li>
-                  <a href="http://localhost:3000/#/mypage">마이페이지</a>
+                  <a href="http://localhost:3000/#/edit">마이페이지</a>
                 </li>
                 <li>
                   <a href="#">에이전시</a>
@@ -177,7 +172,7 @@ function App() {
             </li>
             <li>
               <p>통합검색</p>
-              <a href="#">통합검색</a>
+              <a href="http://localhost:3000/#/search">통합검색</a>
             </li>
             <li>
               <p>이벤트/제휴할인</p>
@@ -205,10 +200,10 @@ function App() {
             </li>
             <li>
               <p>마이페이지</p>
-              <a href="#">
+              <a href="http://localhost:3000/#/scrap">
                 <span>즐겨찾기</span>
               </a>
-              <a href="#">
+              <a href="http://localhost:3000/#/edit">
                 <span>프로필수정</span>
               </a>
             </li>
@@ -228,12 +223,12 @@ function App() {
             <nav className="mp_tab">
               <ul>
                 <li>
-                  <a href="#" className="praises">
+                  <a href="http://localhost:3000/#/scrap" className="scrap">
                     즐겨찾기
                   </a>
                 </li>
                 <li>
-                  <a href="http://localhost:3000/#/mypage" className="edit">
+                  <a href="http://localhost:3000/#/edit" className="edit">
                     프로필수정
                   </a>
                 </li>
@@ -266,9 +261,16 @@ function App() {
                 <button>프로필 사진 변경</button>
               </div>
             </div>
-            <div className="id_wrap">
-              <label>아이디</label>
-              <input type="id" placeholder="아이디를 입력해주세요"></input>
+            <div className="ph_wrap">
+              <label>이메일</label>
+              <input type="email" placeholder="magency@magency.kr"></input>
+            </div>
+            <div className="ph_wrap">
+              <label>연락처</label>
+              <input
+                type="number"
+                placeholder="-를 제외한 휴대폰 번호를 입력해주세요"
+              ></input>
             </div>
             <div className="pw_wrap">
               <label>비밀번호</label>
@@ -281,27 +283,19 @@ function App() {
               <label>비밀번호 확인</label>
               <input type="password" placeholder="비밀번호 확인"></input>
             </div>
-            <div className="ph_wrap">
-              <label>연락처</label>
-              <input
-                type="number"
-                placeholder="-를 제외한 휴대폰 번호를 입력해주세요"
-              ></input>
-            </div>
-            <div className="ph_wrap">
-              <label>이메일</label>
-              <input type="email" placeholder="magency@magency.kr"></input>
-            </div>
             <div className="policy_wrap">
-              <label>개인정보 수집 및 이용에 대한 동의</label>
-              <textarea className="signUp_policy"></textarea>
+              <label>소개</label>
+              <span>다른 회원들에게 보여질 인삿말을 입력해주세요.</span>
+              <textarea className="introduce"></textarea>
             </div>
-            <a href="#" className="cancel">
-              취소
-            </a>
-            <a href="#" className="sum">
-              확인
-            </a>
+            <div className="fin">
+              <a href="javascript:history.back();" className="cancel">
+                취소
+              </a>
+              <a href="#" className="enter">
+                확인
+              </a>
+            </div>
           </div>
         </div>
       </div>
