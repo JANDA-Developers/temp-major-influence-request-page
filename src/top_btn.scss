@@ -1,0 +1,55 @@
+@import "./Variable.scss";
+.top_btn {
+  position: fixed;
+  bottom: 72px;
+  right: 3%;
+  z-index: 500;
+  button {
+    z-index: 5;
+    box-sizing: border-box;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: #fff;
+    border-width: 0;
+    box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.1);
+    padding-top: 0.8rem;
+    cursor: pointer;
+    position: relative;
+    @include resp(640px, 320px) {
+      width: 3rem;
+      height: 3rem;
+      text-indent: -9999px;
+    }
+    span {
+      color: #333;
+      margin-top: 6px;
+    }
+    span::before {
+      content: "";
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      transform: translateX(-50%) rotate(-135deg);
+      position: absolute;
+      top: 1rem;
+      left: 50%;
+      border-right: 1px solid rgba(0, 0, 0, 0.87);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.87);
+      @include resp(640px, 320px) {
+        width: 0.8rem;
+        height: 0.8rem;
+        top: 1.3rem;
+      }
+    }
+  }
+  button:hover {
+    box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.2);
+  }
+}
+#kakao-talk-channel-chat-button {
+  position: fixed;
+  z-index: 999;
+  right: 30px; /* 화면 오른쪽으로부터의 거리 */
+  bottom: 30px; /* 화면 아래쪽으로부터의 거리 */
+}

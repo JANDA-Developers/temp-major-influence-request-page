@@ -1,0 +1,203 @@
+@import "./Variable.scss";
+//이용약관
+.clause {
+  .black_wrap_c {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    .white_bg {
+      width: 880px;
+      padding: 50px 50px 80px;
+      margin: 100px auto;
+      background-color: #fff;
+      border-radius: 6px;
+      position: relative;
+      @include resp(1200px, 1080px) {
+        width: 80%;
+      }
+      @include resp(1080px, 768px) {
+        width: 70%;
+      }
+      @include resp(768px, 640px) {
+        width: 60%;
+      }
+      @include resp(640px, 320px) {
+        padding: 30px 30px 50px;
+        width: 64%;
+        margin: 80px auto;
+      }
+      @include resp(768px, 640px) {
+        width: 60%;
+      }
+      @include resp(640px, 320px) {
+        padding: 30px 30px 50px;
+        width: 64%;
+        margin: 80px auto;
+      }
+      .title {
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 0;
+        margin-bottom: 42px;
+        color: #333;
+        @include resp(768px, 640px) {
+          font-size: 24px;
+        }
+        @include resp(640px, 320px) {
+          font-size: 22px;
+          margin-bottom: 32px;
+        }
+      }
+      .close {
+        width: 50px;
+        height: 50px;
+        background-color: #df9d26;
+        border-radius: 50%;
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        border-width: 0;
+        cursor: pointer;
+        @include resp(640px, 320px) {
+          width: 40px;
+          height: 40px;
+        }
+        svg {
+          width: 20px;
+          @include resp(640px, 320px) {
+            width: 14px;
+          }
+        }
+      }
+      .con_txt {
+        display: inline-block;
+        background-color: #f7f7f7;
+        width: 95%;
+        height: 420px;
+        padding: 20px 12px;
+        border: none;
+        font-size: 14px;
+        line-height: 1.7em;
+        resize: none;
+        overflow: auto;
+        @include resp(1200px, 1080px) {
+          height: 300px;
+        }
+        @include resp(1080px, 768px) {
+          height: 300px;
+          font-size: 12px;
+        }
+        @include resp(768px, 640px) {
+          height: 250px;
+          font-size: 12px;
+        }
+        @include resp(640px, 320px) {
+          height: 230px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+//개인정보 취급방침
+.policy {
+  .black_wrap_p {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    .white_bg {
+      width: 880px;
+      padding: 50px 50px 80px;
+      margin: 100px auto;
+      background-color: #fff;
+      border-radius: 6px;
+      position: relative;
+      @include resp(1200px, 1080px) {
+        width: 80%;
+      }
+      @include resp(1080px, 768px) {
+        width: 70%;
+      }
+      @include resp(768px, 640px) {
+        width: 60%;
+      }
+      @include resp(640px, 320px) {
+        padding: 30px 30px 50px;
+        width: 64%;
+        margin: 80px auto;
+      }
+      .title {
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 0;
+        margin-bottom: 42px;
+        color: #333;
+        @include resp(768px, 640px) {
+          font-size: 24px;
+        }
+        @include resp(640px, 320px) {
+          font-size: 22px;
+          margin-bottom: 32px;
+        }
+      }
+      .close {
+        width: 50px;
+        height: 50px;
+        background-color: #df9d26;
+        border-radius: 50%;
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        border-width: 0;
+        cursor: pointer;
+        @include resp(640px, 320px) {
+          width: 40px;
+          height: 40px;
+        }
+        svg {
+          width: 20px;
+          @include resp(640px, 320px) {
+            width: 14px;
+          }
+        }
+      }
+      .con_txt {
+        display: inline-block;
+        background-color: #f7f7f7;
+        width: 95%;
+        height: 420px;
+        padding: 20px 12px;
+        border: none;
+        font-size: 14px;
+        line-height: 1.7em;
+        resize: none;
+        overflow: auto;
+        @include resp(1200px, 1080px) {
+          height: 300px;
+        }
+        @include resp(1080px, 768px) {
+          height: 300px;
+          font-size: 12px;
+        }
+        @include resp(768px, 640px) {
+          height: 250px;
+          font-size: 12px;
+        }
+        @include resp(640px, 320px) {
+          height: 230px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

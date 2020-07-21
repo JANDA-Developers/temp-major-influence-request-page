@@ -1,7 +1,12 @@
 import React from "react";
 
 const Tag = ({ name }) => {
-  return <div className="keyword">{name}</div>;
+  return (
+    <div className="keyword">
+      {name}
+      <div>안녕?</div>
+    </div>
+  );
 };
 
 export const HouseCard = ({ housename }) => {

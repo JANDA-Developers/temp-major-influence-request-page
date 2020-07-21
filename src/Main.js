@@ -2,17 +2,47 @@ import React from "react";
 import "./main.scss";
 import { HouseCard } from "./HouseCard";
 import img from "./img/logo_1.png";
+import mainvisual1 from "./img/visual_img1.png";
 import rowimg1 from "./img/row1_img1.jpg";
+import rowimg1_1 from "./img/row1_img1_1.jpg";
+import rowimg1_2 from "./img/row1_img1_2.jpg";
+import rowimg1_3 from "./img/row1_img1_3.jpg";
+import rowimg1_4 from "./img/row1_img1_4.jpg";
+import rowimg1_5 from "./img/row1_img1_5.jpg";
 import rowimg2 from "./img/row1_img2.jpg";
+import rowimg2_1 from "./img/row1_img2_1.jpg";
+import rowimg2_2 from "./img/row1_img2_2.jpg";
+import rowimg2_3 from "./img/row1_img2_3.jpg";
+import rowimg2_4 from "./img/row1_img2_4.jpg";
 import rowimg3 from "./img/row1_img3.jpg";
+import rowimg3_1 from "./img/row1_img3_1.jpg";
+import rowimg3_2 from "./img/row1_img3_2.jpg";
+import rowimg3_3 from "./img/row1_img3_3.jpg";
 import rowimg4 from "./img/row1_img4.jpg";
+import rowimg4_1 from "./img/row1_img4_1.jpg";
+import rowimg4_2 from "./img/row1_img4_2.jpg";
+import rowimg4_3 from "./img/row1_img4_3.jpg";
 import rowimg5 from "./img/row1_img5.jpg";
+import rowimg5_1 from "./img/row1_img5_1.jpg";
+import rowimg5_2 from "./img/row1_img5_2.jpg";
+import rowimg5_3 from "./img/row1_img5_3.jpg";
+import rowimg5_4 from "./img/row1_img5_4.jpg";
 import rowimg6 from "./img/row1_img6.jpg";
+import rowimg6_1 from "./img/row1_img6_1.jpg";
+import rowimg6_2 from "./img/row1_img6_2.jpg";
+import rowimg6_3 from "./img/row1_img6_3.jpg";
 import rowimg7 from "./img/row1_img7.jpg";
+import rowimg7_1 from "./img/row1_img7_1.jpg";
+import rowimg7_2 from "./img/row1_img7_2.jpg";
 import rowimg8 from "./img/row1_img8.jpg";
+import rowimg8_1 from "./img/row1_img8_1.jpg";
+import rowimg8_2 from "./img/row1_img8_2.jpg";
+import rowimg8_3 from "./img/row1_img8_3.jpg";
+import rowimg8_4 from "./img/row1_img8_4.jpg";
 import row2img1 from "./img/row2_img1.png";
 import row2img2 from "./img/row2_img2.png";
 import row2img3 from "./img/row2_img3.png";
+import bn_img from "./img/bn_img.png";
 import partners1 from "./img/partners1.png";
 import partners2 from "./img/partners2.png";
 import partners3 from "./img/partners3.png";
@@ -52,22 +82,29 @@ const popUpClause = () => {
 const popUpPolicy = () => {
   $(".black_wrap_p").css({ display: "block" });
 };
-const popUpPrepare = () => {
-  $(".prepare").css({ display: "block" });
+const menuSlide = (e) => {
+  e.persist();
+  const target = $(e.currentTarget).next();
+
+  const hideAll = () => $(".list_img").next().removeClass("clickShow__open");
+
+  if (target.hasClass("clickShow__open")) {
+    hideAll();
+  } else {
+    hideAll();
+    setTimeout(() => {
+      target.addClass("clickShow__open");
+    }, 290);
+  }
 };
-const closePrepare = () => {
-  $(".prepare").css({ display: "none" });
+const menuSlide2 = (e) => {
+  e.persist();
+  $(e.currentTarget).next().toggleClass("clickShow__open");
 };
 
 function App() {
   return (
     <div className="Main">
-      <head>
-        <meta
-          name="naver-site-verification"
-          content="f310e2c35592a9118add6f3685e1a14d71cc3bb3"
-        />
-      </head>
       <header>
         <div className="hd">
           <div className="logo">
@@ -84,278 +121,153 @@ function App() {
         </div>
       </header>
       <section id="mainvisual">
-        <div className="mainvisual">
+        {/* <div className="mainvisual">
           <div className="txt_wrap">
             <p className="txt">영향력 있는 인플루언서가 추천하는</p>
             <p className="txt">
-              만족도 최고의 <strong>MAGENCY</strong>
+              만족도 최고의 <strong></strong>
             </p>
           </div>
           <div onClick={popUp} className="join_link2">
             인플루언서 신청하기
           </div>
+        </div> */}
+        <div className="mainvisual">
+          <JDslider
+            prevArrow={
+              <button className="slick-prev">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 40.51 33.59"
+                >
+                  <defs>
+                    <style
+                      dangerouslySetInnerHTML={{
+                        __html: ".cls-4{fill:#fff;}",
+                      }}
+                    />
+                  </defs>
+                  <rect
+                    className="cls-4"
+                    y="15.49"
+                    width="40.51"
+                    height={3}
+                    rx="1.5"
+                  />
+                  <rect
+                    className="cls-4"
+                    x="681.52"
+                    y="390.76"
+                    width="24.36"
+                    height={3}
+                    rx="1.5"
+                    transform="translate(-736.43 237.69) rotate(-45)"
+                  />
+                  <rect
+                    className="cls-4"
+                    x="683.34"
+                    y="372.58"
+                    width="16.74"
+                    height={3}
+                    rx="1.5"
+                    transform="translate(-195.13 -747.27) rotate(45)"
+                  />
+                </svg>
+              </button>
+            }
+            nextArrow={
+              <button className="slick-next">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 40.51 33.59"
+                >
+                  <defs>
+                    <style
+                      dangerouslySetInnerHTML={{
+                        __html: ".cls-4{fill:#fff;}",
+                      }}
+                    />
+                  </defs>
+                  <rect
+                    className="cls-4"
+                    y="15.49"
+                    width="40.51"
+                    height={3}
+                    rx="1.5"
+                  />
+                  <rect
+                    className="cls-4"
+                    x="681.52"
+                    y="390.76"
+                    width="24.36"
+                    height={3}
+                    rx="1.5"
+                    transform="translate(-736.43 237.69) rotate(-45)"
+                  />
+                  <rect
+                    className="cls-4"
+                    x="683.34"
+                    y="372.58"
+                    width="16.74"
+                    height={3}
+                    rx="1.5"
+                    transform="translate(-195.13 -747.27) rotate(45)"
+                  />
+                </svg>
+              </button>
+            }
+            appendDots={(dots) => {
+              return <ul>{dots}</ul>;
+            }}
+            slide
+          >
+            <JDslide dots={false}>
+              <div className="visual slide1">
+                <span className="visual_txt">
+                  <strong>잔다솔루션</strong>과<strong>타임스페이스</strong>를
+                  이용하는 상품을<br></br>SNS에 소개하고 수익활동을
+                  시작해보세요.
+                </span>
+                <img src={mainvisual1} alt="메이전시소개이미지"></img>
+              </div>
+            </JDslide>
+            <JDslide dots={false}>
+              <div className="visual slide2">
+                <span className="round"></span>
+                <span className="visual_txt1">
+                  <span>
+                    메이전시<br></br>카카오채널<br></br>추가하기
+                  </span>
+                  <span className="sub_txt">
+                    메이전시에서 알려드리는 상품을 카카오톡으로 받아보세요.
+                  </span>
+                  <a
+                    href="https://pf.kakao.com/_xmNxcNxb"
+                    target="_blank"
+                    className="kakao_link"
+                  >
+                    카카오채널 추가하기
+                  </a>
+                </span>
+                <span className="visual_txt2">
+                  <span>
+                    메이전시<br></br>인플루언서<br></br>신청하기하기
+                  </span>
+                  <span className="sub_txt">
+                    메이전시의 인플루언서가 되어 수익을 창출해보세요.
+                  </span>
+                  <div onClick={popUp} className="google_btn">
+                    인플루언서 신청하기
+                  </div>
+                </span>
+                {/* <img src={mainvisual1} alt="메이전시소개이미지"></img> */}
+              </div>
+            </JDslide>
+          </JDslider>
         </div>
       </section>
       <section id="container">
         <div className="row1">
-          <h2 className="row_tit">메이전시에서 어떤 상품을 소개하나요?</h2>
-          <p className="row_txt">
-            메이전시에서는 <strong>잔다솔루션</strong>과
-            <strong>타임스페이스</strong>를 사용중인
-            <br></br>
-            숙박, 공간예약 상품을 제공합니다.
-          </p>
-          <ul>
-            <li>
-              <a
-                href="https://www.instagram.com/studio_jejunight/"
-                target="_blank"
-              >
-                <span className="list_img">
-                  <img src={rowimg1} alt="숨게스트하우스남포가로수길점"></img>
-                </span>
-                <span className="list_tit">SUM 제주 공항점</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#858a8;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">134</span>
-                  </span>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.unknownhotel.com/" target="_blank">
-                <span className="list_img">
-                  <img src={rowimg2} alt="담양언노운호텔"></img>
-                </span>
-                <span className="list_tit">담양 언노운호텔</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#e64473;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">342</span>
-                  </span>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/iloveyacht.kor/"
-                target="_blank"
-              >
-                <span className="list_img">
-                  <img src={rowimg3} alt="아이러브요트"></img>
-                </span>
-                <span className="list_tit">아이러브요트</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#858a8d;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">489</span>
-                  </span>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="http://sinki.co.kr/" target="_blank">
-                <span className="list_img">
-                  <img src={rowimg4} alt="신기산업"></img>
-                </span>
-                <span className="list_tit">신기산업</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#e64473;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">146</span>
-                  </span>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/sinki_yeoul/" target="_blank">
-                <span className="list_img">
-                  <img src={rowimg5} alt="신기여울"></img>
-                </span>
-                <span className="list_tit">신기여울</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#e64473;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">252</span>
-                  </span>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="http://mariannehotel.co.kr/" target="_blank">
-                <span className="list_img">
-                  <img src={rowimg6} alt="마리안느"></img>
-                </span>
-                <span className="list_tit">마리안느</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#e64473;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">363</span>
-                  </span>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.rtbpalliance.com/" target="_blank">
-                <span className="list_img">
-                  <img src={rowimg7} alt="RTBP"></img>
-                </span>
-                <span className="list_tit">RTBP</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#e64473;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">146</span>
-                  </span>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="http://www.angcompany.co.kr/" target="_blank">
-                <span className="list_img">
-                  <img src={rowimg8} alt="엔젤앤가든"></img>
-                </span>
-                <span className="list_tit">엔젤앤가든</span>
-                <span className="like">
-                  <span className="like_icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 29.99"
-                    >
-                      <defs>
-                        <style
-                          dangerouslySetInnerHTML={{
-                            __html: ".cls-4{fill:#e64473;}",
-                          }}
-                        />
-                      </defs>
-                      <path
-                        className="cls-4"
-                        d="M968.79,525.2a8.81,8.81,0,0,0-8.19,5.56,8.81,8.81,0,0,0-17,3.25c-.23,10.49,17,21.23,17,21.17s17.23-10.68,17-21.17A8.88,8.88,0,0,0,968.79,525.2Z"
-                        transform="translate(-943.6 -525.2)"
-                      />
-                    </svg>
-                    <span className="like_txt">273</span>
-                  </span>
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div className="row2">
           <h2 className="row_tit">어떻게 신청하나요?</h2>
           <div className="info_wrap">
             <JDslider
@@ -469,19 +381,23 @@ function App() {
                   <div className="slide_box">
                     <div className="title">
                       <div className="tit">
-                        <span>Step3</span> 홈페이지에서 상품홍보 시작
+                        <span>Step3</span> 상품홍보 시작
                       </div>
                       <div className="txt">
                         메이전시에서 제공하는 상품을<br></br>
-                        홈페이지에 게시합니다.
+                        SNS에 게시합니다.
                       </div>
                     </div>
                     <div className="cont">
-                      <div onClick={popUpPrepare} className="go_btn">
-                        메이전시 홈페이지<span>로</span>
+                      <a
+                        href="https://pf.kakao.com/_xmNxcNxb"
+                        target="_blank"
+                        className="go_btn"
+                      >
+                        메이전시 카카오페이지<span>로</span>
                         <br></br>
                         <span>바로가기</span>
-                      </div>
+                      </a>
                       <img src={row2img3} alt="신청서작성"></img>
                     </div>
                   </div>
@@ -490,46 +406,387 @@ function App() {
             </JDslider>
           </div>
         </div>
-
-        <div class="prepare" onClick={closePrepare}>
-          <div class="white_bg">
-            <img src={p_icon} alt="준비중"></img>
-            <div class="p_txt">
-              사이트<br></br>
-              <strong>오픈 준비중</strong> 입니다
-            </div>
-            <button
-              onClick={closeC}
-              type="button"
-              className="close"
-              data-dismiss="modal"
-              aria-label="close"
+        <div className="row2">
+          <h2 className="row_tit">메이전시는 어떤 상품을 홍보하나요?</h2>
+          <p className="row_txt">
+            메이전시에서는 <strong>잔다솔루션</strong>과
+            <strong>타임스페이스</strong>를 사용중인
+            <br></br>
+            숙박, 공간예약 상품을 홍보합니다.
+          </p>
+          <dl>
+            <dt
+              style={{ order: "-1" }}
+              onClick={menuSlide}
+              className="list_img"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.56 15.56">
-                <defs>
-                  <style
-                    dangerouslySetInnerHTML={{ __html: ".cls-3{fill:#fff;}" }}
-                  />
-                </defs>
-                <rect
-                  className="cls-3"
-                  x="325.11"
-                  y="255.09"
-                  width={2}
-                  height={20}
-                  transform="translate(-35.37 -410.26) rotate(45)"
-                />
-                <rect
-                  className="cls-3"
-                  x="325.11"
-                  y="255.09"
-                  width={2}
-                  height={20}
-                  transform="translate(425.81 -35.37) rotate(135)"
-                />
-              </svg>
-            </button>
-          </div>
+              <img src={rowimg1} alt="SUM제주공항점"></img>
+              <span className="tit">SUM 제주 공항점</span>
+            </dt>
+            <dd style={{ order: "4" }} className="clickShow">
+              <span className="c_tit">SUM 제주 공항점</span>
+              <span className="c_tag">
+                <p>#인생사진</p>
+                <p>#제주밤사진관</p>
+                <p>#숨스튜디오</p>
+              </span>
+              <a
+                href="https://www.instagram.com/studio_jejunight/"
+                target="_blank"
+                className="more_wrap"
+              >
+                <span className="more_txt">상품 둘러보기</span>
+                <span className="moreIcon">icon</span>
+              </a>
+              <span className="c_txt">
+                <p className="txt1">상품 소개</p>
+                <p>"우리, 같이 저녁 먹을래요?"</p>
+                <p>또 다시 행복한 꿈을 꾸고 싶을 때, 언제든 놀러오세요.:)</p>
+                <p>
+                  일상으로 돌아가셔도, 우리는 항상 그 꿈에서 기다리고
+                  있겠습니다.
+                </p>
+              </span>
+              <span className="c_img">
+                <span>
+                  <img src={rowimg1_1}></img>
+                </span>
+                <span>
+                  <img src={rowimg1_2}></img>
+                </span>
+                <span>
+                  <img src={rowimg1_3}></img>
+                </span>
+                <span>
+                  <img src={rowimg1_4}></img>
+                </span>
+                <span>
+                  <img src={rowimg1_5}></img>
+                </span>
+              </span>
+            </dd>
+            <dt style={{ order: "1" }} onClick={menuSlide} className="list_img">
+              <img src={rowimg2} alt="담양언노운호텔"></img>
+              <span className="tit">담양 언노운 호텔</span>
+              <span className="new">NEW</span>
+            </dt>
+            <dd style={{ order: "4" }} className="clickShow">
+              <span className="c_tit">담양 언노운 호텔</span>
+              <span className="c_tag">
+                <p>#담양호텔</p>
+                <p>#담양숙소</p>
+                <p>#담양핫플</p>
+              </span>
+              <a
+                href="https://www.unknownhotel.com/"
+                target="_blank"
+                className="more_wrap"
+              >
+                <span className="more_txt">상품 둘러보기</span>
+                <span className="moreIcon">icon</span>
+              </a>
+              <span className="c_txt">
+                <p className="txt1">상품 소개</p>
+                <p>언노운호텔은 기본을 집중에 집중하며</p>
+                <p>​그 다음 가치(Value)인 로컬 커뮤니티 호텔을 향해</p>
+                <p>달려가겠습니다.</p>
+              </span>
+              <span className="c_img">
+                <span>
+                  <img src={rowimg2_1}></img>
+                </span>
+                <span>
+                  <img src={rowimg2_2}></img>
+                </span>
+                <span>
+                  <img src={rowimg2_3}></img>
+                </span>
+                <span>
+                  <img src={rowimg2_4}></img>
+                </span>
+              </span>
+            </dd>
+            <dt style={{ order: "2" }} onClick={menuSlide} className="list_img">
+              <img src={rowimg3} alt="아이러브요트"></img>
+              <span className="tit">아이러브 요트</span>
+            </dt>
+            <dd style={{ order: "4" }} className="clickShow">
+              <span className="c_tit">아이러브요트</span>
+              <span className="c_tag">
+                <p>#세일링체험</p>
+                <p>#요트대여</p>
+              </span>
+              <a
+                href="https://www.iloveyacht.co/membership"
+                target="_blank"
+                className="more_wrap"
+              >
+                <span className="more_txt">상품 둘러보기</span>
+                <span className="moreIcon">icon</span>
+              </a>
+              <span className="c_txt">
+                <p className="txt1">상품 소개</p>
+                <p>
+                  세계 최대 요트생산업체인 베네토그룹의 자뉴(JEANNEAU)요트를
+                  중심으로
+                </p>
+                <p>​다양한 신제품을 도입하여 최상의 요트서비스를 제공합니다.</p>
+                <p>
+                  탁월한 항해능력과 안전성을 보장하는 최신 모델의 명품요트로
+                  고급 해양레포츠의 매력을 마음껏 즐길 수 있습니다.
+                </p>
+              </span>
+              <span className="c_img">
+                <span>
+                  <img src={rowimg3_1}></img>
+                </span>
+                <span>
+                  <img src={rowimg3_2}></img>
+                </span>
+                <span>
+                  <img src={rowimg3_3}></img>
+                </span>
+              </span>
+            </dd>
+            <dt style={{ order: "3" }} onClick={menuSlide} className="list_img">
+              <img src={rowimg4} alt="신기산업"></img>
+              <span className="tit">신기산업</span>
+              <span className="new">NEW</span>
+            </dt>
+            <dd style={{ order: "4" }} className="clickShow">
+              <span className="c_tit">신기산업</span>
+              <span className="c_tag">
+                <p>#신기잡화점</p>
+                <p>#신기산업</p>
+              </span>
+              <a
+                href="http://sinki.co.kr/"
+                target="_blank"
+                className="more_wrap"
+              >
+                <span className="more_txt">상품 둘러보기</span>
+                <span className="moreIcon">icon</span>
+              </a>
+              <span className="c_txt">
+                <p className="txt1">상품 소개</p>
+                <p>
+                  '철제 제품의 시작과 끝' 이라는 모토 아래 제품 기획부터 제조,
+                  포장, 유통에 이르기까지
+                </p>
+                <p>​일괄적으로 자체 운영하고 있습니다.</p>
+                <p>
+                  전 직원이 내 제품을 만든다는 심정으로 고객 여러분께 최고의
+                  만족을 드리기 위하여 모든 노력을 할 것임을 약속합니다.
+                </p>
+              </span>
+              <span className="c_img">
+                <span>
+                  <img src={rowimg4_1}></img>
+                </span>
+                <span>
+                  <img src={rowimg4_2}></img>
+                </span>
+                <span>
+                  <img src={rowimg4_3}></img>
+                </span>
+              </span>
+            </dd>
+            <dt style={{ order: "5" }} onClick={menuSlide} className="list_img">
+              <img src={rowimg5} alt="신기여울"></img>
+              <span className="tit">신기여울</span>
+            </dt>
+            <dd style={{ order: "10" }} className="clickShow">
+              <span className="c_tit">신기여울</span>
+              <span className="c_tag">
+                <p>#신기여울</p>
+                <p>#신기숲</p>
+                <p>#영도카페</p>
+                <p>#루프탑카페</p>
+              </span>
+              <a
+                href="https://www.instagram.com/sinki_yeoul/"
+                target="_blank"
+                className="more_wrap"
+              >
+                <span className="more_txt">상품 둘러보기</span>
+                <span className="moreIcon">icon</span>
+              </a>
+              <span className="c_txt">
+                <p className="txt1">상품 소개</p>
+                <p>부산 최고의 전망을가진 루프탑 카페와</p>
+                <p>​사업장이 아우러진 새로운 개념의 카페입니다.</p>
+              </span>
+              <span className="c_img">
+                <span>
+                  <img src={rowimg5_1}></img>
+                </span>
+                <span>
+                  <img src={rowimg5_2}></img>
+                </span>
+                <span>
+                  <img src={rowimg5_3}></img>
+                </span>
+                <span>
+                  <img src={rowimg5_4}></img>
+                </span>
+              </span>
+            </dd>
+            <dt style={{ order: "6" }} onClick={menuSlide} className="list_img">
+              <img src={rowimg6} alt="마리안느"></img>
+              <span className="tit">마리안느</span>
+            </dt>
+            <dd style={{ order: "10" }} className="clickShow">
+              <span className="c_tit">마리안느</span>
+              <span className="c_tag">
+                <p>#마리안느</p>
+                <p>#해운대호텔</p>
+                <p>#스카이라운지</p>
+              </span>
+              <a
+                href="http://mariannehotel.co.kr/"
+                target="_blank"
+                className="more_wrap"
+              >
+                <span className="more_txt">상품 둘러보기</span>
+                <span className="moreIcon">icon</span>
+              </a>
+              <span className="c_txt">
+                <p className="txt1">상품 소개</p>
+                <p>
+                  도보 10분 거리에 해운대 해수욕장과 SEA LIFE 부산 아쿠아리움
+                  등이 있습니다.
+                </p>
+                <p>
+                  ​호텔 22층에는 해운대 바다 전망의 스카이라운지가 있으며
+                  비즈니스 고객님들을 위한 비즈니스 센터와 세마나실도 마련되어
+                  있습니다.
+                </p>
+                <p>
+                  22층에 위치한 엘시엘로 바에서는 해운대 바다를 바라보며 맥주
+                  또는 커피를 즐기실 수 있습니다.
+                </p>
+              </span>
+              <span className="c_img">
+                <span>
+                  <img src={rowimg6_1}></img>
+                </span>
+                <span>
+                  <img src={rowimg6_2}></img>
+                </span>
+                <span>
+                  <img src={rowimg6_3}></img>
+                </span>
+              </span>
+            </dd>
+            <dt style={{ order: "7" }} onClick={menuSlide} className="list_img">
+              <img src={rowimg7} alt="RTBP"></img>
+              <span className="tit">RTBP</span>
+              <span className="new">NEW</span>
+            </dt>
+            <dd style={{ order: "10" }} className="clickShow">
+              <span className="c_tit">RTBP</span>
+              <span className="c_tag">
+                <p>#도시재생</p>
+                <p>#머물봉산</p>
+              </span>
+              <a
+                href="https://www.rtbpalliance.com/"
+                target="_blank"
+                className="more_wrap"
+              >
+                <span className="more_txt">상품 둘러보기</span>
+                <span className="moreIcon">icon</span>
+              </a>
+              <span className="c_txt">
+                <p className="txt1">상품 소개</p>
+                <p>
+                  RTBP는 도시재생, 공간 기획, 문화 콘텐츠 기획, 기술개발혁신,
+                  인큐베이팅 등의 사업영역에서 프로젝트를 수행합니다.
+                </p>
+                <p>
+                  실험적 실천 안에서 확장되는 도시를 느끼고 새로움을
+                  이야기합니다.
+                </p>
+                <p>
+                  과거를 머금고 기억을 품은 공간 안에서 현재를 이야기합니다.
+                </p>
+              </span>
+              <span className="c_img">
+                <span>
+                  <img src={rowimg7_1}></img>
+                </span>
+                <span>
+                  <img src={rowimg7_2}></img>
+                </span>
+              </span>
+            </dd>
+            <dt style={{ order: "8" }} onClick={menuSlide} className="list_img">
+              <img src={rowimg8} alt="엔젤앤가든"></img>
+              <span className="tit">엔젤 앤 가든</span>
+              <span className="new">NEW</span>
+            </dt>
+            <dd style={{ order: "9" }} className="clickShow">
+              <span className="c_tit">엔젤앤가든</span>
+              <span className="c_tag">
+                <p>#기장펜션</p>
+                <p>#온수수영장</p>
+                <p>#감성펜션</p>
+              </span>
+              <a
+                href="http://www.angcompany.co.kr/"
+                target="_blank"
+                className="more_wrap"
+              >
+                <span className="more_txt">상품 둘러보기</span>
+                <span className="moreIcon">icon</span>
+              </a>
+              <span className="c_txt">
+                <p className="txt1">상품 소개</p>
+                <p>
+                  A&G가구공방에서 직접만든 원목가구와 디자인 소품을 통해
+                  감성적인 공간을 제공하고,
+                </p>
+                <p>
+                  편안한 쉼을 선물해드리기 위해 고급 침구류와 욕실용품, 그리고
+                  다양한 서비스를 준비하고 있습니다.
+                </p>
+                <p>
+                  온 몸으로 느껴지는 엔젤앤가든의 자연풍경과 감성적인 공간으로
+                  최고의 휴식을 누리실 수 있습니다.
+                </p>
+              </span>
+              <span className="c_img">
+                <span>
+                  <img src={rowimg8_1}></img>
+                </span>
+                <span>
+                  <img src={rowimg8_2}></img>
+                </span>
+                <span>
+                  <img src={rowimg8_3}></img>
+                </span>
+                <span>
+                  <img src={rowimg8_4}></img>
+                </span>
+              </span>
+            </dd>
+          </dl>
+        </div>
+        <div className="banner">
+          <a href="https://pf.kakao.com/_xmNxcNxb" target="_blank">
+            <span className="bn_inner">
+              <span className="bn_img">
+                <img src={bn_img}></img>
+              </span>
+              <span className="bn_txt">
+                <span className="txt_open">
+                  메이전시 카카오톡 채널 <strong>OPEN</strong>
+                </span>
+                <span>인플루언서들의 만족도 최고의 에이전시</span>
+                <span className="link">바로가기</span>
+              </span>
+            </span>
+          </a>
         </div>
       </section>
       <footer>
@@ -635,7 +892,7 @@ function App() {
 
 제1조 (목적 및 적용대상)
               
-① 본 약관은 주식회사 (JANDA)(이하 ‘회사’라 합니다)이 제공하는 전자지급결제대행서비스,선불전자지급수단의 발행 및 관리서비스,전자고지결제서비스(이하 통칭하여 ‘전자금융거래서비스’라 합니다)를 회원이 이용함에 있어,회사와 회원 간 권리,의무 및 회원의 이용절차 등에 관한 사항을 규정하는 것을 그 목적으로 합니다.
+① 본 약관은 메이전시(이하 ‘회사’라 합니다)이 제공하는 전자지급결제대행서비스,선불전자지급수단의 발행 및 관리서비스,전자고지결제서비스(이하 통칭하여 ‘전자금융거래서비스’라 합니다)를 회원이 이용함에 있어,회사와 회원 간 권리,의무 및 회원의 이용절차 등에 관한 사항을 규정하는 것을 그 목적으로 합니다.
 ② 회사는 통신판매중개자이며 개설된 회사의 주최 및 당사자가 아닙니다.
 ③ 회사가 제공하는 결제서비스를 이용한 유료행사의 결제금액 정산은 회사가 정한 결제/정산규정에 따릅니다.
 ④ 개설자 통장입금방식,외부/현장신청 방식을 통한 결제 금액은 본 규정의 적용 대상에 해당하지 않습니다.
@@ -699,7 +956,7 @@ function App() {
 (1) 개인:신분증 사본,통장 사본
 (2) 사업자:사업자등록증 사본,통장 사본
 (3) 비영리,면세사업자:사업자등록증 또는 고유번호증 사본,통장 사본
-※ 전달할 연락처:support@gdcomm.io / 051-950-6537
+※ 전달할 연락처:cdo@stayjanda.com / 070-4128-8244
 ※ 정산정보는 개설자의 명의와 일치해야 합니다.
 ※ 등록한 정산정보는 직접 변경 등록할 수 없으니 신중히 선택하여 주시기 바랍니다.
 ※ 개설자가 잘못된 정산정보를 등록하여 발생하는 불이익에 대해 회사는 책임을 지지 않습니다.
@@ -707,7 +964,7 @@ function App() {
 1) 정산서의 전송
 (1) 행사기간 종료 후 회사 영업일 기준 12일 이내 개설자의 이메일로 정산서를 전송합니다.
 (2) 개설자는 수령한 정산서를 열람하여,정산내역의 이상 유무를 이메일,전화 등의 방법으로 회사에게 알려줘야 합니다.
-☞ 이메일 support@gdcomm.io,전화 051-950-6537
+☞ 이메일 cdo@stayjanda.com, 전화 070-4128-8244
 2) 정산금액의 송금
 (1) 정산금액의 송금은 행사기간 종료일로부터 회사 영업일 기준 12일 후에 진행됩니다.
 (2) 송금은 회사에서 제공한 정산서에 대해 개설자로부터 이상 없음이 확인된 경우에 진행됩니다.
@@ -766,9 +1023,9 @@ function App() {
 3. 회원의 오류정정 요구사실 및 처리결과에 관한 사항
 4. 기타 금융위원회가 고시로 정한 사항
 ⑤ 회원이 제1항에서 정한 서면교부를 요청하고자 할 경우 다음의 주소 및 전화번호로 요청할 수 있습니다.
-주소:부산광역시 부산진구 성지곡로 16번길 11,101동 301호
-사이트 주소:https://www.nolla.kr
-전화번호:051-950-6537
+주소:부산광역시 남구 전포대로133 WEWORK BIFC 14층
+사이트 주소:https://magency.kr
+전화번호:070-4128-8244
 
 
 제7조 (거래지시의 철회 등)
@@ -864,7 +1121,7 @@ function App() {
 제20조 (정의)
 
 본 장에서 사용하는 용어의 정의는 다음과 같습니다.
-1. ‘선불전자지급수단’이라 함은 회사가 운영하는 웹사이트 및 제휴사 서비스 등(이하 ‘징검다리커뮤니케이션 서비스 등’이라고 합니다)에서 재화 또는 용역(이하 ‘재화 등’이라고 합니다)을 구매할 수 있는 이벤트머니 등과 같이 회사가 발행 당시 미리 회원에게 공지한 전자금융거래법 상 선불전자지급수단을 말합니다.
+1. ‘선불전자지급수단’이라 함은 회사가 운영하는 웹사이트 및 제휴사 서비스 등에서 재화 또는 용역(이하 ‘재화 등’이라고 합니다)을 구매할 수 있는 이벤트머니 등과 같이 회사가 발행 당시 미리 회원에게 공지한 전자금융거래법 상 선불전자지급수단을 말합니다.
 2. ‘충전’이라 함은 선불전자지급수단의 일정액을 확보하기 위해 회사가 지정한 지불수단을 통해 선불전자지급수단을 구매하거나,회사 또는 회사가 지정한 제3자의 서비스 등(이하 ‘서비스 등’이라 합니다)에서의 활동을 통해 선불전자지급수단을 적립 받는 것을 말합니다.
 3. ‘회원’이라 함은 본 약관에 동의하고 판매자로부터 재화 등을 구매하고 선불전자지급수단을 결제수단으로 하여 그 대가를 지급하는 자를 말합니다.
 4. ‘판매자’라 함은 선불전자지급수단에 의한 거래에 있어서 회원에게 재화 등을 판매하는 자를 말합니다.
@@ -941,7 +1198,7 @@ function App() {
 ② 제2장 결제대행서비스 제18조는 본 장에 준용합니다.
 부칙
 
-본 약관은 2019년 2월 26일부터 적용됩니다.
+본 약관은 2020년 1월 1일부터 적용됩니다.
 `}
             ></textarea>
           </div>
@@ -986,7 +1243,7 @@ function App() {
               readonly="readonly"
               data-autosize-on="true"
               className="con_txt"
-              value={`MAGENCY(이하 “회사”)는 회원님의 개인정보를 중요시하며, 개인정보의 보호와 관련하여 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 및 개인정보 보호법 등 관련법 상의 개인정보 보호 규정을 준수하고 있습니다.
+              value={`메이전시(이하 “회사”)는 회원님의 개인정보를 중요시하며, 개인정보의 보호와 관련하여 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 및 개인정보 보호법 등 관련법 상의 개인정보 보호 규정을 준수하고 있습니다.
 
 회사는 개인정보처리방침을 통하여 회원님의 개인정보가 남용되거나 유출되지 않도록 최선을 다할 것이며, 회원님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있고, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.
 
@@ -1002,7 +1259,7 @@ function App() {
 
 대부분의 메이전시 서비스는 별도의 사용자 등록이 없이 언제든지 볼 수 있습니다.
 
-그러나 회사는 회원서비스(잔다통합솔루션과 같이 현재 제공 중이거나 향후 제공될 로그인 기반의 서비스)등을 통하여 이용자들에게 맞춤 식 서비스를 비롯한 보다 더 향상된 양질의 서비스를 제공하기 위하여 이용자 개인의 정보를 수집하고 있습니다.
+그러나 회사는 회원서비스등을 통하여 이용자들에게 맞춤 식 서비스를 비롯한 보다 더 향상된 양질의 서비스를 제공하기 위하여 이용자 개인의 정보를 수집하고 있습니다.
 
 회사는 이용자의 사전 동의 없이는 이용자의 개인 정보를 공개하지 않으며, 수집된 정보는 아래와 같이 이용하고 있습니다.
 

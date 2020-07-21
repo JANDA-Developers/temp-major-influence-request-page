@@ -1,5 +1,5 @@
 @import "./mixin.scss";
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap");
 
 $main-color: #df9d26;
 $sub-color1: #efd252;
@@ -52,3 +52,57 @@ textarea:focus {
 select:focus {
   outline: none;
 }
+.JDslider .JDslider__dots {
+  padding: 0 0;
+}
+// input[type="radio"] {
+//   position: absolute;
+//   width: 1px;
+//   height: 1px;
+//   padding: 0;
+//   margin: -1px;
+//   overflow: hidden;
+//   clip: rect(0, 0, 0, 0);
+//   border: 0;
+// }
+// input[type="radio"] + label {
+//   display: inline-block;
+//   position: relative;
+//   padding-left: 30px;
+//   cursor: pointer;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+// }
+// input[type="radio"] + label:before {
+//   content: "";
+//   position: absolute;
+//   left: 0;
+//   top: 4px;
+//   width: 16px;
+//   height: 16px;
+//   text-align: center;
+//   background: #fff;
+//   border: 1px solid #ddd;
+//   border-radius: 100%;
+// }
+// input[type="radio"] + label:active:before,
+// input[type="radio"]:checked + label:active:before {
+//   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+//     inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+// }
+// input[type="radio"]:checked + label:before {
+//   background: #e9ecee;
+//   border-color: #adb8c0;
+// }
+// input[type="radio"]:checked + label:after {
+//   content: "\2714";
+//   position: absolute;
+//   top: 1px;
+//   left: 5px;
+//   width: 13px;
+//   height: 13px;
+//   background: #99a1a7;
+//   border-radius: 100%;
+//   box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3);
+// }
