@@ -124,7 +124,7 @@ function App() {
       <section id="mainvisual">
         <div className="mainvisual">
           <div className="txt_wrap">
-            <p className="txt">영향력 있는 인플루언서가 추천하는</p>
+            <p className="txt">영향력 있는 인플루언서가 추천하는..</p>
             <p className="txt">
               만족도 최고의 <strong>에이전시</strong>
             </p>
