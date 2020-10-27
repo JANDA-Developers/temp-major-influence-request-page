@@ -116,7 +116,7 @@ function App() {
 
           <div className="join">
             <div onClick={popUp} className="join_link1">
-              인플루언서 신청하기
+              인플루언서 신청하기.
             </div>
           </div>
         </div>
