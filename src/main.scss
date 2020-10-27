@@ -2,10 +2,6 @@
 @import "~@janda-com/front/build/scss/style_config.scss";
 @import "~@janda-com/front/build/scss/components/Slider.scss";
 @import "~@janda-com/front/build/scss/components/CheckBox.scss";
-@import "./header.scss";
-@import "./footer.scss";
-@import "./ClausePolicy.scss";
-@import "./top_btn.scss";
 
 body {
   margin: 0;
@@ -17,256 +13,214 @@ body {
 }
 
 .Main {
-  #mainvisual {
-    .mainvisual {
-      // background: url(img/mainvisual_img2.png) no-repeat 88% center/32%;
-      //width: 100%;
-      //text-align: left;
-      // @include resp( 1200px, 1080px) {
-      //   background: url(img/mainvisual_img2.png) no-repeat 97% center/50% auto;
-      //   height: 750px;
-      // }
-      // @include resp(1080px, 768px) {
-      //   background: url(./img/mainvisual_img2.png) no-repeat center 290px/50%
-      //     auto;
-      //   height: 750px;
-      //   text-align: center;
-      // }
-      // @include resp(768px, 640px) {
-      //   background: url(./img/mainvisual_img2.png) no-repeat center 260px/65%
-      //     auto;
-      //   height: 700px;
-      //   text-align: center;
-      // }
-      // @include resp(640px, 320px) {
-      //   background: url(./img/mainvisual_img2.png) no-repeat center 230px/80%
-      //     auto;
-      //   height: 620px;
-      //   text-align: center;
-      // }
-      .visual {
-        height: 620px;
+  header {
+    padding: 30px 3%;
+    height: 46px;
+    .hd {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .logo img {
+        @include resp($mobile1, $mobile2) {
+          width: 180px;
+        }
+        @include resp($mobile2, $mobile3) {
+          width: 160px;
+        }
       }
-      .JDslider .slick-arrow {
+    }
+    .search_wrap {
+      width: 50%;
+      height: 46px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      label {
+        text-indent: -9999px;
+      }
+      input {
+        width: 100%;
+        height: 40px;
+        background-color: $background-color;
+        border-radius: 20px;
+        border: 1px solid $border-color;
+        padding: 0 44px 0 20px;
+        margin-right: 24px;
+      }
+      input::placeholder {
+        font-size: 16px;
+        color: $font-color2;
+      }
+      .search_btn {
+        display: block;
+        width: 20px;
         position: absolute;
         top: 50%;
-        margin-top: -25px;
-        background-color: rgba(223, 157, 38, 0.5);
-        border: none;
-        width: 65px;
-        height: 65px;
-        border-radius: 100%;
-        cursor: pointer;
-        svg {
-          width: 32px;
-        }
+        right: 40px;
+        transform: translateY(-50%);
       }
-      .slick-prev {
-        left: 15%;
-        transition: all 0.3s;
+    }
+    .join_link1 {
+      display: block;
+      padding: 12px 24px;
+      background-color: $sub-color1;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      @include resp($mobile1, $mobile2) {
+        padding: 8px 20px;
+        font-size: 14px;
       }
-      .slick-prev:hover {
-        left: 14.5%;
+      @include resp($mobile2, $mobile3) {
+        padding: 8px 20px;
+        font-size: 14px;
       }
-      .slick-next {
-        right: 15%;
-        transition: all 0.3s;
+    }
+    .join_link1:hover {
+      background-color: #fff;
+      border: 1px solid $sub-color1;
+      color: $sub-color1;
+      transition: all 0.6s;
+    }
+  }
+  #mainvisual {
+    .mainvisual {
+      background: url(./img/mainvisual_img2.png) no-repeat 97% center;
+      width: 100%;
+      height: 900px;
+      overflow: hidden;
+      text-align: left;
+      position: relative;
+      @include resp($tablet1, $tablet2) {
+        background: url(./img/mainvisual_img2.png) no-repeat 97% center/50% auto;
+        height: 750px;
       }
-      .slick-next:hover {
-        right: 14.5%;
+      @include resp($tablet2, $mobile1) {
+        background: url(./img/mainvisual_img2.png) no-repeat center 290px/50%
+          auto;
+        height: 750px;
+        text-align: center;
       }
-      ul {
+      @include resp($mobile1, $mobile2) {
+        background: url(./img/mainvisual_img2.png) no-repeat center 260px/65%
+          auto;
+        height: 700px;
+        text-align: center;
+      }
+      @include resp($mobile2, $mobile3) {
+        background: url(./img/mainvisual_img2.png) no-repeat center 230px/80%
+          auto;
+        height: 620px;
+        text-align: center;
+      }
+      .txt_wrap {
         position: absolute;
-        bottom: 30px;
-        li {
-          margin: 0 12px;
+        top: 50%;
+        left: 10%;
+        transform: translateY(-95%);
+        color: $font-color1;
+        font-size: 50px;
+        letter-spacing: -2px;
+        line-height: 0.5em;
+        @include resp($tablet1, $tablet2) {
+          left: 3%;
+          font-size: 42px;
+          letter-spacing: -3px;
         }
-        .slick-active > button:before {
-          background-color: #fff;
-          width: 25px;
-          height: 3px;
-          border-radius: 0;
-        }
-        button:before {
-          background-color: #df9d26;
-          width: 25px;
-          height: 3px;
-          border-radius: 0;
-        }
-      }
-      .slide1 {
-        background: linear-gradient(
-          30deg,
-          #df9d26 0%,
-          #efd252 50%,
-          #f8e79d 100%
-        );
-        position: relative;
-        .visual_txt {
-          display: block;
-          color: #fff;
-          font-size: 36px;
-          letter-spacing: 2.6px;
-          padding-top: 82px;
-          text-shadow: 0px 2px 7px #df9d26;
-        }
-        img {
-          position: absolute;
-          top: 50%;
-          right: 50%;
-          margin-top: -92px;
-          margin-right: -500px;
-          // transform: translate(-76%, -35%);
-        }
-      }
-      .slide2 {
-        font-size: 46px;
-        color: #fff;
-        position: relative;
-        text-shadow: 0px 2px 7px #df9d26;
-        font-weight: 300;
-        .round {
-          width: 480px;
-          height: 480px;
-          border-radius: 100%;
-          background-color: rgba(223, 157, 38, 0.5);
-          position: absolute;
-          top: 50%;
+        @include resp($tablet2, $mobile1) {
+          width: 100%;
+          top: 8%;
           left: 50%;
-          margin-top: -240px;
-          margin-left: -240px;
+          transform: translateX(-50%);
+          font-size: 38px;
+          letter-spacing: -3px;
         }
-        span {
-          display: block;
+        @include resp($mobile1, $mobile2) {
+          width: 100%;
+          top: 8%;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 30px;
+          letter-spacing: -2px;
         }
-        .visual_txt1 {
-          background-color: #efd252;
-          width: 30%;
-          height: 620px;
-          text-align: left;
-          position: absolute;
-          top: 0;
-          left: 0;
-          padding-top: 120px;
-          padding-left: 20%;
-          .kakao_link {
-            display: block;
-            font-size: 16px;
-            font-weight: 500;
-            line-height: 40px;
-            color: #fff;
-            z-index: 100;
-            width: 200px;
-            height: 40px;
-            border-radius: 3px;
-            margin-top: 46px;
-            border: 2px solid #fff;
-            text-align: center;
-            text-shadow: none;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-          }
-          .kakao_link::before {
-            content: "";
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
-            z-index: -1;
-            position: absolute;
-            top: -40px;
-            left: 0;
-            transition: all 0.3s;
-          }
-          .kakao_link:hover {
-            color: #efd252;
-          }
-          .kakao_link:hover::before {
-            top: 0;
-          }
+        @include resp($mobile2, $mobile3) {
+          width: 100%;
+          top: 8%;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 22px;
+          letter-spacing: -2px;
         }
-        .visual_txt2 {
-          width: 30%;
-          height: 620px;
-          color: #555;
-          text-shadow: none;
-          text-align: right;
-          position: absolute;
-          top: 0;
-          right: 0;
-          padding-top: 120px;
-          padding-right: 20%;
-          z-index: 2;
-
-          .google_btn {
-            display: block;
-            font-size: 16px;
-            font-weight: 500;
-            line-height: 40px;
-            color: #555;
-            z-index: 100;
-            width: 200px;
-            height: 40px;
-            border-radius: 3px;
-            margin-top: 46px;
-            border: 1px solid #555;
-            text-align: center;
-            text-shadow: none;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            float: right;
-          }
-          .google_btn::before {
-            content: "";
-            width: 100%;
-            height: 100%;
-            background-color: #df9d26;
-            z-index: -1;
-            position: absolute;
-            top: -40px;
-            right: 0;
-            transition: all 0.3s;
-          }
-          .google_btn:hover {
-            border: 1px solid #df9d26;
-            color: #fff;
-          }
-          .google_btn:hover::before {
-            top: 0;
-          }
+        strong {
+          color: $main-color;
+          font-weight: bold;
         }
-        .sub_txt {
-          margin-top: 24px;
-          font-size: 16px;
+      }
+      .join_link2 {
+        display: bolck;
+        padding: 20px 34px;
+        font-size: 22px;
+        letter-spacing: 1px;
+        color: #fff;
+        background-color: $main-color;
+        border-radius: 36px;
+        position: absolute;
+        bottom: 40%;
+        left: 10%;
+        cursor: pointer;
+        @include resp($tablet1, $tablet2) {
+          left: 3%;
+        }
+        @include resp($tablet2, $mobile1) {
+          bottom: 64%;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 14px 24px;
+          font-size: 18px;
+        }
+        @include resp($mobile1, $mobile2) {
+          bottom: 66%;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 12px 24px;
+          font-size: 18px;
+        }
+        @include resp($mobile2, $mobile3) {
+          bottom: 70%;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 10px 24px;
+          font-size: 14px;
         }
       }
     }
   }
+
   #container {
     .row_tit {
       text-align: center;
       font-size: 40px;
-      font-weight: 500;
-      color: #333;
+      font-weight: 600;
+      color: $font-color1;
       margin-bottom: 52px;
       position: relative;
-      @include resp(1200px, 1080px) {
+      @include resp($tablet1, $tablet2) {
         font-size: 36px;
         margin-bottom: 32px;
       }
-      @include resp(1080px, 768px) {
+      @include resp($tablet2, $mobile1) {
         font-size: 30px;
         letter-spacing: -2px;
         margin-bottom: 30px;
       }
-      @include resp(768px, 640px) {
+      @include resp($mobile1, $mobile2) {
         font-size: 28px;
         letter-spacing: -2px;
         margin-bottom: 24px;
       }
-      @include resp(640px, 320px) {
+      @include resp($mobile2, $mobile3) {
         font-size: 26px;
         letter-spacing: -2.5px;
         margin-bottom: 20px;
@@ -276,42 +230,187 @@ body {
       font-size: 20px;
       line-height: 35px;
       text-align: center;
-      color: #333;
+      color: $font-color1;
       margin-bottom: 65px;
-      @include resp(1200px, 1080px) {
+      @include resp($tablet1, $tablet2) {
         margin-bottom: 52px;
       }
-      @include resp(1080px, 768px) {
+      @include resp($tablet2, $mobile1) {
         font-size: 18px;
         line-height: 1.5em;
         margin-bottom: 46px;
       }
-      @include resp(768px, 640px) {
+      @include resp($mobile1, $mobile2) {
         font-size: 18px;
         line-height: 1.5em;
         margin-bottom: 46px;
       }
-      @include resp(640px, 320px) {
+      @include resp($mobile2, $mobile3) {
         font-size: 16px;
         line-height: 1.5em;
         margin-bottom: 40px;
         letter-spacing: -1px;
       }
     }
-
     .row1 {
-      background-color: #f2f4f9;
-      padding: 160px 3% 0;
-      @include resp(1200px, 1080px) {
+      background-color: $background-color;
+      padding: 210px 3% 150px;
+      position: relative;
+      @include resp($tablet1, $tablet2) {
+        padding: 150px 3% 90px;
+      }
+      @include resp($mobile1, $mobile2) {
+        padding: 130px 3% 60px;
+      }
+      @include resp($mobile2, $mobile3) {
+        padding: 130px 3% 60px;
+      }
+      .row_tit::before {
+        content: "PRODUCT";
+        display: bolck;
+        position: absolute;
+        top: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 32px;
+        font-weight: 300;
+        opacity: 0.2;
+        @include resp($tablet1, $tablet2) {
+          font-size: 28px;
+          top: -56px;
+        }
+        @include resp($tablet2, $mobile1) {
+          font-size: 26px;
+          top: -52px;
+        }
+        @include resp($mobile1, $mobile2) {
+          font-size: 24px;
+          top: -48px;
+        }
+        @include resp($mobile2, $mobile3) {
+          font-size: 24px;
+          top: -48px;
+        }
+      }
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          width: calc(25% - 40px);
+          margin: 0 20px 60px;
+          background-color: #fff;
+          border-radius: 5px;
+          @include resp($tablet1, $tablet2) {
+            width: calc(50% - 30px);
+            margin: 0 15px 60px;
+          }
+          @include resp($tablet2, $mobile1) {
+            width: calc(50% - 30px);
+            margin: 0 15px 50px;
+          }
+          @include resp($mobile1, $mobile2) {
+            width: 100%;
+            margin: 0 70px 50px;
+          }
+          @include resp($mobile2, $mobile3) {
+            width: 100%;
+            margin: 0 70px 50px;
+          }
+          a {
+            display: block;
+            overflow: hidden;
+            position: relative;
+            .list_img {
+              display: block;
+              //height: auto;
+              margin: 10px;
+              border-radius: 5px;
+              overflow: hidden;
+
+              img {
+                width: 100%;
+              }
+            }
+            .list_tit {
+              display: block;
+              font-size: 20px;
+              color: $font-color3;
+              font-weight: 600;
+              margin-left: 32px;
+              margin-right: 32px;
+              margin-bottom: 16px;
+              white-space: normal;
+              word-wrap: break-word;
+              display: -webkit-box;
+              -webkit-line-clamp: 1;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              @include resp(1500px) {
+                font-size: 18px;
+                margin-left: 26px;
+                margin-right: 26px;
+              }
+              @include resp($tablet1, $tablet2) {
+                font-size: 16px;
+                margin-left: 18px;
+                margin-right: 12px;
+              }
+            }
+          }
+          .like {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 32px;
+            margin-bottom: 24px;
+            @include resp(1500px) {
+              margin-right: 18px;
+              margin-bottom: 18px;
+            }
+            @include resp($tablet1, $tablet2) {
+              margin-right: 16px;
+              margin-bottom: 14px;
+            }
+            @include resp($mobile1, $mobile2) {
+              margin-right: 16px;
+              margin-bottom: 14px;
+            }
+            .like_icon svg {
+              width: 16px;
+              margin-right: 4px;
+              @include resp($tablet1, $tablet2) {
+                width: 14px;
+              }
+              @include resp($mobile2, $mobile3) {
+                width: 12px;
+              }
+            }
+            .like_txt {
+              font-size: 18px;
+              color: $font-color3;
+              @include resp($tablet1, $tablet2) {
+                font-size: 16px;
+              }
+              @include resp($mobile2, $mobile3) {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .row2 {
+      padding: 210px 3% 0;
+      @include resp($tablet1, $tablet2) {
         padding: 150px 3% 0;
       }
-      @include resp(1080px, 768px) {
+      @include resp($tablet2, $mobile1) {
         padding: 150px 3% 0;
       }
-      @include resp(768px, 640px) {
+      @include resp($mobile1, $mobile2) {
         padding: 130px 3% 0;
       }
-      @include resp(640px, 320px) {
+      @include resp($mobile2, $mobile3) {
         padding: 130px 3% 0;
       }
       .row_tit::before {
@@ -324,19 +423,19 @@ body {
         font-size: 32px;
         font-weight: 300;
         opacity: 0.2;
-        @include resp(1200px, 1080px) {
+        @include resp($tablet1, $tablet2) {
           font-size: 28px;
           top: -56px;
         }
-        @include resp(1080px, 768px) {
+        @include resp($tablet2, $mobile1) {
           font-size: 26px;
           top: -52px;
         }
-        @include resp(768px, 640px) {
+        @include resp($mobile1, $mobile2) {
           font-size: 24px;
           top: -48px;
         }
-        @include resp(640px, 320px) {
+        @include resp($mobile2, $mobile3) {
           font-size: 24px;
           top: -48px;
         }
@@ -355,18 +454,18 @@ body {
           border: none;
           background-color: rgba(0, 0, 0, 0);
           cursor: pointer;
-          @include resp(1080px, 768px) {
+          @include resp($tablet2, $mobile1) {
             left: 3%;
           }
-          @include resp(768px, 640px) {
+          @include resp($mobile1, $mobile2) {
             left: 3%;
           }
-          @include resp(640px, 320px) {
+          @include resp($mobile2, $mobile3) {
             left: 2%;
           }
           svg {
             width: 20px;
-            @include resp(640px, 320px) {
+            @include resp($mobile2, $mobile3) {
               width: 14px;
             }
           }
@@ -375,39 +474,38 @@ body {
           .tit {
             font-size: 26px;
             margin-bottom: 10px;
-            color: #333;
+            color: $font-color1;
             font-weight: 500;
-            @include resp(1200px, 1080px) {
+            @include resp($tablet1, $tablet2) {
               font-size: 22px;
             }
-            @include resp(1080px, 768px) {
+            @include resp($tablet2, $mobile1) {
               font-size: 20px;
             }
-            @include resp(768px, 640px) {
+            @include resp($mobile1, $mobile2) {
               font-size: 20px;
             }
-            @include resp(640px, 320px) {
+            @include resp($mobile2, $mobile3) {
               font-size: 20px;
             }
             span {
-              color: #df9d26;
+              color: $main-color;
               font-weight: 600;
             }
           }
           .txt {
             font-size: 20px;
-            font-weight: 300;
-            color: #555;
-            @include resp(1200px, 1080px) {
+            color: $font-color3;
+            @include resp($tablet1, $tablet2) {
               font-size: 18px;
             }
-            @include resp(1080px, 768px) {
+            @include resp($tablet2, $mobile1) {
               font-size: 16px;
             }
-            @include resp(768px, 640px) {
+            @include resp($mobile1, $mobile2) {
               font-size: 16px;
             }
-            @include resp(640px, 320px) {
+            @include resp($mobile2, $mobile3) {
               font-size: 16px;
             }
           }
@@ -415,19 +513,19 @@ body {
             padding: 152px 18px 0;
             height: 800px;
             overflow: hidden;
-            @include resp(1200px, 1080px) {
+            @include resp($tablet1, $tablet2) {
               padding: 120px 18px 0;
               height: 600px;
             }
-            @include resp(1080px, 768px) {
+            @include resp($tablet2, $mobile1) {
               padding: 100px 18px 0;
               height: 480px;
             }
-            @include resp(768px, 640px) {
+            @include resp($mobile1, $mobile2) {
               padding: 100px 18px 0;
               height: 480px;
             }
-            @include resp(640px, 320px) {
+            @include resp($mobile2, $mobile3) {
               padding: 100px 18px 0;
               height: 400px;
             }
@@ -438,30 +536,28 @@ body {
               margin-bottom: 32px;
               font-size: 16px;
               line-height: 1.2em;
-              font-weight: 300;
-              letter-spacing: 1px;
               background-color: #fff;
-              border: 1px solid #ddd;
+              border: 1px solid $font-color2;
               box-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.1);
-              color: #555;
+              color: $font-color3;
               cursor: pointer;
-              @include resp(1080px, 768px) {
+              @include resp($tablet2, $mobile1) {
                 font-size: 14px;
                 padding: 10px 30px;
                 margin-bottom: 42px;
               }
-              @include resp(768px, 640px) {
+              @include resp($mobile1, $mobile2) {
                 font-size: 14px;
                 padding: 10px 30px;
                 margin-bottom: 42px;
               }
-              @include resp(640px, 320px) {
+              @include resp($mobile2, $mobile3) {
                 font-size: 14px;
                 padding: 10px 30px;
                 margin-bottom: 22px;
               }
               span {
-                @include resp(640px, 320px) {
+                @include resp($mobile2, $mobile3) {
                   display: none;
                 }
               }
@@ -469,16 +565,16 @@ body {
             img {
               display: block;
               margin: 0 auto;
-              @include resp(1200px, 1080px) {
+              @include resp($tablet1, $tablet2) {
                 width: 75%;
               }
-              @include resp(1080px, 768px) {
+              @include resp($tablet2, $mobile1) {
                 width: 86%;
               }
-              @include resp(768px, 640px) {
+              @include resp($mobile1, $mobile2) {
                 width: 96%;
               }
-              @include resp(640px, 320px) {
+              @include resp($mobile2, $mobile3) {
                 width: 96%;
               }
             }
@@ -495,18 +591,18 @@ body {
           border: none;
           background-color: rgba(0, 0, 0, 0);
           cursor: pointer;
-          @include resp(1080px, 768px) {
+          @include resp($tablet2, $mobile1) {
             right: 3%;
           }
-          @include resp(768px, 640px) {
+          @include resp($mobile1, $mobile2) {
             right: 3%;
           }
-          @include resp(640px, 320px) {
+          @include resp($mobile2, $mobile3) {
             right: 2%;
           }
           svg {
             width: 20px;
-            @include resp(640px, 320px) {
+            @include resp($mobile2, $mobile3) {
               width: 14px;
             }
           }
@@ -517,16 +613,16 @@ body {
           top: 142px;
           left: 50%;
           transform: translateX(-50%);
-          @include resp(1200px, 1080px) {
+          @include resp($tablet1, $tablet2) {
             top: 106px;
           }
-          @include resp(1080px, 768px) {
+          @include resp($tablet2, $mobile1) {
             top: 90px;
           }
-          @include resp(768px, 640px) {
+          @include resp($mobile1, $mobile2) {
             top: 92px;
           }
-          @include resp(640px, 320px) {
+          @include resp($mobile2, $mobile3) {
             top: 92px;
           }
           li {
@@ -540,24 +636,24 @@ body {
               font-weight: bold;
               border-radius: 50%;
               cursor: pointer;
-              color: #df9d26;
+              color: $main-color;
               border-color: #fff;
               background-color: #fff;
               border-width: 0;
               box-shadow: 0 3px 5px 3px rgba(0, 0, 0, 0.1);
-              @include resp(1200px, 1080px) {
+              @include resp($tablet1, $tablet2) {
                 width: 42px;
                 height: 42px;
               }
-              @include resp(1080px, 768px) {
+              @include resp($tablet2, $mobile1) {
                 width: 40px;
                 height: 40px;
               }
-              @include resp(768px, 640px) {
+              @include resp($mobile1, $mobile2) {
                 width: 40px;
                 height: 40px;
               }
-              @include resp(640px, 320px) {
+              @include resp($mobile2, $mobile3) {
                 width: 40px;
                 height: 40px;
               }
@@ -569,390 +665,453 @@ body {
           .slick-active {
             button {
               color: #fff;
-              background-color: #df9d26;
+              background-color: $main-color;
             }
           }
         }
       }
     }
+  }
 
-    .row2 {
-      padding: 210px 3% 90px;
+  .prepare {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    .white_bg {
+      width: 320px;
+      border-radius: 6px;
+      background-color: #fff;
+      padding: 26px 0;
+      margin: 15% auto 0;
       position: relative;
-      @include resp(1200px, 1080px) {
-        padding: 150px 3% 90px;
+      @include resp($tablet2, $mobile1) {
+        margin: 25% auto 0;
       }
-      @include resp(768px, 640px) {
-        padding: 130px 3% 60px;
+      @include resp($mobile2, $mobile3) {
+        margin: 30% auto 0;
       }
-      @include resp(640px, 320px) {
-        padding: 130px 3% 60px;
+      img {
+        display: block;
+        margin: 0 auto;
+        width: 60px;
       }
-      .row_tit::before {
-        content: "PRODUCT";
-        display: bolck;
+      .p_txt {
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.5em;
+        color: $font-color3;
+        margin-top: 10px;
+        strong {
+          color: $main-color;
+        }
+      }
+      .close {
+        width: 40px;
+        height: 40px;
+        background-color: $main-color;
+        border-radius: 50%;
         position: absolute;
-        top: -60px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 32px;
-        font-weight: 300;
-        opacity: 0.2;
-        @include resp(1200px, 1080px) {
-          font-size: 28px;
-          top: -56px;
-        }
-        @include resp(1080px, 768px) {
-          font-size: 26px;
-          top: -52px;
-        }
-        @include resp(768px, 640px) {
-          font-size: 24px;
-          top: -48px;
-        }
-        @include resp(640px, 320px) {
-          font-size: 24px;
-          top: -48px;
-        }
-      }
-      dl {
-        display: flex;
-        flex-wrap: wrap;
-        dt {
-          cursor: pointer;
-          width: calc(25% - 30px);
-          margin: 0 15px 60px;
-          overflow: hidden;
-          position: relative;
-          @include resp(1200px, 1080px) {
-            width: calc(50% - 30px);
-            margin: 0 15px 60px;
-          }
-          @include resp(1080px, 768px) {
-            width: calc(50% - 30px);
-            margin: 0 15px 50px;
-          }
-          @include resp(768px, 640px) {
-            width: 100%;
-            margin: 0 70px 50px;
-          }
-          @include resp(640px, 320px) {
-            width: 100%;
-            margin: 0 70px 50px;
-          }
-          img {
-            width: 100%;
-          }
-          .tit {
-            display: block;
-            width: 100%;
-            height: auto;
-            padding: 50px 0 20px 24px;
-            font-size: 18px;
-            font-weight: 500;
-            color: #fff;
-            text-shadow: 0px 5px 7px rgba(0, 0, 0, 0.8);
-            background: linear-gradient(
-              180deg,
-              transparent,
-              rgba(0, 0, 0, 0.8)
-            );
-            position: absolute;
-            bottom: 0;
-            left: 0;
-          }
-          .new {
-            display: block;
-            font-size: 12px;
-            color: #fff;
-            padding: 2px 10px;
-            background-color: #fd2020;
-            box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.3);
-            opacity: 0.9;
-            border-radius: 3px;
-            position: absolute;
-            left: 24px;
-            animation-name: new;
-            animation-duration: 0.6s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
-            animation-direction: alternate;
-          }
-          @keyframes new {
-            0% {
-              top: 6%;
-            }
-            100% {
-              top: 8%;
-            }
-          }
-        }
-        .clickShow {
-          width: 100%;
-          height: 0;
-          padding: 0 30px;
-          background-color: #fff;
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-          box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.1);
-          overflow: hidden;
-          margin-inline-start: 15px;
-          margin-inline-end: 15px;
-          margin-top: -60px;
-          position: relative;
-          transition: all 0.5s ease-in;
-          &.clickShow__open {
-            height: 500px;
-            padding: 30px;
-            margin-bottom: 45px;
-          }
-          .c_tit {
-            color: #333;
-            font-size: 20px;
-            font-weight: 500;
-          }
-          .c_tag {
-            display: flex;
-            justify-content: start;
-            padding: 14px 0 26px;
-            p {
-              font-size: 12px;
-              font-weight: 400;
-              color: #888;
-              background-color: #fff;
-              border: 1px solid #d8d8d8;
-              display: block;
-              padding: 2px 18px;
-              margin: 0 12px 0 0;
-              border-radius: 20px;
-              cursor: default;
-              transition: all 0.2s ease-in;
-            }
-            p:hover {
-              box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.07);
-            }
-          }
-          .more_wrap {
-            position: absolute;
-            top: 46px;
-            right: 40px;
-            .more_txt {
-              display: blcok;
-              width: 0px;
-              height: 40px;
-              text-align: left;
-              border-bottom-left-radius: 20px;
-              border-top-left-radius: 20px;
-              color: #fff;
-              font-size: 16px;
-              line-height: 40px;
-              font-weight: 500;
-              letter-spacing: 1px;
-              padding-left: 20px;
-              background-color: #efd252;
-              overflow: hidden;
-              position: absolute;
-              top: 0;
-              right: 40px;
-              z-index: 20 !important;
-              transition: all 0.6s;
-            }
-            .moreIcon::before {
-              content: "";
-              display: block;
-              width: 20px;
-              height: 2px;
-              background-color: #fff;
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              margin-top: -1px;
-              margin-left: -10px;
-              transition: all 0.3s;
-            }
-            .moreIcon {
-              display: block;
-              width: 40px;
-              height: 40px;
-              font-size: 40px;
-              font-weight: 300;
-              line-height: 38px;
-              color: #fff;
-              border-radius: 20px;
-              text-align: center;
-              background-color: #df9d26;
-              position: absolute;
-              top: 0;
-              right: 20px;
-              text-indent: -9999px;
-              z-index: 30 !important;
-            }
-            .moreIcon::after {
-              content: "";
-              display: block;
-              width: 20px;
-              height: 2px;
-              background-color: #fff;
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              margin-top: -1px;
-              margin-left: -10px;
-              transition: all 0.3s;
-            }
-          }
-          .more_wrap:hover .more_txt {
-            width: 126px;
-          }
-          .more_wrap:hover .moreIcon::before {
-            transform: rotate(90deg);
-          }
-          .more_wrap:hover .moreIcon::after {
-            transform: rotate(180deg);
-          }
-          .c_txt {
-            display: block;
-            color: #555;
-            font-size: 14px;
-            height: 100px;
-            overflow-y: scroll;
-            p {
-              margin-block-start: 0;
-              margin-block-end: 0;
-            }
-            .txt1 {
-              color: #df9d26;
-              font-size: 16px;
-              font-weight: 500;
-              margin-bottom: 6px;
-            }
-          }
-          .c_img {
-            margin-top: 36px;
-            display: flex;
-            justify-content: flex-start;
-            span {
-              display: flex;
-              justify-content: center;
-              align-self: center;
-              width: 330px;
-              height: auto;
-              overflow: hidden;
-              margin-right: 20px;
-              img {
-                width: 100%;
-              }
-            }
-          }
+        top: -16px;
+        right: -16px;
+        border-width: 0;
+        cursor: pointer;
+        svg {
+          width: 16px;
         }
       }
     }
-    .banner {
-      margin: 106px 0;
-      @include resp(1200px, 1080px) {
-        margin: 150px 0 106px;
+  }
+
+  .row3 {
+    padding: 250px 3%;
+    background-color: $background-color;
+    @include resp($tablet1, $tablet2) {
+      padding: 220px 3%;
+    }
+    @include resp($tablet2, $mobile1) {
+      padding: 180px 3% 140px;
+    }
+    @include resp($mobile1, $mobile2) {
+      padding: 180px 3% 140px;
+    }
+    @include resp($mobile2, $mobile3) {
+      padding: 130px 3% 90px;
+    }
+    .row_tit::before {
+      content: "PARTNER";
+      display: bolck;
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 32px;
+      font-weight: 300;
+      opacity: 0.2;
+      @include resp($tablet1, $tablet2) {
+        font-size: 28px;
+        top: -56px;
       }
-      a {
+      @include resp($tablet2, $mobile1) {
+        font-size: 26px;
+        top: -52px;
+      }
+      @include resp($mobile1, $mobile2) {
+        font-size: 24px;
+        top: -48px;
+      }
+      @include resp($mobile2, $mobile3) {
+        font-size: 24px;
+        top: -48px;
+      }
+    }
+  }
+
+  .footer_in {
+    padding: 60px 3% 100px;
+    color: $font-color3;
+    text-align: center;
+    background-color: $background-color;
+    @include resp($mobile1, $mobile2) {
+      padding: 60px 3% 70px;
+    }
+    @include resp($mobile2, $mobile3) {
+      padding: 60px 3% 70px;
+    }
+    .ft_info {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+      position: relative;
+      .info1 {
         display: block;
-        margin: 0 12%;
-        position: relative;
-        @include resp(1200px, 1080px) {
-          margin: 0 5%;
+        color: $font-color3;
+        font-size: 16px;
+        font-weight: 600;
+        margin-right: 80px;
+        cursor: pointer;
+        @include resp($mobile2, $mobile3) {
+          font-size: 14px;
         }
-        @include resp(1084px) {
-          margin: 0 3%;
+      }
+      .info1:hover {
+        opacity: 0.5;
+        transition: all 0.6s;
+      }
+      .info2 {
+        display: block;
+        color: $font-color3;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        @include resp($mobile2, $mobile3) {
+          font-size: 14px;
         }
-        @include resp(768px, 640px) {
-        }
-        @include resp(640px, 320px) {
+      }
+      .info2:hover {
+        opacity: 0.5;
+        transition: all 0.6s;
+      }
+    }
+    .ft_info::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $font-color2;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    .f_detail_wrap {
+      color: $font-color1;
+      display: flex;
+      justify-content: center;
+      text-align: left;
+      @include resp($mobile1, $mobile2) {
+        text-align: center;
+        display: block;
+      }
+      @include resp($mobile2, $mobile3) {
+        text-align: center;
+        display: block;
+      }
+      ul {
+        margin: 0 10px;
+      }
+      li {
+        margin-bottom: 8px;
+        @include resp($mobile2, $mobile3) {
+          margin-bottom: 3px;
         }
         span {
-          display: block;
+          font-size: 14px;
+          margin-right: 12px;
+          @include resp($mobile2, $mobile3) {
+            font-size: 12px;
+          }
         }
-        .bn_inner {
-          background-color: #ffcd00;
-          border-radius: 5px;
-          height: 200px;
-          @include resp(1084px) {
-            height: 500px;
+      }
+      strong {
+        font-size: 14px;
+        @include resp($mobile2, $mobile3) {
+          font-size: 12px;
+        }
+      }
+    }
+    .partner_wrap {
+      margin: 30px 0 50px;
+      img {
+        height: 30px;
+        margin: 10px;
+      }
+    }
+    .copyright {
+      font-size: 12px;
+      margin-top: 24px;
+      @include resp($mobile2, $mobile3) {
+        font-size: 10px;
+        margin-top: 30px;
+      }
+    }
+  }
+
+  // 카카오
+  .kakao_icon_wrap {
+    margin-bottom: env(safe-area-inset-bottom, 0);
+    position: fixed !important;
+    bottom: 100px !important;
+    display: block !important;
+    z-index: 10000000 !important;
+    flex-wrap: nowrap !important;
+    right: 26px !important;
+    overflow: initial !important;
+    background: transparent !important;
+  }
+  .kakao_icon {
+    position: relative !important;
+    display: flex !important;
+    -webkit-box-align: center !important;
+    align-items: center !important;
+    -webkit-box-pack: center !important;
+    justify-content: center !important;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 6px 0px !important;
+    box-sizing: border-box !important;
+    cursor: pointer !important;
+    flex-wrap: nowrap !important;
+    width: 62px !important;
+    height: 62px !important;
+    overflow: initial !important;
+    transition: box-shadow 0.2s ease-out 0s !important;
+    animation: 0.2s cubic-bezier(0.1, 0, 0.6, 1) 0.35s 1 normal backwards
+      running eLtMsx !important;
+    border-radius: 31px !important;
+  }
+
+  //이용약관
+  .clause {
+    .black_wrap_c {
+      display: none;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.7);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      .white_bg {
+        width: 880px;
+        padding: 50px 50px 80px;
+        margin: 100px auto;
+        background-color: #fff;
+        border-radius: 6px;
+        position: relative;
+        @include resp($tablet1, $tablet2) {
+          width: 80%;
+        }
+        @include resp($tablet2, $mobile1) {
+          width: 70%;
+        }
+        @include resp($mobile1, $mobile2) {
+          width: 60%;
+        }
+        @include resp($mobile2, $mobile3) {
+          padding: 30px 30px 50px;
+          width: 64%;
+          margin: 80px auto;
+        }
+        @include resp($mobile1, $mobile2) {
+          width: 60%;
+        }
+        @include resp($mobile2, $mobile3) {
+          padding: 30px 30px 50px;
+          width: 64%;
+          margin: 80px auto;
+        }
+        .title {
+          font-size: 28px;
+          font-weight: 500;
+          line-height: 0;
+          margin-bottom: 42px;
+          color: $font-color1;
+          @include resp($mobile1, $mobile2) {
+            font-size: 24px;
           }
-          @include resp(768px, 640px) {
-            height: 445px;
+          @include resp($mobile2, $mobile3) {
+            font-size: 22px;
+            margin-bottom: 32px;
           }
-          @include resp(500px, 320px) {
-            height: 360px;
+        }
+        .close {
+          width: 50px;
+          height: 50px;
+          background-color: $main-color;
+          border-radius: 50%;
+          position: absolute;
+          top: -20px;
+          right: -20px;
+          border-width: 0;
+          cursor: pointer;
+          @include resp($mobile2, $mobile3) {
+            width: 40px;
+            height: 40px;
           }
-          .bn_img {
-            width: 470px;
-            position: absolute;
-            bottom: 0px;
-            left: 3%;
-            @include resp(1200px, 1080px) {
-              width: 420px;
-              left: 5%;
-            }
-            @include resp(1084px) {
-              width: 380px;
-              left: 50%;
-              margin-left: -190px;
-            }
-            @include resp(500px, 320px) {
-              width: 300px;
-              margin-left: -150px;
-            }
-            img {
-              width: 100%;
+          svg {
+            width: 20px;
+            @include resp($mobile2, $mobile3) {
+              width: 14px;
             }
           }
-          .bn_txt {
-            position: absolute;
-            top: 20%;
-            right: 12%;
-            color: #333;
-            font-size: 20px;
-            text-align: right;
-            @include resp(1200px, 1080px) {
-              right: 8%;
+        }
+        .con_txt {
+          display: inline-block;
+          background-color: #f7f7f7;
+          width: 95%;
+          height: 420px;
+          padding: 20px 12px;
+          border: none;
+          font-size: 14px;
+          line-height: 1.7em;
+          resize: none;
+          overflow: auto;
+          @include resp($tablet1, $tablet2) {
+            height: 300px;
+          }
+          @include resp($tablet2, $mobile1) {
+            height: 300px;
+            font-size: 12px;
+          }
+          @include resp($mobile1, $mobile2) {
+            height: 250px;
+            font-size: 12px;
+          }
+          @include resp($mobile2, $mobile3) {
+            height: 230px;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  //개인정보 취급방침
+  .policy {
+    .black_wrap_p {
+      display: none;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.7);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      .white_bg {
+        width: 880px;
+        padding: 50px 50px 80px;
+        margin: 100px auto;
+        background-color: #fff;
+        border-radius: 6px;
+        position: relative;
+        @include resp($tablet1, $tablet2) {
+          width: 80%;
+        }
+        @include resp($tablet2, $mobile1) {
+          width: 70%;
+        }
+        @include resp($mobile1, $mobile2) {
+          width: 60%;
+        }
+        @include resp($mobile2, $mobile3) {
+          padding: 30px 30px 50px;
+          width: 64%;
+          margin: 80px auto;
+        }
+        .title {
+          font-size: 28px;
+          font-weight: 500;
+          line-height: 0;
+          margin-bottom: 42px;
+          color: $font-color1;
+          @include resp($mobile1, $mobile2) {
+            font-size: 24px;
+          }
+          @include resp($mobile2, $mobile3) {
+            font-size: 22px;
+            margin-bottom: 32px;
+          }
+        }
+        .close {
+          width: 50px;
+          height: 50px;
+          background-color: $main-color;
+          border-radius: 50%;
+          position: absolute;
+          top: -20px;
+          right: -20px;
+          border-width: 0;
+          cursor: pointer;
+          @include resp($mobile2, $mobile3) {
+            width: 40px;
+            height: 40px;
+          }
+          svg {
+            width: 20px;
+            @include resp($mobile2, $mobile3) {
+              width: 14px;
             }
-            @include resp(1084px) {
-              text-align: center;
-              top: 40px;
-              right: 50%;
-              transform: translateX(50%);
-            }
-            @include resp(768px, 640px) {
-              width: 100%;
-              font-size: 16px;
-            }
-            @include resp(500px, 320px) {
-              width: 100%;
-              font-size: 14px;
-            }
-            .txt_open {
-              font-size: 32px;
-              margin-bottom: 6px;
-              @include resp(1084px) {
-                margin-bottom: 4px;
-              }
-              @include resp(768px, 640px) {
-                font-size: 24px;
-              }
-              @include resp(500px, 320px) {
-                font-size: 20px;
-              }
-            }
-            .link {
-              display: inline-block;
-              padding: 6px 24px;
-              background-color: #333;
-              color: #ffcd00;
-              border-radius: 3px;
-              font-size: 14px;
-              margin-top: 10px;
-              @include resp(1084px) {
-                margin-top: 22px;
-              }
-            }
+          }
+        }
+        .con_txt {
+          display: inline-block;
+          background-color: #f7f7f7;
+          width: 95%;
+          height: 420px;
+          padding: 20px 12px;
+          border: none;
+          font-size: 14px;
+          line-height: 1.7em;
+          resize: none;
+          overflow: auto;
+          @include resp($tablet1, $tablet2) {
+            height: 300px;
+          }
+          @include resp($tablet2, $mobile1) {
+            height: 300px;
+            font-size: 12px;
+          }
+          @include resp($mobile1, $mobile2) {
+            height: 250px;
+            font-size: 12px;
+          }
+          @include resp($mobile2, $mobile3) {
+            height: 230px;
+            font-size: 12px;
           }
         }
       }
