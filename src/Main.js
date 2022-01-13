@@ -65,7 +65,7 @@ const goToScrollTop = () => {
 
 const popUp = () => {
   window.open(
-    "https://docs.google.com/forms/d/e/1FAIpQLSc01WBPGL47QKimNCdB1mNn1KzQFporI2RWF_6llOWEwdfQNQ/viewform",
+    "https://jungle.booking.stayjanda.cloud/?storeCode=STORE-DPMXE1&layout=SOLO#/buypage",
     "PopupWin",
     "top=10, left=10, width=600, height=650, status=no, menubar=no, toolbar=no, resizable=no"
   );

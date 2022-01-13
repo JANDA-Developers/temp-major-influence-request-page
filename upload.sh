@@ -1,7 +1,7 @@
-yarn build
+# yarn build
 
 function upload() {
-  aws s3 sync ./build s3://major-temp-service --acl public-read
+  aws s3 sync ./build s3://request.magency.kr --acl public-read
 }
 
 upload
